@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Tennis green primary palette */
+    --primary: 153 100% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Court green accent */
+    --court: 153 100% 20%;
+    --court-foreground: 0 0% 100%;
+    --court-muted: 153 40% 90%;
+
+    /* Base surfaces */
+    --background: 210 20% 98%;
+    --foreground: 220 25% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    /* Secondary / muted */
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 220 20% 20%;
+    --muted: 210 15% 93%;
+    --muted-foreground: 215 15% 47%;
+    --accent: 153 30% 94%;
+    --accent-foreground: 153 100% 16%;
+
+    /* Functional */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 25% 90%;
+    --input: 214 25% 90%;
+    --ring: 153 100% 20%;
+    --radius: 0.625rem;
+
+    /* Sport-specific */
+    --win: 152 60% 40%;
+    --loss: 0 60% 50%;
+    --surface-hard: 220 70% 55%;
+    --surface-clay: 20 80% 50%;
+    --surface-grass: 140 65% 40%;
+
+    /* Gradients */
+    --gradient-court: linear-gradient(135deg, hsl(153 100% 20%), hsl(153 80% 28%));
+    --gradient-hero: linear-gradient(160deg, hsl(153 100% 18%) 0%, hsl(153 60% 25%) 50%, hsl(170 50% 30%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 20% 98%));
+
+    /* Shadows */
+    --shadow-court: 0 4px 14px -3px hsl(153 100% 20% / 0.15);
+    --shadow-court-lg: 0 10px 30px -5px hsl(153 100% 20% / 0.2);
+    --shadow-card-hover: 0 8px 25px -5px hsl(220 25% 10% / 0.1);
+  }
+
+  .dark {
+    --primary: 153 80% 45%;
+    --primary-foreground: 220 25% 6%;
+
+    --court: 153 80% 45%;
+    --court-foreground: 220 25% 6%;
+    --court-muted: 153 30% 15%;
+
+    --background: 222 25% 7%;
+    --foreground: 210 25% 93%;
+    --card: 222 20% 10%;
+    --card-foreground: 210 25% 93%;
+    --popover: 222 20% 10%;
+    --popover-foreground: 210 25% 93%;
+
+    --secondary: 220 18% 14%;
+    --secondary-foreground: 210 20% 88%;
+    --muted: 220 15% 14%;
+    --muted-foreground: 215 15% 55%;
+    --accent: 153 25% 12%;
+    --accent-foreground: 153 80% 55%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 16%;
+    --input: 220 15% 16%;
+    --ring: 153 80% 45%;
+
+    --win: 152 55% 48%;
+    --loss: 0 55% 55%;
+
+    --gradient-court: linear-gradient(135deg, hsl(153 80% 30%), hsl(153 60% 40%));
+    --gradient-hero: linear-gradient(160deg, hsl(222 25% 5%) 0%, hsl(153 40% 10%) 50%, hsl(170 30% 12%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(222 20% 10%), hsl(222 25% 8%));
+
+    --shadow-court: 0 4px 14px -3px hsl(153 80% 45% / 0.15);
+    --shadow-court-lg: 0 10px 30px -5px hsl(153 80% 45% / 0.2);
+    --shadow-card-hover: 0 8px 25px -5px hsl(0 0% 0% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer components {
+  .stat-value {
+    @apply text-2xl font-bold tracking-tight font-mono;
+  }
+  .stat-label {
+    @apply text-xs font-medium uppercase tracking-wider text-muted-foreground;
+  }
+  .score-set {
+    @apply inline-flex items-baseline gap-0.5 font-mono text-sm font-semibold;
+  }
+  .score-tiebreak {
+    @apply text-xs font-normal text-muted-foreground align-super;
+  }
+  .badge-level {
+    @apply inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold;
+  }
+  .tab-active {
+    @apply border-b-2 border-primary text-primary font-semibold;
+  }
+  .tab-inactive {
+    @apply border-b-2 border-transparent text-muted-foreground hover:text-foreground hover:border-border transition-colors;
+  }
+  .table-header {
+    @apply text-xs font-semibold uppercase tracking-wider text-muted-foreground;
+  }
+  .table-cell {
+    @apply text-sm py-3 px-4;
+  }
+}

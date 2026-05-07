@@ -1,0 +1,16 @@
+{
+  "source": "/Users/jm/Project/ios/USTAQuery/Views/Shared/PaginationControls.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Page %lld of %lld",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 17
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,569 @@
+{
+  "" : {
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQuery-primary.dia",
+    "emit-module-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQuery-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQuery-primary-emit-module.dia",
+    "pch" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQuery-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQuery-primary.swiftdeps"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Config/AppConfig.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppConfig.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppConfig.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppConfig.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppConfig.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppConfig.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppConfig.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppConfig.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppConfig~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/ContentView.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Models/Match.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Match.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Match.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Match.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Match.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Match.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Match.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Match.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Match~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Models/PagedResponse.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PagedResponse.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PagedResponse.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PagedResponse.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PagedResponse.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PagedResponse.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PagedResponse.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PagedResponse.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PagedResponse~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Models/PlayerDetail.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerDetail.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerDetail.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerDetail.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerDetail.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerDetail.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerDetail.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerDetail.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerDetail~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Models/PlayerStats.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerStats.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerStats.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerStats.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerStats.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerStats.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerStats.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerStats.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerStats~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Models/PlayerSummary.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerSummary.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerSummary.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerSummary.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerSummary.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerSummary.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerSummary.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerSummary.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerSummary~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Models/PlayerTournamentEntry.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentEntry.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentEntry.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentEntry.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentEntry.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentEntry.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentEntry.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentEntry.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentEntry~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Models/Ranking.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Ranking.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Ranking.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Ranking.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Ranking.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Ranking.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Ranking.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Ranking.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Ranking~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Models/RankingHistory.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingHistory.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingHistory.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingHistory.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingHistory.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingHistory.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingHistory.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingHistory.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingHistory~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Models/Registration.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Registration.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Registration.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Registration.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Registration.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Registration.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Registration.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Registration.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Registration~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Models/Tournament.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Tournament.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Tournament.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Tournament.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Tournament.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Tournament.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Tournament.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Tournament.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Tournament~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Models/TournamentEntry.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEntry.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEntry.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEntry.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEntry.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEntry.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEntry.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEntry.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEntry~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Models/TournamentEvent.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEvent.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEvent.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEvent.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEvent.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEvent.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEvent.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEvent.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentEvent~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Models/TournamentFilterOptions.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentFilterOptions.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentFilterOptions.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentFilterOptions.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentFilterOptions.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentFilterOptions.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentFilterOptions.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentFilterOptions.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentFilterOptions~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Networking/APIClient.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIClient.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIClient.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIClient.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIClient.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIClient.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIClient.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIClient.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIClient~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Networking/APIError.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIError.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIError.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIError.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIError.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIError.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIError.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIError.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIError~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Networking/Endpoint.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Endpoint.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Endpoint.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Endpoint.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Endpoint.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Endpoint.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Endpoint.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Endpoint.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Endpoint~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Theme/AppTheme.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppTheme.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppTheme.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppTheme.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppTheme.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppTheme.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppTheme.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppTheme.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppTheme~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Theme/Color+Extensions.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Color+Extensions.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Color+Extensions.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Color+Extensions.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Color+Extensions.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Color+Extensions.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Color+Extensions.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Color+Extensions.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Color+Extensions~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/USTAQueryApp.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQueryApp.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQueryApp.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQueryApp.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQueryApp.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQueryApp.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQueryApp.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQueryApp.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQueryApp~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Utilities/Constants.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Constants.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Constants.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Constants.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Constants.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Constants.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Constants.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Constants.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Constants~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Utilities/DateFormatting.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/DateFormatting.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/DateFormatting.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/DateFormatting.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/DateFormatting.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/DateFormatting.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/DateFormatting.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/DateFormatting.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/DateFormatting~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Utilities/RankingListNameFormatter.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingListNameFormatter.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingListNameFormatter.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingListNameFormatter.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingListNameFormatter.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingListNameFormatter.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingListNameFormatter.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingListNameFormatter.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingListNameFormatter~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/ViewModels/PlayerProfileViewModel.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileViewModel.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileViewModel.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileViewModel.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileViewModel.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileViewModel.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileViewModel.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileViewModel.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileViewModel~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/ViewModels/RankingsViewModel.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsViewModel.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsViewModel.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsViewModel.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsViewModel.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsViewModel.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsViewModel.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsViewModel.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsViewModel~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/ViewModels/SearchViewModel.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchViewModel.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchViewModel.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchViewModel.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchViewModel.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchViewModel.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchViewModel.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchViewModel.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchViewModel~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/ViewModels/TournamentBrowserViewModel.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserViewModel.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserViewModel.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserViewModel.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserViewModel.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserViewModel.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserViewModel.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserViewModel.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserViewModel~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/ViewModels/TournamentDetailViewModel.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailViewModel.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailViewModel.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailViewModel.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailViewModel.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailViewModel.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailViewModel.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailViewModel.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailViewModel~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Player/PlayerInfoHeader.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoHeader.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoHeader.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoHeader.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoHeader.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoHeader.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoHeader.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoHeader.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoHeader~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Player/PlayerInfoTab.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoTab.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoTab.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoTab.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoTab.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoTab.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoTab.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoTab.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerInfoTab~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Player/PlayerMatchesTab.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerMatchesTab.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerMatchesTab.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerMatchesTab.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerMatchesTab.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerMatchesTab.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerMatchesTab.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerMatchesTab.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerMatchesTab~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Player/PlayerRankingsTab.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRankingsTab.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRankingsTab.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRankingsTab.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRankingsTab.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRankingsTab.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRankingsTab.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRankingsTab.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRankingsTab~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Player/PlayerRegistrationsTab.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRegistrationsTab.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRegistrationsTab.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRegistrationsTab.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRegistrationsTab.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRegistrationsTab.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRegistrationsTab.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRegistrationsTab.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRegistrationsTab~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Player/PlayerTournamentsTab.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentsTab.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentsTab.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentsTab.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentsTab.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentsTab.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentsTab.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentsTab.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerTournamentsTab~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Screens/HomeView.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/HomeView.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/HomeView.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/HomeView.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/HomeView.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/HomeView.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/HomeView.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/HomeView.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/HomeView~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Screens/PlayerProfileView.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileView.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileView.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileView.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileView.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileView.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileView.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileView.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerProfileView~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Screens/RankingsView.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsView.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsView.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsView.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsView.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsView.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsView.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsView.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsView~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Screens/SearchResultsView.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchResultsView.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchResultsView.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchResultsView.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchResultsView.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchResultsView.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchResultsView.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchResultsView.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchResultsView~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Screens/TournamentBrowserView.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserView.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserView.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserView.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserView.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserView.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserView.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserView.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentBrowserView~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Screens/TournamentDetailView.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailView.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailView.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailView.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailView.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailView.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailView.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailView.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentDetailView~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Shared/EmptyStateView.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EmptyStateView.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EmptyStateView.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EmptyStateView.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EmptyStateView.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EmptyStateView.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EmptyStateView.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EmptyStateView.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EmptyStateView~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Shared/ErrorAlertView.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ErrorAlertView.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ErrorAlertView.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ErrorAlertView.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ErrorAlertView.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ErrorAlertView.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ErrorAlertView.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ErrorAlertView.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/ErrorAlertView~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Shared/LevelBadge.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LevelBadge.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LevelBadge.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LevelBadge.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LevelBadge.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LevelBadge.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LevelBadge.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LevelBadge.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LevelBadge~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Shared/LoadingView.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LoadingView.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LoadingView.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LoadingView.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LoadingView.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LoadingView.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LoadingView.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LoadingView.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/LoadingView~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Shared/MatchScoreDisplay.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/MatchScoreDisplay.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/MatchScoreDisplay.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/MatchScoreDisplay.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/MatchScoreDisplay.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/MatchScoreDisplay.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/MatchScoreDisplay.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/MatchScoreDisplay.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/MatchScoreDisplay~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Shared/PaginationControls.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PaginationControls.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PaginationControls.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PaginationControls.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PaginationControls.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PaginationControls.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PaginationControls.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PaginationControls.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PaginationControls~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Shared/PlayerCard.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerCard.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerCard.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerCard.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerCard.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerCard.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerCard.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerCard.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerCard~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Shared/SearchBarView.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchBarView.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchBarView.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchBarView.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchBarView.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchBarView.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchBarView.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchBarView.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/SearchBarView~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Shared/StatusBadge.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/StatusBadge.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/StatusBadge.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/StatusBadge.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/StatusBadge.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/StatusBadge.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/StatusBadge.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/StatusBadge.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/StatusBadge~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Shared/WinLossIndicator.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/WinLossIndicator.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/WinLossIndicator.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/WinLossIndicator.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/WinLossIndicator.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/WinLossIndicator.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/WinLossIndicator.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/WinLossIndicator.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/WinLossIndicator~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Tournament/EntriesGroupedView.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EntriesGroupedView.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EntriesGroupedView.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EntriesGroupedView.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EntriesGroupedView.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EntriesGroupedView.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EntriesGroupedView.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EntriesGroupedView.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EntriesGroupedView~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Tournament/EventPillSelector.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventPillSelector.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventPillSelector.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventPillSelector.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventPillSelector.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventPillSelector.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventPillSelector.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventPillSelector.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventPillSelector~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Tournament/EventsSummaryView.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventsSummaryView.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventsSummaryView.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventsSummaryView.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventsSummaryView.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventsSummaryView.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventsSummaryView.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventsSummaryView.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/EventsSummaryView~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Tournament/TournamentCard.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentCard.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentCard.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentCard.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentCard.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentCard.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentCard.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentCard.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentCard~partial.swiftmodule"
+  },
+  "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

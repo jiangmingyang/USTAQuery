@@ -1,0 +1,30 @@
+{
+  "/Users/jm/Project/ios/USTAQuery/Models/PlayerStats.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerStats.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerStats.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerStats.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerStats.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerStats.swiftdeps"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Models/PlayerSummary.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerSummary.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerSummary.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerSummary.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerSummary.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerSummary.swiftdeps"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Player/PlayerRankingsTab.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRankingsTab.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRankingsTab.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRankingsTab.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRankingsTab.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRankingsTab.swiftdeps"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Player/PlayerRegistrationsTab.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRegistrationsTab.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRegistrationsTab.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRegistrationsTab.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRegistrationsTab.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/PlayerRegistrationsTab.swiftdeps"
+  }
+}

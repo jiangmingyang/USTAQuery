@@ -1,0 +1,30 @@
+{
+  "/Users/jm/Project/ios/USTAQuery/Models/Registration.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Registration.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Registration.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Registration.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Registration.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/Registration.swiftdeps"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Utilities/RankingListNameFormatter.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingListNameFormatter.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingListNameFormatter.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingListNameFormatter.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingListNameFormatter.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingListNameFormatter.swiftdeps"
+  },
+  "/Users/jm/Project/ios/USTAQuery/ViewModels/RankingsViewModel.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsViewModel.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsViewModel.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsViewModel.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsViewModel.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsViewModel.swiftdeps"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Screens/RankingsView.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsView.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsView.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsView.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsView.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/RankingsView.swiftdeps"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "source": "/Users/jm/Project/ios/USTAQuery/Views/Shared/WinLossIndicator.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "W",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 7
+        }
+      },
+      {
+        "comment": "",
+        "key": "L",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 7
+        }
+      }
+    ]
+  },
+  "version": 1
+}

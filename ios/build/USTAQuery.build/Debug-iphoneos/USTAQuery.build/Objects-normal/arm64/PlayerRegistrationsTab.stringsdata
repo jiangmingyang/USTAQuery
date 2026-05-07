@@ -1,0 +1,16 @@
+{
+  "source": "/Users/jm/Project/ios/USTAQuery/Views/Player/PlayerRegistrationsTab.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Partner: %@ %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 55
+        }
+      }
+    ]
+  },
+  "version": 1
+}

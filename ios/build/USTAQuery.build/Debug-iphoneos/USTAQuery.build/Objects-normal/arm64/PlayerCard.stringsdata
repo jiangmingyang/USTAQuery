@@ -1,0 +1,16 @@
+{
+  "source": "/Users/jm/Project/ios/USTAQuery/Views/Shared/PlayerCard.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%@ %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 19
+        }
+      }
+    ]
+  },
+  "version": 1
+}

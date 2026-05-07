@@ -1,0 +1,23 @@
+{
+  "/Users/jm/Project/ios/USTAQuery/Models/TournamentFilterOptions.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentFilterOptions.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentFilterOptions.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentFilterOptions.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentFilterOptions.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/TournamentFilterOptions.swiftdeps"
+  },
+  "/Users/jm/Project/ios/USTAQuery/USTAQueryApp.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQueryApp.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQueryApp.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQueryApp.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQueryApp.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/USTAQueryApp.swiftdeps"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Views/Shared/WinLossIndicator.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/WinLossIndicator.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/WinLossIndicator.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/WinLossIndicator.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/WinLossIndicator.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/WinLossIndicator.swiftdeps"
+  }
+}

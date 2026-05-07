@@ -1,0 +1,30 @@
+{
+  "/Users/jm/Project/ios/USTAQuery/Config/AppConfig.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppConfig.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppConfig.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppConfig.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppConfig.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppConfig.swiftdeps"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Networking/APIClient.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIClient.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIClient.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIClient.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIClient.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIClient.swiftdeps"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Networking/APIError.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIError.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIError.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIError.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIError.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/APIError.swiftdeps"
+  },
+  "/Users/jm/Project/ios/USTAQuery/Theme/AppTheme.swift" : {
+    "const-values" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppTheme.swiftconstvalues",
+    "dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppTheme.d",
+    "diagnostics" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppTheme.dia",
+    "object" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppTheme.o",
+    "swift-dependencies" : "/Users/jm/Project/ios/build/USTAQuery.build/Debug-iphoneos/USTAQuery.build/Objects-normal/arm64/AppTheme.swiftdeps"
+  }
+}

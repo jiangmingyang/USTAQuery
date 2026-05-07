@@ -1,0 +1,16 @@
+{
+  "source": "/Users/jm/Project/ios/USTAQuery/Views/Tournament/EventPillSelector.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "All (%lld)",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 19
+        }
+      }
+    ]
+  },
+  "version": 1
+}

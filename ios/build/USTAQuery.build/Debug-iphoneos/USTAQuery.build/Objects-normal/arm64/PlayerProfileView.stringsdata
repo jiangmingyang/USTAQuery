@@ -1,0 +1,24 @@
+{
+  "source": "/Users/jm/Project/ios/USTAQuery/Views/Screens/PlayerProfileView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%@ %@",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 54
+        }
+      },
+      {
+        "comment": "",
+        "key": "Player",
+        "location": {
+          "startingColumn": 87,
+          "startingLine": 54
+        }
+      }
+    ]
+  },
+  "version": 1
+}

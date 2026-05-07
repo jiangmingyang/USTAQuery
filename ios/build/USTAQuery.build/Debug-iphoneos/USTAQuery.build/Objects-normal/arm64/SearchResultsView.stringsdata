@@ -1,0 +1,16 @@
+{
+  "source": "/Users/jm/Project/ios/USTAQuery/Views/Screens/SearchResultsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Search",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 49
+        }
+      }
+    ]
+  },
+  "version": 1
+}

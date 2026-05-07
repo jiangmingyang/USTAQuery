@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0DD9A18B5E547EA138424B00 /* TournamentDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1147FFC862AE1B9CAD409886 /* TournamentDetailViewModel.swift */; };
+		122D834D8DBCF0FAF7EDD902 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80A40B774D8D7675DC3994E /* LoadingView.swift */; };
+		191B1741364C027AB1850960 /* PlayerRegistrationsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A43A5823FF3FFDDABFC40C /* PlayerRegistrationsTab.swift */; };
+		23589E8DBECEF41933302141 /* TournamentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D480E36FC38122D62770BB46 /* TournamentCard.swift */; };
+		23E20C49F81C05770B2E2265 /* RankingHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796E67CDF7C61ABF0AE799F /* RankingHistory.swift */; };
+		2464F91454F085E1265687ED /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F02042E55DAAA5CC4209F6 /* EmptyStateView.swift */; };
+		26A181D27DD2CA388DDE79B3 /* PlayerTournamentsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B495E61A3CCEEBB39B51E9 /* PlayerTournamentsTab.swift */; };
+		2959BFE212C4B0CDAA18731E /* PlayerInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33D3981038613FBB5BA1078 /* PlayerInfoHeader.swift */; };
+		29BC806EE511134D9E36D34F /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73CED8EA1667D2E08C550D0 /* Registration.swift */; };
+		2D5130048393825F9AEE1A39 /* TournamentBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F753C141EB8C761C19E1E3D1 /* TournamentBrowserView.swift */; };
+		2F174C95961D4058BB015B97 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C43438959488033577C2901 /* Constants.swift */; };
+		321F92A3D4EBFD1B3AA8D65F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5BD4AF2BFA869B89831E4C /* HomeView.swift */; };
+		34C243A5ABA27B763867EC2B /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61EC53D85D89DEF88AD94DE /* SearchBarView.swift */; };
+		3570777C3D042B6A781AFDCB /* PlayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A4EBF1560EBC0C1047613E /* PlayerStats.swift */; };
+		387CED36B4AFD4179D634038 /* EventPillSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAB88616428C899DFC422C /* EventPillSelector.swift */; };
+		3CBC74FEBA42D7C5BB4F2133 /* RankingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551ACE8D12CA9C7C556DDC39 /* RankingsViewModel.swift */; };
+		4051D4024B7E18D03515A6ED /* TournamentFilterOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C387EA3BB8D0200273B46D0C /* TournamentFilterOptions.swift */; };
+		4071EF27D98F958A1037CBCD /* TournamentEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38AAF1B8BA9727C316396A /* TournamentEvent.swift */; };
+		4A6723462DEC3F2CB64CFB06 /* PlayerSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12687F25A9073A6F5FA081F /* PlayerSummary.swift */; };
+		4E52D7D861A7CA455FB637CB /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A935B8E22E1BAFCB0277F5A4 /* AppTheme.swift */; };
+		54CB084038F7A05976266770 /* LevelBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1B37C931E067FA50BD3ED /* LevelBadge.swift */; };
+		5C727710F830BB36AD95E67A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E40CC63F37CE426E0DD5A2 /* Endpoint.swift */; };
+		5DAE5A836D9FDD1BD50F4229 /* EntriesGroupedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4A4F295E1494FCCF19B6D /* EntriesGroupedView.swift */; };
+		742421EA0D9D2F5E84026432 /* USTAQueryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC46CD29F2A7048EE41635 /* USTAQueryApp.swift */; };
+		79738D0517A3FAC5C53C6FF9 /* PlayerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926AFD8AAC5DB85EDFF515F /* PlayerProfileView.swift */; };
+		83389A85DF46C8D9A90189E1 /* PlayerRankingsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276CF1206ECADBD13FD1CD8 /* PlayerRankingsTab.swift */; };
+		8EA6AF31009EDBE23AEF6D1E /* PlayerInfoTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D682E735A625A49795B904 /* PlayerInfoTab.swift */; };
+		8FBADB5EC5AEB0DE444FAAA8 /* WinLossIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0D92928F3614AD93612F1F /* WinLossIndicator.swift */; };
+		8FE5531AC9A3923ABEF3FC83 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0CB945BCA21809443A9836 /* SearchViewModel.swift */; };
+		9420D74D52BAEAF92E65CDFB /* PlayerTournamentEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E0EF3FB1A6A5ABA0B05A8 /* PlayerTournamentEntry.swift */; };
+		948BAE8EC1A1411FC9D9C708 /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170F9E06202942A7175A05B8 /* DateFormatting.swift */; };
+		AC0AAC6CD2D8B4BBB573EED5 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FE77B844CC1F470B5638DD /* APIClient.swift */; };
+		AD46F39B71EBA6FF0F0CCD1B /* TournamentBrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBBCD3A267E5F55D8DBCC7 /* TournamentBrowserViewModel.swift */; };
+		B7ECF95612734342D59204E8 /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9999F3383CF7AEF9D07B42 /* Ranking.swift */; };
+		B8E41333204CE61BB6016F02 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B15C2CA3AC12DB50E67B78 /* Tournament.swift */; };
+		BE53A963050D5E29A003B838 /* MatchScoreDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E14939AEDEC9076D10566 /* MatchScoreDisplay.swift */; };
+		BE9C5885CFF926BBB7029378 /* PagedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ADEF6E6EFF2A864F0229F2 /* PagedResponse.swift */; };
+		C12CCC32B5A7FB4DDD3F1034 /* RankingListNameFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEEF85BE1912AA9F505DE4F /* RankingListNameFormatter.swift */; };
+		C20D93F1BE2460E02087C5A4 /* PlayerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9797BD2AEEB5B833D19F20 /* PlayerCard.swift */; };
+		C79CCD64299460144FC1FC71 /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75B1B5A0D42C6FF7B2EC084 /* SearchResultsView.swift */; };
+		D1A67F98DA068D79634D4BC9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5904E60B9659070F16118035 /* AppConfig.swift */; };
+		D1EF5225320B4310261C088B /* TournamentEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78183758DD946B3E2CD13D0E /* TournamentEntry.swift */; };
+		D2392C971BE06722AC6CEE8B /* TournamentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00136A41DF7C89F6E5DA737D /* TournamentDetailView.swift */; };
+		D5D1E218BDA585A0E7E8FABC /* RankingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B558789AF091A11A766B1E /* RankingsView.swift */; };
+		E00478068CC951A03F244942 /* PlayerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21D30C8596B8450BCB96B7 /* PlayerDetail.swift */; };
+		E32D32794A20FD437E41B77A /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51760D433C25FD289B067915 /* Match.swift */; };
+		E82B68426A95F51296381732 /* PlayerMatchesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E89AE88CA16BA98EE0B6EDC /* PlayerMatchesTab.swift */; };
+		ED5EB8073FDBEA0EF2CE80A8 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2EBFE491AC7CC658B8614C /* Color+Extensions.swift */; };
+		EF761B34D308B2D2BB472EF0 /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BEA9B17EA1985C228C5F36 /* StatusBadge.swift */; };
+		F0F4002046936715A2E7C622 /* PlayerProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46E05D992232FB715458BC8 /* PlayerProfileViewModel.swift */; };
+		F25B385E7D19D5F4DCE2E4E2 /* EventsSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E1C617C0DA66894744D1EA /* EventsSummaryView.swift */; };
+		F50DDD6ABF73CCDFEC1792A5 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AF22CA7F028FCDD693A425 /* APIError.swift */; };
+		F6FC5A25C8D7E1207198D0DB /* PaginationControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F5893091D00EF065DDBC41 /* PaginationControls.swift */; };
+		F9267148DF7C0D2B6ABB4F82 /* ErrorAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0280D436356BBAE28170F5C0 /* ErrorAlertView.swift */; };
+		FECF884D848A2E6DDA3D468B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029317691790175483AF20B0 /* ContentView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		00136A41DF7C89F6E5DA737D /* TournamentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetailView.swift; sourceTree = "<group>"; };
+		0280D436356BBAE28170F5C0 /* ErrorAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertView.swift; sourceTree = "<group>"; };
+		029317691790175483AF20B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0355474FFC908FAA3781415F /* USTAQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = USTAQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1147FFC862AE1B9CAD409886 /* TournamentDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetailViewModel.swift; sourceTree = "<group>"; };
+		170F9E06202942A7175A05B8 /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
+		18D682E735A625A49795B904 /* PlayerInfoTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoTab.swift; sourceTree = "<group>"; };
+		1926AFD8AAC5DB85EDFF515F /* PlayerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfileView.swift; sourceTree = "<group>"; };
+		21F02042E55DAAA5CC4209F6 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		25E1C617C0DA66894744D1EA /* EventsSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsSummaryView.swift; sourceTree = "<group>"; };
+		2A2EBFE491AC7CC658B8614C /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		30DBBCD3A267E5F55D8DBCC7 /* TournamentBrowserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentBrowserViewModel.swift; sourceTree = "<group>"; };
+		46ADEF6E6EFF2A864F0229F2 /* PagedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagedResponse.swift; sourceTree = "<group>"; };
+		51760D433C25FD289B067915 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		551ACE8D12CA9C7C556DDC39 /* RankingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsViewModel.swift; sourceTree = "<group>"; };
+		5904E60B9659070F16118035 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		59BEA9B17EA1985C228C5F36 /* StatusBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
+		5A38AAF1B8BA9727C316396A /* TournamentEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentEvent.swift; sourceTree = "<group>"; };
+		6C43438959488033577C2901 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		75B15C2CA3AC12DB50E67B78 /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		78183758DD946B3E2CD13D0E /* TournamentEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentEntry.swift; sourceTree = "<group>"; };
+		79AC46CD29F2A7048EE41635 /* USTAQueryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USTAQueryApp.swift; sourceTree = "<group>"; };
+		7E89AE88CA16BA98EE0B6EDC /* PlayerMatchesTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMatchesTab.swift; sourceTree = "<group>"; };
+		89E40CC63F37CE426E0DD5A2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		8F0D92928F3614AD93612F1F /* WinLossIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinLossIndicator.swift; sourceTree = "<group>"; };
+		8F9797BD2AEEB5B833D19F20 /* PlayerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCard.swift; sourceTree = "<group>"; };
+		9F9999F3383CF7AEF9D07B42 /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
+		A1F5893091D00EF065DDBC41 /* PaginationControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationControls.swift; sourceTree = "<group>"; };
+		A276CF1206ECADBD13FD1CD8 /* PlayerRankingsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRankingsTab.swift; sourceTree = "<group>"; };
+		A3AF22CA7F028FCDD693A425 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		A7E1B37C931E067FA50BD3ED /* LevelBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBadge.swift; sourceTree = "<group>"; };
+		A935B8E22E1BAFCB0277F5A4 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		A9B558789AF091A11A766B1E /* RankingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsView.swift; sourceTree = "<group>"; };
+		AB6E0EF3FB1A6A5ABA0B05A8 /* PlayerTournamentEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTournamentEntry.swift; sourceTree = "<group>"; };
+		ACEEF85BE1912AA9F505DE4F /* RankingListNameFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListNameFormatter.swift; sourceTree = "<group>"; };
+		AD0CB945BCA21809443A9836 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		AE21D30C8596B8450BCB96B7 /* PlayerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetail.swift; sourceTree = "<group>"; };
+		B12687F25A9073A6F5FA081F /* PlayerSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSummary.swift; sourceTree = "<group>"; };
+		B796E67CDF7C61ABF0AE799F /* RankingHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingHistory.swift; sourceTree = "<group>"; };
+		B9A4EBF1560EBC0C1047613E /* PlayerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStats.swift; sourceTree = "<group>"; };
+		BA5BD4AF2BFA869B89831E4C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C387EA3BB8D0200273B46D0C /* TournamentFilterOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentFilterOptions.swift; sourceTree = "<group>"; };
+		C4FE77B844CC1F470B5638DD /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		C80A40B774D8D7675DC3994E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		D33D3981038613FBB5BA1078 /* PlayerInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoHeader.swift; sourceTree = "<group>"; };
+		D480E36FC38122D62770BB46 /* TournamentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentCard.swift; sourceTree = "<group>"; };
+		D61EC53D85D89DEF88AD94DE /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		D73CED8EA1667D2E08C550D0 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		DEB4A4F295E1494FCCF19B6D /* EntriesGroupedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesGroupedView.swift; sourceTree = "<group>"; };
+		E0CAB88616428C899DFC422C /* EventPillSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPillSelector.swift; sourceTree = "<group>"; };
+		E61E14939AEDEC9076D10566 /* MatchScoreDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchScoreDisplay.swift; sourceTree = "<group>"; };
+		E75B1B5A0D42C6FF7B2EC084 /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
+		F46E05D992232FB715458BC8 /* PlayerProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfileViewModel.swift; sourceTree = "<group>"; };
+		F753C141EB8C761C19E1E3D1 /* TournamentBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentBrowserView.swift; sourceTree = "<group>"; };
+		F7A43A5823FF3FFDDABFC40C /* PlayerRegistrationsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRegistrationsTab.swift; sourceTree = "<group>"; };
+		F8B495E61A3CCEEBB39B51E9 /* PlayerTournamentsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTournamentsTab.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		08888E5970BA7AF98E30842A /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				D33D3981038613FBB5BA1078 /* PlayerInfoHeader.swift */,
+				18D682E735A625A49795B904 /* PlayerInfoTab.swift */,
+				7E89AE88CA16BA98EE0B6EDC /* PlayerMatchesTab.swift */,
+				A276CF1206ECADBD13FD1CD8 /* PlayerRankingsTab.swift */,
+				F7A43A5823FF3FFDDABFC40C /* PlayerRegistrationsTab.swift */,
+				F8B495E61A3CCEEBB39B51E9 /* PlayerTournamentsTab.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		16FDE910AA039D00EAADABE7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0355474FFC908FAA3781415F /* USTAQuery.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CE405A8462AD2845EECB48A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5904E60B9659070F16118035 /* AppConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		3FA2B62BC5233F79C0D0EB64 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				08888E5970BA7AF98E30842A /* Player */,
+				72D03F55A47D50F2E56B51C9 /* Screens */,
+				DA5DDB63DCB0D66F838A11C2 /* Shared */,
+				7EABDA71D86AACE118CB3ED0 /* Tournament */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C1DF1BEF5ED0FE2F313C8A1 /* USTAQuery */ = {
+			isa = PBXGroup;
+			children = (
+				029317691790175483AF20B0 /* ContentView.swift */,
+				79AC46CD29F2A7048EE41635 /* USTAQueryApp.swift */,
+				2CE405A8462AD2845EECB48A /* Config */,
+				7D27ADC56E20CC9BFA59E623 /* Models */,
+				791013846E5E3FE14158304D /* Networking */,
+				79C9C6EB115C833B1C3F559E /* Preview Content */,
+				F46B4943766C444BD0CC3588 /* Theme */,
+				F8B8CC1E19C8E16B293BE136 /* Utilities */,
+				9D3CAF44048E3BB6E80DA591 /* ViewModels */,
+				3FA2B62BC5233F79C0D0EB64 /* Views */,
+			);
+			path = USTAQuery;
+			sourceTree = "<group>";
+		};
+		72D03F55A47D50F2E56B51C9 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BA5BD4AF2BFA869B89831E4C /* HomeView.swift */,
+				1926AFD8AAC5DB85EDFF515F /* PlayerProfileView.swift */,
+				A9B558789AF091A11A766B1E /* RankingsView.swift */,
+				E75B1B5A0D42C6FF7B2EC084 /* SearchResultsView.swift */,
+				F753C141EB8C761C19E1E3D1 /* TournamentBrowserView.swift */,
+				00136A41DF7C89F6E5DA737D /* TournamentDetailView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		791013846E5E3FE14158304D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C4FE77B844CC1F470B5638DD /* APIClient.swift */,
+				A3AF22CA7F028FCDD693A425 /* APIError.swift */,
+				89E40CC63F37CE426E0DD5A2 /* Endpoint.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		79C9C6EB115C833B1C3F559E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7B4D00016150C350B63C97EB = {
+			isa = PBXGroup;
+			children = (
+				4C1DF1BEF5ED0FE2F313C8A1 /* USTAQuery */,
+				16FDE910AA039D00EAADABE7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7D27ADC56E20CC9BFA59E623 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				51760D433C25FD289B067915 /* Match.swift */,
+				46ADEF6E6EFF2A864F0229F2 /* PagedResponse.swift */,
+				AE21D30C8596B8450BCB96B7 /* PlayerDetail.swift */,
+				B9A4EBF1560EBC0C1047613E /* PlayerStats.swift */,
+				B12687F25A9073A6F5FA081F /* PlayerSummary.swift */,
+				AB6E0EF3FB1A6A5ABA0B05A8 /* PlayerTournamentEntry.swift */,
+				9F9999F3383CF7AEF9D07B42 /* Ranking.swift */,
+				B796E67CDF7C61ABF0AE799F /* RankingHistory.swift */,
+				D73CED8EA1667D2E08C550D0 /* Registration.swift */,
+				75B15C2CA3AC12DB50E67B78 /* Tournament.swift */,
+				78183758DD946B3E2CD13D0E /* TournamentEntry.swift */,
+				5A38AAF1B8BA9727C316396A /* TournamentEvent.swift */,
+				C387EA3BB8D0200273B46D0C /* TournamentFilterOptions.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7EABDA71D86AACE118CB3ED0 /* Tournament */ = {
+			isa = PBXGroup;
+			children = (
+				DEB4A4F295E1494FCCF19B6D /* EntriesGroupedView.swift */,
+				E0CAB88616428C899DFC422C /* EventPillSelector.swift */,
+				25E1C617C0DA66894744D1EA /* EventsSummaryView.swift */,
+				D480E36FC38122D62770BB46 /* TournamentCard.swift */,
+			);
+			path = Tournament;
+			sourceTree = "<group>";
+		};
+		9D3CAF44048E3BB6E80DA591 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F46E05D992232FB715458BC8 /* PlayerProfileViewModel.swift */,
+				551ACE8D12CA9C7C556DDC39 /* RankingsViewModel.swift */,
+				AD0CB945BCA21809443A9836 /* SearchViewModel.swift */,
+				30DBBCD3A267E5F55D8DBCC7 /* TournamentBrowserViewModel.swift */,
+				1147FFC862AE1B9CAD409886 /* TournamentDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DA5DDB63DCB0D66F838A11C2 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				21F02042E55DAAA5CC4209F6 /* EmptyStateView.swift */,
+				0280D436356BBAE28170F5C0 /* ErrorAlertView.swift */,
+				A7E1B37C931E067FA50BD3ED /* LevelBadge.swift */,
+				C80A40B774D8D7675DC3994E /* LoadingView.swift */,
+				E61E14939AEDEC9076D10566 /* MatchScoreDisplay.swift */,
+				A1F5893091D00EF065DDBC41 /* PaginationControls.swift */,
+				8F9797BD2AEEB5B833D19F20 /* PlayerCard.swift */,
+				D61EC53D85D89DEF88AD94DE /* SearchBarView.swift */,
+				59BEA9B17EA1985C228C5F36 /* StatusBadge.swift */,
+				8F0D92928F3614AD93612F1F /* WinLossIndicator.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		F46B4943766C444BD0CC3588 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A935B8E22E1BAFCB0277F5A4 /* AppTheme.swift */,
+				2A2EBFE491AC7CC658B8614C /* Color+Extensions.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		F8B8CC1E19C8E16B293BE136 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6C43438959488033577C2901 /* Constants.swift */,
+				170F9E06202942A7175A05B8 /* DateFormatting.swift */,
+				ACEEF85BE1912AA9F505DE4F /* RankingListNameFormatter.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		840E5C6873C5F9E45D32C2E1 /* USTAQuery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E14F949F6FAFD4AF9B34D1E7 /* Build configuration list for PBXNativeTarget "USTAQuery" */;
+			buildPhases = (
+				E6C824A1DDCE97C786323D37 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = USTAQuery;
+			packageProductDependencies = (
+			);
+			productName = USTAQuery;
+			productReference = 0355474FFC908FAA3781415F /* USTAQuery.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE7D06639EC392C166FE6BE1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = D5D50B18E680096A57C78DDD /* Build configuration list for PBXProject "USTAQuery" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 7B4D00016150C350B63C97EB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 16FDE910AA039D00EAADABE7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				840E5C6873C5F9E45D32C2E1 /* USTAQuery */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E6C824A1DDCE97C786323D37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC0AAC6CD2D8B4BBB573EED5 /* APIClient.swift in Sources */,
+				F50DDD6ABF73CCDFEC1792A5 /* APIError.swift in Sources */,
+				D1A67F98DA068D79634D4BC9 /* AppConfig.swift in Sources */,
+				4E52D7D861A7CA455FB637CB /* AppTheme.swift in Sources */,
+				ED5EB8073FDBEA0EF2CE80A8 /* Color+Extensions.swift in Sources */,
+				2F174C95961D4058BB015B97 /* Constants.swift in Sources */,
+				FECF884D848A2E6DDA3D468B /* ContentView.swift in Sources */,
+				948BAE8EC1A1411FC9D9C708 /* DateFormatting.swift in Sources */,
+				2464F91454F085E1265687ED /* EmptyStateView.swift in Sources */,
+				5C727710F830BB36AD95E67A /* Endpoint.swift in Sources */,
+				5DAE5A836D9FDD1BD50F4229 /* EntriesGroupedView.swift in Sources */,
+				F9267148DF7C0D2B6ABB4F82 /* ErrorAlertView.swift in Sources */,
+				387CED36B4AFD4179D634038 /* EventPillSelector.swift in Sources */,
+				F25B385E7D19D5F4DCE2E4E2 /* EventsSummaryView.swift in Sources */,
+				321F92A3D4EBFD1B3AA8D65F /* HomeView.swift in Sources */,
+				54CB084038F7A05976266770 /* LevelBadge.swift in Sources */,
+				122D834D8DBCF0FAF7EDD902 /* LoadingView.swift in Sources */,
+				E32D32794A20FD437E41B77A /* Match.swift in Sources */,
+				BE53A963050D5E29A003B838 /* MatchScoreDisplay.swift in Sources */,
+				BE9C5885CFF926BBB7029378 /* PagedResponse.swift in Sources */,
+				F6FC5A25C8D7E1207198D0DB /* PaginationControls.swift in Sources */,
+				C20D93F1BE2460E02087C5A4 /* PlayerCard.swift in Sources */,
+				E00478068CC951A03F244942 /* PlayerDetail.swift in Sources */,
+				2959BFE212C4B0CDAA18731E /* PlayerInfoHeader.swift in Sources */,
+				8EA6AF31009EDBE23AEF6D1E /* PlayerInfoTab.swift in Sources */,
+				E82B68426A95F51296381732 /* PlayerMatchesTab.swift in Sources */,
+				79738D0517A3FAC5C53C6FF9 /* PlayerProfileView.swift in Sources */,
+				F0F4002046936715A2E7C622 /* PlayerProfileViewModel.swift in Sources */,
+				83389A85DF46C8D9A90189E1 /* PlayerRankingsTab.swift in Sources */,
+				191B1741364C027AB1850960 /* PlayerRegistrationsTab.swift in Sources */,
+				3570777C3D042B6A781AFDCB /* PlayerStats.swift in Sources */,
+				4A6723462DEC3F2CB64CFB06 /* PlayerSummary.swift in Sources */,
+				9420D74D52BAEAF92E65CDFB /* PlayerTournamentEntry.swift in Sources */,
+				26A181D27DD2CA388DDE79B3 /* PlayerTournamentsTab.swift in Sources */,
+				B7ECF95612734342D59204E8 /* Ranking.swift in Sources */,
+				23E20C49F81C05770B2E2265 /* RankingHistory.swift in Sources */,
+				C12CCC32B5A7FB4DDD3F1034 /* RankingListNameFormatter.swift in Sources */,
+				D5D1E218BDA585A0E7E8FABC /* RankingsView.swift in Sources */,
+				3CBC74FEBA42D7C5BB4F2133 /* RankingsViewModel.swift in Sources */,
+				29BC806EE511134D9E36D34F /* Registration.swift in Sources */,
+				34C243A5ABA27B763867EC2B /* SearchBarView.swift in Sources */,
+				C79CCD64299460144FC1FC71 /* SearchResultsView.swift in Sources */,
+				8FE5531AC9A3923ABEF3FC83 /* SearchViewModel.swift in Sources */,
+				EF761B34D308B2D2BB472EF0 /* StatusBadge.swift in Sources */,
+				B8E41333204CE61BB6016F02 /* Tournament.swift in Sources */,
+				2D5130048393825F9AEE1A39 /* TournamentBrowserView.swift in Sources */,
+				AD46F39B71EBA6FF0F0CCD1B /* TournamentBrowserViewModel.swift in Sources */,
+				23589E8DBECEF41933302141 /* TournamentCard.swift in Sources */,
+				D2392C971BE06722AC6CEE8B /* TournamentDetailView.swift in Sources */,
+				0DD9A18B5E547EA138424B00 /* TournamentDetailViewModel.swift in Sources */,
+				D1EF5225320B4310261C088B /* TournamentEntry.swift in Sources */,
+				4071EF27D98F958A1037CBCD /* TournamentEvent.swift in Sources */,
+				4051D4024B7E18D03515A6ED /* TournamentFilterOptions.swift in Sources */,
+				742421EA0D9D2F5E84026432 /* USTAQueryApp.swift in Sources */,
+				8FBADB5EC5AEB0DE444FAAA8 /* WinLossIndicator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		25814FC06C16F306475A4ABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9QHRPXHGRR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "USTA Query";
+				INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsArbitraryLoads = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ustaquery.app;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42E4B850703AE9BAAAEF68A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B858C152C65A851A539E72BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9QHRPXHGRR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "USTA Query";
+				INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsArbitraryLoads = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ustaquery.app;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EB6F7B24D0D50A9D48477D25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5D50B18E680096A57C78DDD /* Build configuration list for PBXProject "USTAQuery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42E4B850703AE9BAAAEF68A5 /* Debug */,
+				EB6F7B24D0D50A9D48477D25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E14F949F6FAFD4AF9B34D1E7 /* Build configuration list for PBXNativeTarget "USTAQuery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25814FC06C16F306475A4ABE /* Debug */,
+				B858C152C65A851A539E72BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE7D06639EC392C166FE6BE1 /* Project object */;
+}

@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: usta-query
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/usta_tennis?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: usta_app
+    password: usta_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.usta.query: DEBUG
+    org.hibernate.SQL: DEBUG
