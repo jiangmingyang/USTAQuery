@@ -51,7 +51,11 @@ export function RankingsPage() {
   function updateParam(key: string, value: string) {
     const params = new URLSearchParams(searchParams)
     params.set(key, value)
-    if (key !== "page") params.set("page", "0")
+    if (key !== "page") {
+      params.set("page", "0")
+      // Reset publishDate when changing list/gender/age so auto-select picks latest for new catalog
+      if (key !== "publishDate") params.delete("publishDate")
+    }
     setSearchParams(params)
   }
 
@@ -60,7 +64,17 @@ export function RankingsPage() {
   // Fetch available versions when catalogId changes
   useEffect(() => {
     getRankingVersions(catalogId)
-      .then(setVersions)
+      .then((v) => {
+        setVersions(v)
+        // Auto-select the latest version if none is selected
+        if (v.length > 0) {
+          const params = new URLSearchParams(searchParams)
+          if (!params.get("publishDate")) {
+            params.set("publishDate", v[0])
+            setSearchParams(params, { replace: true })
+          }
+        }
+      })
       .catch(() => setVersions([]))
   }, [catalogId])
 
