@@ -1,4 +1,4 @@
-"""USTA Scraper — CLI entry point and orchestrator."""
+"""USTA logger.info — CLI entry point and orchestrator."""
 from __future__ import annotations
 
 import argparse
@@ -255,6 +255,7 @@ def scrape_tournament_api(
                     try:
                         t_data = entry["tournament"]
                         internal_id = db.upsert_tournament(t_data)
+                        usta_url = entry.get("usta_url", "")
                         local_stats["tournaments"] += 1
 
                         for ev in entry["events"]:

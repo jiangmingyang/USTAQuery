@@ -121,7 +121,12 @@ def _parse_single(item: dict, section_name: str | None) -> Optional[dict]:
         "total_draws": None,
     }
 
-    return {"tournament": tournament, "events": events}
+    usta_url = (
+        f"https://playtennis.usta.com/Competitions/{org_slug}/Tournaments/players/{tournament_id}"
+        if org_slug and tournament_id else ""
+    )
+
+    return {"tournament": tournament, "events": events, "usta_url": usta_url}
 
 
 def _parse_event(e: dict) -> Optional[dict]:
@@ -168,21 +173,11 @@ def _extract_org_slug(org: dict) -> str:
     """Extract the organization URL slug from the API response.
 
     The ClubSpark API may provide the slug in different fields.
-    Tries: websiteUrl, slug, then derives from name as fallback.
+    Tries: urlSegment, websiteUrl, slug, then derives from name as fallback.
     """
-    # Try websiteUrl first (e.g. "/orgname" or "orgname")
-    website_url = org.get("websiteUrl", "") or ""
-    if website_url:
-        return website_url.strip("/").split("/")[-1]
-
-    # Try slug field directly
-    slug = org.get("slug", "") or ""
-    if slug:
-        return slug
-
-    # Derive from name as fallback: lowercase, remove non-alnum
-    name = org.get("name", "") or ""
-    if name:
-        return re.sub(r"[^a-z0-9]", "", name.lower())
+    # Try urlSegment first (most accurate)
+    url_segment = org.get("urlSegment", "") or ""
+    if url_segment:
+        return url_segment.strip("/").split("/")[-1]
 
     return ""
