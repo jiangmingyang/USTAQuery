@@ -69,6 +69,7 @@ export interface Tournament {
   organization: string | null
   orgSlug: string | null
   status: string | null
+  registrationStatus: string | null
   eventsCount: number | null
   surface: string | null
   url: string | null
@@ -121,6 +122,7 @@ export interface PlayerTournamentEntry {
   city: string | null
   state: string | null
   section: string | null
+  registrationStatus: string | null
   eventId: string
   eventType: string | null
   entryStatus: string | null

@@ -336,6 +336,10 @@ def scrape_single_tournament_detail_graphql(
     try:
         result = scrape_tournament_detail_graphql(page, tournament_id, org_slug)
         entries = result.get("entries", [])
+        registration_status = result.get("registration_status")
+
+        if registration_status:
+            logger.info("Tournament %s — registration status: %s", tournament_id, registration_status)
 
         if not entries:
             truly_empty = result.get("truly_empty", False)
@@ -348,7 +352,7 @@ def scrape_single_tournament_detail_graphql(
                 else:
                     status = "EMPTY"
                     logger.info("Tournament %s — no players registered (not ended), marked EMPTY", tournament_id)
-                db.update_tournament_detail_status(tournament_id, status)
+                db.update_tournament_detail_status(tournament_id, status, registration_status=registration_status)
                 db.update_scrape_job(
                     job_id, "COMPLETED",
                     records_processed=0, records_created=0,
@@ -358,7 +362,7 @@ def scrape_single_tournament_detail_graphql(
                     "[FAILED] Tournament %s — scrape returned no data, marked FAILED for retry\n  %s",
                     tournament_id, usta_url,
                 )
-                db.update_tournament_detail_status(tournament_id, "FAILED")
+                db.update_tournament_detail_status(tournament_id, "FAILED", registration_status=registration_status)
                 db.update_scrape_job(
                     job_id, "FAILED",
                     error_message="APIs returned empty but page does not confirm no players",
@@ -380,7 +384,7 @@ def scrape_single_tournament_detail_graphql(
                     entry.get("player_name", "?"), e,
                 )
 
-        db.update_tournament_detail_status(tournament_id, "SUCCESS")
+        db.update_tournament_detail_status(tournament_id, "SUCCESS", registration_status=registration_status)
         db.update_scrape_job(
             job_id, "COMPLETED",
             records_processed=len(entries),
@@ -449,6 +453,7 @@ def scrape_tournament_details_batch(
         try:
             result = scrape_tournament_detail_graphql(page, tid, org_slug)
             entries = result.get("entries", [])
+            registration_status = result.get("registration_status")
 
             if not entries:
                 truly_empty = result.get("truly_empty", False)
@@ -456,16 +461,16 @@ def scrape_tournament_details_batch(
                     end_date = t.get("end_date")
                     from datetime import date
                     if end_date and end_date < date.today():
-                        db.update_tournament_detail_status(tid, "SUCCESS")
+                        db.update_tournament_detail_status(tid, "SUCCESS", registration_status=registration_status)
                     else:
-                        db.update_tournament_detail_status(tid, "EMPTY")
+                        db.update_tournament_detail_status(tid, "EMPTY", registration_status=registration_status)
                     local_stats["empty"] += 1
                 else:
                     logger.error(
                         "[FAILED] %s — scrape returned no data, marking FAILED for retry\n  %s",
                         name, usta_url,
                     )
-                    db.update_tournament_detail_status(tid, "FAILED")
+                    db.update_tournament_detail_status(tid, "FAILED", registration_status=registration_status)
                     local_stats["failed"] += 1
                 return local_stats
 
@@ -484,7 +489,7 @@ def scrape_tournament_details_batch(
                         entry.get("player_name", "?"), e,
                     )
 
-            db.update_tournament_detail_status(tid, "SUCCESS")
+            db.update_tournament_detail_status(tid, "SUCCESS", registration_status=registration_status)
             local_stats["succeeded"] += 1
 
         except Exception as e:

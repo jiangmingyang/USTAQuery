@@ -562,23 +562,28 @@ def upsert_tournament_entry(data: dict) -> int:
 
 
 def update_tournament_detail_status(
-    tournament_id: str, status: str, scraped_at: str | None = None
+    tournament_id: str, status: str, scraped_at: str | None = None,
+    registration_status: str | None = None,
 ):
-    """Update tournament detail scrape status and timestamp."""
+    """Update tournament detail scrape status, timestamp, and registration status."""
     with get_cursor() as cur:
         if scraped_at:
             cur.execute(
                 """UPDATE tournaments
-                   SET detail_scrape_status = %s, detail_scraped_at = %s
+                   SET detail_scrape_status = %s,
+                       detail_scraped_at = %s,
+                       registration_status = COALESCE(%s, registration_status)
                    WHERE tournament_id = %s""",
-                (status, scraped_at, tournament_id),
+                (status, scraped_at, registration_status, tournament_id),
             )
         else:
             cur.execute(
                 """UPDATE tournaments
-                   SET detail_scrape_status = %s, detail_scraped_at = CURRENT_TIMESTAMP
+                   SET detail_scrape_status = %s,
+                       detail_scraped_at = CURRENT_TIMESTAMP,
+                       registration_status = COALESCE(%s, registration_status)
                    WHERE tournament_id = %s""",
-                (status, tournament_id),
+                (status, registration_status, tournament_id),
             )
 
 
@@ -589,10 +594,11 @@ def get_tournaments_to_scrape(
 ) -> list[dict]:
     """Get tournaments that need detail scraping.
 
-    Skips tournaments where:
-    - detail was already scraped successfully AND
-    - the tournament has ended (end_date < CURDATE()) AND
-    - the scrape happened after the tournament ended
+    Skips only when BOTH conditions are true:
+    - registration_status = 'Completed'  (tournament is finished)
+    - detail_scrape_status = 'SUCCESS'   (already scraped successfully)
+
+    Everything else is re-scraped: open, closed, unknown status, failed, etc.
 
     Returns list of dicts with id, tournament_id, org_slug, name, start_date, end_date.
     """
@@ -604,11 +610,8 @@ def get_tournaments_to_scrape(
           AND (%s IS NULL OR start_date >= %s)
           AND (%s IS NULL OR start_date <= %s)
           AND NOT (
-              detail_scrape_status = 'SUCCESS'
-              AND end_date IS NOT NULL
-              AND end_date < CURDATE()
-              AND detail_scraped_at IS NOT NULL
-              AND detail_scraped_at > end_date
+              COALESCE(registration_status, '') = 'Completed'
+              AND COALESCE(detail_scrape_status, '') = 'SUCCESS'
           )
         ORDER BY start_date ASC
     """

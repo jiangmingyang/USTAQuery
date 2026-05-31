@@ -1,10 +1,10 @@
 import { useParams, Link } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { getPlayer, getPlayerStats, getPlayerMatches, getPlayerRankings, getPlayerRegistrations, getPlayerTournaments, getPlayerTournamentEntries } from "@/api/client"
-import type { PlayerDetail, PlayerStats, Match, Ranking, Registration, Tournament, PagedResponse, PlayerTournamentEntry } from "@/types"
+import { getPlayer, getPlayerStats, getPlayerMatches, getPlayerRankings, getPlayerTournamentEntries } from "@/api/client"
+import type { PlayerDetail, PlayerStats, Match, Ranking, PagedResponse, PlayerTournamentEntry } from "@/types"
 import { PlayerInfoSection } from "@/components/player/PlayerInfoSection"
 import { MatchScoreDisplay, WinLossIndicator } from "@/components/match/MatchScoreDisplay"
-import { LoadingSection, EmptyState, ErrorAlert, StatusBadge, LevelBadge, CategoryBadge } from "@/components/shared/StatusComponents"
+import { LoadingSection, EmptyState, ErrorAlert, LevelBadge } from "@/components/shared/StatusComponents"
 import { cn, formatDate } from "@/lib/utils"
 import { AGE_RESTRICTIONS, LIST_TYPES, formatRankingListName } from "@/lib/constants"
 
@@ -17,6 +17,8 @@ export function PlayerProfilePage() {
   const [stats, setStats] = useState<PlayerStats | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [entries, setEntries] = useState<PlayerTournamentEntry[]>([])
+  const [entriesLoading, setEntriesLoading] = useState(false)
 
   useEffect(() => {
     if (!uaid) return
@@ -25,6 +27,12 @@ export function PlayerProfilePage() {
       .then(([p, s]) => { setPlayer(p); setStats(s) })
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false))
+  }, [uaid])
+
+  useEffect(() => {
+    if (!uaid) return
+    setEntriesLoading(true)
+    getPlayerTournamentEntries(uaid).then(setEntries).catch(() => {}).finally(() => setEntriesLoading(false))
   }, [uaid])
 
   if (loading) return <LoadingSection />
@@ -63,8 +71,8 @@ export function PlayerProfilePage() {
       {/* Tab Content */}
       <div className="animate-fade-in">
         {tab === "info" && <PlayerInfoTab player={player} />}
-        {tab === "tournaments" && <TournamentsTab uaid={player.uaid} />}
-        {tab === "registrations" && <RegistrationsTab uaid={player.uaid} />}
+        {tab === "tournaments" && <TournamentsTab entries={entries} loading={entriesLoading} />}
+        {tab === "registrations" && <RegistrationsTab entries={entries} loading={entriesLoading} />}
         {tab === "matches" && <MatchesTab uaid={player.uaid} />}
         {tab === "rankings" && <RankingsTab uaid={player.uaid} />}
       </div>
@@ -97,20 +105,14 @@ function InfoRow({ label, value }: { label: string; value: string | null | undef
   )
 }
 
-function TournamentsTab({ uaid }: { uaid: string }) {
-  const [entries, setEntries] = useState<PlayerTournamentEntry[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    getPlayerTournamentEntries(uaid).then(setEntries).catch(() => {}).finally(() => setLoading(false))
-  }, [uaid])
-
+function TournamentsTab({ entries, loading }: { entries: PlayerTournamentEntry[]; loading: boolean }) {
   if (loading) return <LoadingSection />
-  if (entries.length === 0) return <EmptyState title="No tournament entries" description="No tournament registrations found for this player." />
+  const filtered = entries.filter(e => e.registrationStatus === "Completed")
+  if (filtered.length === 0) return <EmptyState title="No completed tournaments" description="No completed tournaments found for this player." />
 
   // Group entries by tournament
   const grouped = new Map<number, { name: string; level: string | null; category: string | null; startDate: string | null; endDate: string | null; city: string | null; state: string | null; section: string | null; entries: PlayerTournamentEntry[] }>()
-  for (const e of entries) {
+  for (const e of filtered) {
     const tid = e.tournamentInternalId
     if (!grouped.has(tid)) {
       grouped.set(tid, {
@@ -198,55 +200,80 @@ function TournamentsTab({ uaid }: { uaid: string }) {
   )
 }
 
-function RegistrationsTab({ uaid }: { uaid: string }) {
-  const [data, setData] = useState<PagedResponse<Registration> | null>(null)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    getPlayerRegistrations(uaid).then(setData).catch(() => {}).finally(() => setLoading(false))
-  }, [uaid])
-
+function RegistrationsTab({ entries, loading }: { entries: PlayerTournamentEntry[]; loading: boolean }) {
   if (loading) return <LoadingSection />
-  if (!data || data.content.length === 0) return <EmptyState title="No registrations found" />
+  const filtered = entries.filter(e => e.registrationStatus !== "Completed")
+  if (filtered.length === 0) return <EmptyState title="No active registrations" description="No open or upcoming tournament registrations found." />
+
+  // Group entries by tournament
+  const grouped = new Map<number, { name: string; level: string | null; startDate: string | null; endDate: string | null; city: string | null; state: string | null; section: string | null; registrationStatus: string | null; entries: PlayerTournamentEntry[] }>()
+  for (const e of filtered) {
+    const tid = e.tournamentInternalId
+    if (!grouped.has(tid)) {
+      grouped.set(tid, {
+        name: e.tournamentName,
+        level: e.tournamentLevel,
+        startDate: e.startDate,
+        endDate: e.endDate,
+        city: e.city,
+        state: e.state,
+        section: e.section,
+        registrationStatus: e.registrationStatus,
+        entries: [],
+      })
+    }
+    grouped.get(tid)!.entries.push(e)
+  }
+
+  function entryStatusColor(status: string | null): string {
+    const s = (status || "").toUpperCase()
+    if (s.includes("DIRECT") || s === "REGISTERED") return "bg-primary/10 text-primary"
+    if (s.includes("WITHDRAWN")) return "bg-destructive/10 text-destructive"
+    if (s.includes("ALTERNATE")) return "bg-accent text-accent-foreground"
+    return "bg-muted text-muted-foreground"
+  }
+
+  function regStatusBadge(status: string | null) {
+    if (!status) return null
+    const color = status === "Registrations open"
+      ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
+      : status === "Registrations closed"
+        ? "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400"
+        : "bg-muted text-muted-foreground"
+    return (
+      <span className={cn("inline-flex items-center rounded-md px-1.5 py-0.5 text-[10px] font-medium", color)}>
+        {status}
+      </span>
+    )
+  }
 
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full">
-        <thead>
-          <tr className="border-b">
-            <th className="table-header text-left py-3 px-4">Tournament</th>
-            <th className="table-header text-left py-3 px-4">Division</th>
-            <th className="table-header text-left py-3 px-4">Type</th>
-            <th className="table-header text-left py-3 px-4">Partner</th>
-            <th className="table-header text-left py-3 px-4">Seed</th>
-            <th className="table-header text-left py-3 px-4">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.content.map((r) => (
-            <tr key={r.id} className="border-b border-border/50 hover:bg-muted/30 transition-colors">
-              <td className="table-cell">
-                <p className="font-medium">{r.tournament.name}</p>
-                <p className="text-xs text-muted-foreground">{formatDate(r.tournament.startDate)}</p>
-              </td>
-              <td className="table-cell">{r.divisionName}</td>
-              <td className="table-cell">
-                <span className={cn("badge-level", r.matchType === "DOUBLES" ? "bg-accent text-accent-foreground" : "bg-muted text-foreground")}>
-                  {r.matchType}
-                </span>
-              </td>
-              <td className="table-cell">
-                {r.matchType === "DOUBLES"
-                  ? (r.player2 ? `${r.player2.firstName} ${r.player2.lastName}` : <span className="text-muted-foreground italic">Partner TBD</span>)
-                  : "\u2014"
-                }
-              </td>
-              <td className="table-cell font-mono">{r.seed || "\u2014"}</td>
-              <td className="table-cell"><StatusBadge status={r.status} /></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="space-y-3">
+      {Array.from(grouped.entries()).map(([tid, t]) => (
+        <Link key={tid} to={`/tournaments/${tid}`} className="block rounded-lg border p-4 hover:bg-muted/30 transition-colors">
+          <div className="flex items-start justify-between gap-3 mb-1.5">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 flex-wrap">
+                <p className="font-medium text-sm">{t.name}</p>
+                {regStatusBadge(t.registrationStatus)}
+              </div>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                {formatDate(t.startDate)}{t.endDate ? ` \u2013 ${formatDate(t.endDate)}` : ""}
+                {(t.city || t.state) && ` \u00b7 ${t.city && t.state ? `${t.city}, ${t.state}` : t.state || t.city}`}
+                {t.section && ` \u00b7 ${t.section}`}
+              </p>
+            </div>
+            {t.level && <LevelBadge level={t.level} />}
+          </div>
+          <div className="flex flex-wrap gap-1.5 mt-2">
+            {t.entries.map((e, i) => (
+              <span key={`${e.eventId}-${i}`} className={cn("inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium", entryStatusColor(e.entryStatus))}>
+                {e.eventType || "Event"}
+              </span>
+            ))}
+          </div>
+        </Link>
+      ))}
     </div>
   )
 }

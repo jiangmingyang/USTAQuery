@@ -21,6 +21,7 @@ public class TournamentDto {
     private String organization;
     private String orgSlug;
     private String status;
+    private String registrationStatus;
     private Integer eventsCount;
     private String surface;
     private String url;
@@ -62,6 +63,8 @@ public class TournamentDto {
     public void setOrgSlug(String orgSlug) { this.orgSlug = orgSlug; }
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+    public String getRegistrationStatus() { return registrationStatus; }
+    public void setRegistrationStatus(String registrationStatus) { this.registrationStatus = registrationStatus; }
     public Integer getEventsCount() { return eventsCount; }
     public void setEventsCount(Integer eventsCount) { this.eventsCount = eventsCount; }
     public String getSurface() { return surface; }

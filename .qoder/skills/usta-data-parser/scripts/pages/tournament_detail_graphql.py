@@ -39,7 +39,11 @@ def scrape_tournament_detail_graphql(
     then tries the TournamentDesk API (for started tournaments). If that returns
     empty, falls back to the Tournaments API (for upcoming tournaments).
 
-    Returns {"entries": [...], "truly_empty": bool}.
+    Returns {
+        "entries": [...],
+        "truly_empty": bool,
+        "registration_status": str | None,  # "Registrations open" | "Registrations closed" | "Completed"
+    }.
     truly_empty=True means the page itself shows no players registered.
     """
     # Navigate to establish browser session / cookies
@@ -51,23 +55,51 @@ def scrape_tournament_detail_graphql(
     page.goto(players_url, timeout=config.TIMEOUT)
     _wait_for_page_ready(page)
 
+    # Detect registration status from page text
+    registration_status = _detect_registration_status(page)
+    logger.debug("Registration status: %s", registration_status)
+
     # Try TournamentDesk API first (richer data for started/ended tournaments)
     entries = _fetch_participants_tournamentdesk(page, tournament_id)
     if entries:
         logger.debug("Found %d entries via TournamentDesk API", len(entries))
-        return {"entries": entries, "truly_empty": False}
+        return {"entries": entries, "truly_empty": False, "registration_status": registration_status}
 
     # Fall back to Tournaments API (works for all tournament statuses)
     logger.debug("TournamentDesk API unavailable, trying Tournaments API...")
     entries = _fetch_registrations_upcoming(page, tournament_id)
     if entries:
         logger.debug("Found %d entries via Tournaments API", len(entries))
-        return {"entries": entries, "truly_empty": False}
+        return {"entries": entries, "truly_empty": False, "registration_status": registration_status}
 
     # Both APIs returned empty — check if the page itself shows "no players"
     truly_empty = _check_page_truly_empty(page)
     logger.debug("No entries from either API, truly_empty=%s", truly_empty)
-    return {"entries": [], "truly_empty": truly_empty}
+    return {"entries": [], "truly_empty": truly_empty, "registration_status": registration_status}
+
+
+def _detect_registration_status(page: Page) -> str | None:
+    """Detect tournament registration status from the page text.
+
+    Looks for one of three status strings displayed in the tournament header:
+    - "Registrations open"
+    - "Registrations closed"
+    - "Completed"
+
+    Returns the matched status string, or None if not detected.
+    """
+    try:
+        content = page.text_content("body") or ""
+        lower = content.lower()
+        if "registrations open" in lower:
+            return "Registrations open"
+        if "registrations closed" in lower:
+            return "Registrations closed"
+        if "completed" in lower:
+            return "Completed"
+        return None
+    except Exception:
+        return None
 
 
 def _check_page_truly_empty(page: Page) -> bool:

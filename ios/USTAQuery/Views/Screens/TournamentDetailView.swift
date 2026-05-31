@@ -110,7 +110,11 @@ private struct TournamentInfoCard: View {
                     InfoItem(label: "Director", value: director)
                 }
                 InfoItem(icon: "trophy", label: "Events", value: "\(tournament.eventsCount ?? tournament.events?.count ?? 0)")
-                InfoItem(label: "Status", value: statusText)
+                if tournament.status == "cancelled" {
+                    InfoItem(label: "Status", value: "Cancelled")
+                } else if let regStatus = tournament.registrationStatus {
+                    InfoItem(label: "Status", value: regStatus, highlight: regStatus.lowercased().contains("open") ? .green : regStatus.lowercased().contains("closed") ? .orange : nil)
+                }
             }
         }
         .padding()
@@ -131,17 +135,13 @@ private struct TournamentInfoCard: View {
         let parts = [tournament.city, tournament.state].compactMap { $0 }.filter { !$0.isEmpty }
         return parts.isEmpty ? nil : parts.joined(separator: ", ")
     }
-
-    private var statusText: String {
-        if tournament.status == "cancelled" { return "Cancelled" }
-        return (tournament.acceptingEntries ?? false) ? "Accepting Entries" : "Entries Closed"
-    }
 }
 
 private struct InfoItem: View {
     var icon: String? = nil
     let label: String
     let value: String
+    var highlight: Color? = nil
 
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
@@ -155,6 +155,7 @@ private struct InfoItem: View {
                 }
                 Text(value)
                     .font(.subheadline.weight(.medium))
+                    .foregroundStyle(highlight ?? Color.primary)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)

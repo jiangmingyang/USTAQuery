@@ -123,10 +123,16 @@ export function TournamentDetailPage() {
             {tournament.organization && <InfoItem label="Organization" value={tournament.organization} />}
             {tournament.directorName && <InfoItem label="Director" value={tournament.directorName} />}
             <InfoItem icon={<Trophy className="h-3.5 w-3.5" />} label="Events" value={String(tournament.eventsCount || events.length)} />
-            <InfoItem label="Status" value={
-              tournament.status === "cancelled" ? "Cancelled" :
-              tournament.acceptingEntries ? "Accepting Entries" : "Entries Closed"
-            } />
+            {tournament.status === "cancelled"
+              ? <InfoItem label="Status" value="Cancelled" />
+              : tournament.registrationStatus
+              ? <InfoItem label="Status" value={tournament.registrationStatus} highlight={
+                  tournament.registrationStatus.toLowerCase().includes("open") ? "green"
+                  : tournament.registrationStatus.toLowerCase().includes("closed") ? "orange"
+                  : "default"
+                } />
+              : null
+            }
           </div>
         </CardContent>
       </Card>
@@ -176,11 +182,20 @@ export function TournamentDetailPage() {
   )
 }
 
-function InfoItem({ icon, label, value }: { icon?: React.ReactNode; label: string; value: string }) {
+function InfoItem({ icon, label, value, highlight }: {
+  icon?: React.ReactNode
+  label: string
+  value: string
+  highlight?: "green" | "orange" | "default"
+}) {
+  const valueClass =
+    highlight === "green" ? "text-green-600 dark:text-green-400" :
+    highlight === "orange" ? "text-orange-600 dark:text-orange-400" :
+    ""
   return (
     <div className="flex flex-col gap-0.5">
       <span className="text-xs text-muted-foreground">{label}</span>
-      <span className="flex items-center gap-1 text-sm font-medium">
+      <span className={`flex items-center gap-1 text-sm font-medium ${valueClass}`}>
         {icon}
         {value}
       </span>
@@ -328,16 +343,16 @@ function buildDisplayRows(entries: TournamentEntry[]): DisplayRow[] {
     })
   }
 
-  // Sort by entryPosition ascending (USTA acceptance list order)
-  // Only sort when entryPosition data is available; otherwise preserve backend order
-  const hasPositions = rows.some(r => r.entryPosition != null)
-  if (hasPositions) {
-    rows.sort((a, b) => {
-      const posA = a.entryPosition ?? Infinity
-      const posB = b.entryPosition ?? Infinity
-      return posA - posB
-    })
-  }
+  // Sort: entryPosition first (if available), otherwise by total ranking points descending
+  rows.sort((a, b) => {
+    const aPosNull = a.entryPosition == null
+    const bPosNull = b.entryPosition == null
+    if (!aPosNull && !bPosNull) return a.entryPosition! - b.entryPosition!
+    if (!aPosNull && bPosNull) return -1
+    if (aPosNull && !bPosNull) return 1
+    // Both null: sort by totalPoints descending
+    return b.totalPoints - a.totalPoints
+  })
   return rows
 }
 

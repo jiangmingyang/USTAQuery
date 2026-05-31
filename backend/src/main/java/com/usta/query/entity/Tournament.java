@@ -101,6 +101,14 @@ public class Tournament {
     @Column(name = "detail_scrape_status", length = 20)
     private String detailScrapeStatus;
 
+    /**
+     * Tournament's own registration status as shown on the USTA page.
+     * Values: "Registrations open" | "Registrations closed" | "Completed"
+     * Distinct from detailScrapeStatus which tracks whether the scrape job succeeded.
+     */
+    @Column(name = "registration_status", length = 30)
+    private String registrationStatus;
+
     @OneToMany(mappedBy = "tournament", fetch = FetchType.LAZY)
     private List<TournamentEvent> events;
 
@@ -210,6 +218,9 @@ public class Tournament {
 
     public String getDetailScrapeStatus() { return detailScrapeStatus; }
     public void setDetailScrapeStatus(String detailScrapeStatus) { this.detailScrapeStatus = detailScrapeStatus; }
+
+    public String getRegistrationStatus() { return registrationStatus; }
+    public void setRegistrationStatus(String registrationStatus) { this.registrationStatus = registrationStatus; }
 
     public List<TournamentEvent> getEvents() { return events; }
     public void setEvents(List<TournamentEvent> events) { this.events = events; }

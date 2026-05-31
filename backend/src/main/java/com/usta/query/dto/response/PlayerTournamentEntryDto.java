@@ -14,6 +14,7 @@ public class PlayerTournamentEntryDto {
     private String city;
     private String state;
     private String section;
+    private String registrationStatus;
 
     // Entry info
     private String eventId;
@@ -48,6 +49,9 @@ public class PlayerTournamentEntryDto {
 
     public String getSection() { return section; }
     public void setSection(String section) { this.section = section; }
+
+    public String getRegistrationStatus() { return registrationStatus; }
+    public void setRegistrationStatus(String registrationStatus) { this.registrationStatus = registrationStatus; }
 
     public String getEventId() { return eventId; }
     public void setEventId(String eventId) { this.eventId = eventId; }

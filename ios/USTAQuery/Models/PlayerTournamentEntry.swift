@@ -11,6 +11,7 @@ struct PlayerTournamentEntry: Codable, Identifiable, Hashable {
     let city: String?
     let state: String?
     let section: String?
+    let registrationStatus: String?
     let eventId: String
     let eventType: String?
     let entryStatus: String?

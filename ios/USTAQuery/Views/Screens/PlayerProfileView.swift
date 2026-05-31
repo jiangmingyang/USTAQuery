@@ -68,11 +68,15 @@ struct PlayerProfileView: View {
                 PlayerInfoTab(player: player)
             }
         case .tournaments:
-            PlayerTournamentsTab(entries: viewModel.tournamentEntries, isLoading: viewModel.tournamentsLoading)
+            PlayerTournamentsTab(
+                entries: viewModel.tournamentEntries.filter { $0.registrationStatus == "Completed" },
+                isLoading: viewModel.tournamentsLoading
+            )
         case .registrations:
             PlayerRegistrationsTab(
+                tournamentEntries: viewModel.tournamentEntries.filter { $0.registrationStatus != "Completed" },
                 registrations: viewModel.registrations,
-                isLoading: viewModel.registrationsLoading,
+                isLoading: viewModel.registrationsLoading || viewModel.tournamentsLoading,
                 currentPage: viewModel.registrationsPage
             ) { page in
                 Task { await viewModel.loadRegistrations(page: page) }

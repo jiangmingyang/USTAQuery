@@ -1,0 +1,35 @@
+# Backend build artifacts
+backend/target/
+
+# Frontend build artifacts
+frontend/dist/
+frontend/node_modules/
+
+# Python
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+**/.DS_Store
+
+# Env files (never commit secrets)
+.env
+.env.*
+!.env.example
+
+# iOS build artifacts
+ios/build/
+ios/*.xcworkspace/xcuserdata/
+ios/DerivedData/
+
+# DB dumps
+*.sql.gz
+*.dump

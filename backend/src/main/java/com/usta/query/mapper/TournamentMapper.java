@@ -31,6 +31,7 @@ public class TournamentMapper {
         dto.setOrganization(t.getOrganization());
         dto.setOrgSlug(t.getOrgSlug());
         dto.setStatus(t.getStatus());
+        dto.setRegistrationStatus(t.getRegistrationStatus());
         dto.setEventsCount(t.getEventsCount() != null ? t.getEventsCount().intValue() : null);
         dto.setSurface(t.getSurface());
         dto.setUrl(t.getUrl());
@@ -88,6 +89,7 @@ public class TournamentMapper {
         dto.setCity(t.getCity());
         dto.setState(t.getState());
         dto.setSection(t.getSection());
+        dto.setRegistrationStatus(t.getRegistrationStatus());
         dto.setEventId(e.getEventId());
         dto.setEventType(e.getEventType());
         dto.setEntryStatus(e.getEntryStatus());

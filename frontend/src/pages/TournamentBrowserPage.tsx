@@ -283,6 +283,22 @@ function MultiSelect({ label, selected, onChange, options, placeholder, minWidth
   )
 }
 
+function RegistrationStatusBadge({ status }: { status: string | null }) {
+  if (!status) return null
+  const lower = status.toLowerCase()
+  const styles =
+    lower.includes("open")
+      ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
+      : lower.includes("closed")
+      ? "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400"
+      : "bg-muted text-muted-foreground"
+  return (
+    <span className={`inline-block rounded-full px-2 py-0.5 text-[11px] font-medium ${styles}`}>
+      {status}
+    </span>
+  )
+}
+
 function TournamentCard({ tournament: t }: { tournament: Tournament }) {
   return (
     <Link to={`/tournaments/${t.id}`} className="block">
@@ -314,6 +330,7 @@ function TournamentCard({ tournament: t }: { tournament: Tournament }) {
             {t.status === "cancelled" && (
               <span className="text-destructive font-medium">Cancelled</span>
             )}
+            <RegistrationStatusBadge status={t.registrationStatus} />
           </div>
           {t.organization && (
             <p className="text-xs text-muted-foreground mt-1">Org: {t.organization}</p>

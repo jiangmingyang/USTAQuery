@@ -18,6 +18,7 @@ struct Tournament: Codable, Identifiable, Hashable {
     let organization: String?
     let orgSlug: String?
     let status: String?
+    let registrationStatus: String?
     let eventsCount: Int?
     let surface: String?
     let url: String?
