@@ -610,8 +610,8 @@ def get_tournaments_to_scrape(
           AND (%s IS NULL OR start_date >= %s)
           AND (%s IS NULL OR start_date <= %s)
           AND NOT (
-              COALESCE(registration_status, '') = 'Completed'
-              AND COALESCE(detail_scrape_status, '') = 'SUCCESS'
+              COALESCE(detail_scrape_status, '') = 'SUCCESS'
+              AND COALESCE(registration_status, '') IN ('Completed', 'Cancelled')
           )
         ORDER BY start_date ASC
     """
