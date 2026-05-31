@@ -45,7 +45,7 @@ public class RankingController {
             @RequestParam(required = false) String publishDate,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "50") int size) {
-        if (catalogId != null && publishDate != null) {
+        if (catalogId != null && publishDate != null && !publishDate.isBlank()) {
             LocalDateTime date = LocalDateTime.parse(publishDate);
             return ResponseEntity.ok(rankingService.getLeaderboardByDate(catalogId, date, PageRequest.of(page, size)));
         }
