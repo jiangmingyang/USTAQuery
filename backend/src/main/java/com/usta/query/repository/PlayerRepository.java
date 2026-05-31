@@ -12,8 +12,11 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
 
     Optional<Player> findByUaid(String uaid);
 
-    @Query("SELECT p FROM Player p WHERE LOWER(p.firstName) LIKE LOWER(CONCAT('%', :q, '%')) " +
+    @Query("SELECT p FROM Player p WHERE " +
+           "LOWER(p.firstName) LIKE LOWER(CONCAT('%', :q, '%')) " +
            "OR LOWER(p.lastName) LIKE LOWER(CONCAT('%', :q, '%')) " +
-           "OR p.uaid LIKE CONCAT('%', :q, '%')")
+           "OR p.uaid LIKE CONCAT('%', :q, '%') " +
+           "OR LOWER(CONCAT(p.firstName, ' ', p.lastName)) LIKE LOWER(CONCAT('%', :q, '%')) " +
+           "OR LOWER(CONCAT(p.lastName, ' ', p.firstName)) LIKE LOWER(CONCAT('%', :q, '%'))")
     Page<Player> search(@Param("q") String query, Pageable pageable);
 }

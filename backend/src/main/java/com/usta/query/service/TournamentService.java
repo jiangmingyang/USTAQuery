@@ -252,4 +252,10 @@ public class TournamentService {
         List<TournamentEntry> entries = tournamentEntryRepository.findByPlayerUaidWithTournament(uaid);
         return entries.stream().map(tournamentMapper::toPlayerEntryDto).toList();
     }
+
+    public PagedResponse<TournamentDto> searchUnified(String q, Pageable pageable) {
+        Page<Tournament> page = tournamentRepository.searchByNamePrefixOrCode(q, pageable);
+        var content = page.getContent().stream().map(tournamentMapper::toDto).toList();
+        return playerMapper.toPagedResponse(page, content);
+    }
 }

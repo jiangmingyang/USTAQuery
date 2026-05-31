@@ -68,4 +68,10 @@ public interface TournamentRepository extends JpaRepository<Tournament, Long> {
     @Query("SELECT DISTINCT r.tournament FROM Registration r WHERE r.player1.uaid = :uaid " +
            "ORDER BY r.tournament.startDate DESC")
     Page<Tournament> findByPlayerUaid(@Param("uaid") String uaid, Pageable pageable);
+
+    @Query("SELECT t FROM Tournament t WHERE " +
+           "LOWER(t.name) LIKE LOWER(CONCAT(:q, '%')) " +
+           "OR LOWER(t.code) = LOWER(:q) " +
+           "ORDER BY t.startDate DESC")
+    Page<Tournament> searchByNamePrefixOrCode(@Param("q") String q, Pageable pageable);
 }

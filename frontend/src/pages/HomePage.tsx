@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { SearchBar } from "@/components/shared/SearchBar"
 import { Card, CardContent } from "@/components/ui/card"
-import { Trophy, Users, BarChart3, Calendar } from "lucide-react"
+import { Trophy, Users, BarChart3 } from "lucide-react"
 
 export function HomePage() {
   const navigate = useNavigate()
@@ -30,11 +30,11 @@ export function HomePage() {
               USTA Tennis<br />Tournament Query
             </h1>
             <p className="text-base md:text-lg text-primary-foreground/80 mb-8">
-              Search player profiles, rankings, tournament history, match results, and registration records
+              Search player profiles, rankings, tournament history, and registration records
             </p>
             <SearchBar
               onSearch={handleSearch}
-              placeholder="Search by player name or UAID..."
+              placeholder="Search players or tournaments..."
               size="lg"
               className="max-w-lg mx-auto"
             />
@@ -44,7 +44,7 @@ export function HomePage() {
 
       {/* Feature Cards */}
       <section className="container py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <FeatureCard
             icon={Users}
             title="Player Profiles"
@@ -56,12 +56,6 @@ export function HomePage() {
             title="Tournaments"
             description="Browse L1-L7 tournaments with filters by level, category, and state"
             onClick={() => navigate("/tournaments")}
-          />
-          <FeatureCard
-            icon={Calendar}
-            title="Match Results"
-            description="Set-by-set scores with tiebreaks, singles and doubles"
-            onClick={() => navigate("/search?q=")}
           />
           <FeatureCard
             icon={BarChart3}

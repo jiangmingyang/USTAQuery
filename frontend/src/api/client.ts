@@ -1,4 +1,4 @@
-import type { PagedResponse, PlayerSummary, PlayerDetail, PlayerStats, Tournament, TournamentFilterOptions, TournamentEntry, PlayerTournamentEntry, Registration, Match, Ranking, RankingHistory } from "@/types"
+import type { PagedResponse, PlayerSummary, PlayerDetail, PlayerStats, Tournament, TournamentFilterOptions, TournamentEntry, PlayerTournamentEntry, Registration, Match, Ranking, RankingHistory, UnifiedSearchResponse } from "@/types"
 
 const BASE_URL = "/api/v1"
 
@@ -19,6 +19,10 @@ function qs(params: Record<string, string | number | boolean | null | undefined>
 // Players
 export function searchPlayers(q: string, page = 0, size = 20) {
   return fetchJson<PagedResponse<PlayerSummary>>(`${BASE_URL}/players/search${qs({ q, page, size })}`)
+}
+
+export function unifiedSearch(q: string, page = 0, size = 5) {
+  return fetchJson<UnifiedSearchResponse>(`${BASE_URL}/search${qs({ q, page, size })}`)
 }
 
 export function getPlayer(uaid: string) {

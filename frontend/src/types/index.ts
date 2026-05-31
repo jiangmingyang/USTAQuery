@@ -216,3 +216,8 @@ export interface RankingHistory {
   displayLabel: string | null
   dataPoints: Ranking[]
 }
+
+export interface UnifiedSearchResponse {
+  players: PagedResponse<PlayerSummary> | null
+  tournaments: PagedResponse<Tournament> | null
+}
