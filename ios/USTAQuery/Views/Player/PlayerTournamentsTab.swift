@@ -29,6 +29,46 @@ struct PlayerTournamentsTab: View {
     }
 }
 
+/// Determine the overall entry status for a group of entries.
+/// Priority: accepted > alternate > withdrawn
+func classifyEntryStatus(_ entries: [PlayerTournamentEntry]) -> EntryStatusGroup {
+    for e in entries {
+        let s = (e.entryStatus ?? "").uppercased()
+        if s.contains("DIRECT") || s == "REGISTERED" { return .accepted }
+    }
+    for e in entries {
+        let s = (e.entryStatus ?? "").uppercased()
+        if s.contains("ALTERNATE") || s.contains("UNGROUPED") { return .alternate }
+    }
+    for e in entries {
+        let s = (e.entryStatus ?? "").uppercased()
+        if s.contains("WITHDRAWN") { return .withdrawn }
+    }
+    return .accepted
+}
+
+enum EntryStatusGroup {
+    case accepted, alternate, withdrawn
+
+    var label: String {
+        switch self {
+        case .accepted: return "Accepted"
+        case .alternate: return "Alternate"
+        case .withdrawn: return "Withdrawn"
+        }
+    }
+
+    var color: Color {
+        switch self {
+        case .accepted: return AppTheme.tennisGreen
+        case .alternate: return .orange
+        case .withdrawn: return AppTheme.lossRed
+        }
+    }
+
+    var isMainDraw: Bool { self == .accepted }
+}
+
 private struct TournamentEntryCard: View {
     let name: String
     let level: String?
@@ -37,6 +77,8 @@ private struct TournamentEntryCard: View {
     let city: String?
     let state: String?
     let entries: [PlayerTournamentEntry]
+
+    private var status: EntryStatusGroup { classifyEntryStatus(entries) }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -47,6 +89,13 @@ private struct TournamentEntryCard: View {
                         .multilineTextAlignment(.leading)
                 }
                 Spacer()
+                Text(status.label)
+                    .font(.caption2.weight(.medium))
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .background(status.color.opacity(0.15))
+                    .foregroundStyle(status.color)
+                    .clipShape(Capsule())
                 LevelBadge(level: level)
             }
 
@@ -78,6 +127,11 @@ private struct TournamentEntryCard: View {
         .padding()
         .background(Color(.systemGroupedBackground))
         .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .opacity(status.isMainDraw ? 1.0 : 0.6)
+        .overlay(
+            RoundedRectangle(cornerRadius: AppTheme.cornerRadius)
+                .strokeBorder(status.isMainDraw ? Color.clear : Color(.systemGray3).opacity(0.5), lineWidth: 1)
+        )
     }
 }
 

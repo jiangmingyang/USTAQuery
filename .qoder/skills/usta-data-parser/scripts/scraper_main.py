@@ -409,6 +409,7 @@ def scrape_tournament_details_batch(
     date_to: str | None = None,
     limit: int | None = None,
     delay: float = 3.0,
+    force: bool = False,
 ):
     """Batch-scrape tournament detail (participants/entries) via GraphQL.
 
@@ -416,6 +417,9 @@ def scrape_tournament_details_batch(
     - Skip if already scraped successfully after the tournament ended
     - Otherwise scrape participants and upsert entries
     - Record scrape status and timestamp
+
+    When force=True, re-scrapes ALL completed tournaments regardless of
+    whether they were already scraped successfully.
     """
     from pages.tournament_detail_graphql import scrape_tournament_detail_graphql
 
@@ -424,11 +428,11 @@ def scrape_tournament_details_batch(
         date_from = date_from or f"{year}-01-01"
         date_to = date_to or f"{year}-12-31"
 
-    tournaments = db.get_tournaments_to_scrape(date_from, date_to, limit)
+    tournaments = db.get_tournaments_to_scrape(date_from, date_to, limit, force=force)
     total = len(tournaments)
 
     if total == 0:
-        logger.info("No tournaments need detail scraping")
+        logger.info("No tournaments need detail scraping%s", " (force mode)" if force else "")
         return
 
     job_id = db.create_scrape_job(
@@ -784,6 +788,10 @@ def main():
     parser.add_argument("--to-date", help="End date YYYY-MM-DD for 'tournament-api' mode")
     parser.add_argument("--all-sections", action="store_true", help="Scrape all sections")
     parser.add_argument("--org-group", help="Specific org group ID for 'tournament-api' mode")
+    parser.add_argument(
+        "--force", action="store_true",
+        help="Force re-scrape all completed tournaments (for 'tournament-details' mode)",
+    )
     parser.add_argument("--debug", action="store_true", help="Enable debug logging")
 
     args = parser.parse_args()
@@ -841,6 +849,7 @@ def main():
                 date_to=args.to_date,
                 limit=args.limit,
                 delay=delay,
+                force=args.force,
             )
 
         elif args.mode == "tournament-detail-graphql":

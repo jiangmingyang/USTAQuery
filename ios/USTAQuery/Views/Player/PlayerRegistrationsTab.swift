@@ -51,6 +51,8 @@ private struct ActiveTournamentEntryCard: View {
     let entry: PlayerTournamentEntry
     let allEntries: [PlayerTournamentEntry]
 
+    private var status: EntryStatusGroup { classifyEntryStatus(allEntries) }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
@@ -60,6 +62,13 @@ private struct ActiveTournamentEntryCard: View {
                         .multilineTextAlignment(.leading)
                 }
                 Spacer()
+                Text(status.label)
+                    .font(.caption2.weight(.medium))
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .background(status.color.opacity(0.15))
+                    .foregroundStyle(status.color)
+                    .clipShape(Capsule())
                 LevelBadge(level: entry.tournamentLevel)
             }
 
@@ -94,6 +103,11 @@ private struct ActiveTournamentEntryCard: View {
         .padding()
         .background(Color(.systemGroupedBackground))
         .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .opacity(status.isMainDraw ? 1.0 : 0.6)
+        .overlay(
+            RoundedRectangle(cornerRadius: AppTheme.cornerRadius)
+                .strokeBorder(status.isMainDraw ? Color.clear : Color(.systemGray3).opacity(0.5), lineWidth: 1)
+        )
     }
 }
 

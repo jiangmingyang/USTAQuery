@@ -171,6 +171,12 @@ fun TournamentDetailScreen(
                                 EmptyStateView(title = "No entries", description = "No entries found for this tournament")
                             } else {
                                 val statusOrder = listOf("Acceptance", "Alternates", "Withdrawn", "Other")
+                                val statusColors = mapOf(
+                                    "Acceptance" to TennisGreen,
+                                    "Alternates" to Color(0xFFF97316),
+                                    "Withdrawn" to Color(0xFFEF4444),
+                                    "Other" to MaterialTheme.colorScheme.onSurfaceVariant
+                                )
                                 LazyColumn(
                                     modifier = Modifier.fillMaxWidth().weight(1f),
                                     contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 16.dp),
@@ -183,7 +189,7 @@ fun TournamentDetailScreen(
                                                 "$status (${rows.size})",
                                                 fontWeight = FontWeight.SemiBold,
                                                 fontSize = 14.sp,
-                                                color = TennisGreen
+                                                color = statusColors[status] ?: TennisGreen
                                             )
                                         }
                                         items(rows.size) { index ->

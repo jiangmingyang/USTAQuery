@@ -591,30 +591,46 @@ def get_tournaments_to_scrape(
     date_from: str | None = None,
     date_to: str | None = None,
     limit: int | None = None,
+    force: bool = False,
 ) -> list[dict]:
     """Get tournaments that need detail scraping.
 
-    Skips only when BOTH conditions are true:
+    By default, skips only when BOTH conditions are true:
     - registration_status = 'Completed'  (tournament is finished)
     - detail_scrape_status = 'SUCCESS'   (already scraped successfully)
 
     Everything else is re-scraped: open, closed, unknown status, failed, etc.
 
+    When force=True, returns ALL completed tournaments regardless of scrape
+    status (used to re-scrape with the updated GraphQL entry-status fields).
+
     Returns list of dicts with id, tournament_id, org_slug, name, start_date, end_date.
     """
-    sql = """
-        SELECT id, tournament_id, org_slug, name, start_date, end_date,
-               detail_scraped_at, detail_scrape_status
-        FROM tournaments
-        WHERE tournament_id IS NOT NULL
-          AND (%s IS NULL OR start_date >= %s)
-          AND (%s IS NULL OR start_date <= %s)
-          AND NOT (
-              COALESCE(detail_scrape_status, '') = 'SUCCESS'
-              AND COALESCE(registration_status, '') IN ('Completed', 'Cancelled')
-          )
-        ORDER BY start_date ASC
-    """
+    if force:
+        sql = """
+            SELECT id, tournament_id, org_slug, name, start_date, end_date,
+                   detail_scraped_at, detail_scrape_status
+            FROM tournaments
+            WHERE tournament_id IS NOT NULL
+              AND COALESCE(registration_status, '') = 'Completed'
+              AND (%s IS NULL OR start_date >= %s)
+              AND (%s IS NULL OR start_date <= %s)
+            ORDER BY start_date ASC
+        """
+    else:
+        sql = """
+            SELECT id, tournament_id, org_slug, name, start_date, end_date,
+                   detail_scraped_at, detail_scrape_status
+            FROM tournaments
+            WHERE tournament_id IS NOT NULL
+              AND (%s IS NULL OR start_date >= %s)
+              AND (%s IS NULL OR start_date <= %s)
+              AND NOT (
+                  COALESCE(detail_scrape_status, '') = 'SUCCESS'
+                  AND COALESCE(registration_status, '') IN ('Completed', 'Cancelled')
+              )
+            ORDER BY start_date ASC
+        """
     params = [date_from, date_from, date_to, date_to]
     if limit:
         sql += " LIMIT %s"

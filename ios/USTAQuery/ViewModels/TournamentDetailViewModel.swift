@@ -97,7 +97,7 @@ final class TournamentDetailViewModel {
     private func classifyStatus(_ status: String?) -> StatusGroup {
         guard let s = status?.uppercased() else { return .other }
         if s.contains("DIRECT") || s == "REGISTERED" { return .accepted }
-        if s.contains("ALTERNATE") { return .alternate }
+        if s.contains("ALTERNATE") || s.contains("UNGROUPED") { return .alternate }
         if s.contains("WITHDRAWN") { return .withdrawn }
         return .other
     }
@@ -110,12 +110,19 @@ final class TournamentDetailViewModel {
 
         // Classify entries
         for e in entries {
-            let isDoubles = (e.eventType ?? "").uppercased().contains("DOUBLES")
-            let isTeam = (e.playerName ?? "").contains("/") && (e.firstName?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
+            let evType = (e.eventType ?? "").uppercased()
+            let isDoubles = evType.contains("DOUBLES")
+            let isTeamEvent = evType.contains("TEAM")
+            let hasSlash = (e.playerName ?? "").contains("/")
+            let hasFirstName = !(e.firstName?.trimmingCharacters(in: .whitespaces).isEmpty ?? true)
 
-            if isDoubles && isTeam {
+            if isTeamEvent && !hasFirstName {
+                // TEAM event synthetic entry: pair summary or team name — skip both
+                continue
+            } else if isDoubles && hasSlash && !hasFirstName {
+                // Doubles pair summary (e.g. "Racic/Yamamoto")
                 teamEntries.append(e)
-            } else if isDoubles && !(e.firstName?.trimmingCharacters(in: .whitespaces).isEmpty ?? true) {
+            } else if isDoubles && hasFirstName {
                 let ln = (e.lastName ?? "").trimmingCharacters(in: .whitespaces).lowercased()
                 let key = "\(e.eventId)::\(e.drawId ?? "")::\(ln)"
                 individualsByKey[key, default: []].append(e)

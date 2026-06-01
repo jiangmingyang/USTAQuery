@@ -62,14 +62,14 @@ def scrape_tournament_detail_graphql(
     # Try TournamentDesk API first (richer data for started/ended tournaments)
     entries = _fetch_participants_tournamentdesk(page, tournament_id)
     if entries:
-        logger.debug("Found %d entries via TournamentDesk API", len(entries))
+        logger.info("Found %d entries via TournamentDesk API", len(entries))
         return {"entries": entries, "truly_empty": False, "registration_status": registration_status}
 
     # Fall back to Tournaments API (works for all tournament statuses)
-    logger.debug("TournamentDesk API unavailable, trying Tournaments API...")
+    logger.info("TournamentDesk API returned 0 entries, falling back to Tournaments API")
     entries = _fetch_registrations_upcoming(page, tournament_id)
     if entries:
-        logger.debug("Found %d entries via Tournaments API", len(entries))
+        logger.info("Found %d entries via Tournaments API", len(entries))
         return {"entries": entries, "truly_empty": False, "registration_status": registration_status}
 
     # Both APIs returned empty — check if the page itself shows "no players"
@@ -190,6 +190,13 @@ def _fetch_participants_tournamentdesk(
         page, query, {"tournamentId": tournament_id}, TOURNAMENTDESK_API_URL,
         silent=True,
     )
+    # Retry with uppercase UUID if lowercase returned empty
+    if (not data or not data.get("getTournamentParticipants")) and tournament_id != tournament_id.upper():
+        logger.info("TournamentDesk: retrying with uppercase UUID %s", tournament_id.upper())
+        data = _call_graphql(
+            page, query, {"tournamentId": tournament_id.upper()}, TOURNAMENTDESK_API_URL,
+            silent=True,
+        )
     if not data or "getTournamentParticipants" not in data:
         return []
 
@@ -262,6 +269,10 @@ def _fetch_registrations_upcoming(
     For doubles events (detected when eventEntries.players has 2+ players),
     creates team summary entries with "LastName1/LastName2" format and shared
     draw_id to enable proper pair display on the frontend.
+
+    Note: This API does NOT expose entryStage/entryStatus in its schema.
+    For acceptance/alternate/withdrawn differentiation, the TournamentDesk API
+    must succeed (called first in scrape_tournament_detail_graphql).
     """
     query = """
     query paginatedPublicTournamentRegistrations(
@@ -327,6 +338,7 @@ def _fetch_registrations_upcoming(
         }
 
         data = _call_graphql(page, query, variables, TOURNAMENTS_API_URL)
+
         if not data or "paginatedPublicTournamentRegistrations" not in data:
             break
 
@@ -362,6 +374,10 @@ def _fetch_registrations_upcoming(
                 event_id = ev.get("id", "")
 
                 event_entry = event_entries.get(event_id, {})
+
+                # Tournaments API schema does not expose entryStage/entryStatus.
+                # These fields are only available via the TournamentDesk API.
+                entry_stage = "MAIN"
                 entry_status = "REGISTERED" if event_entry else "PENDING"
 
                 # Try to get USTA ID from eventEntries.players if not found
@@ -399,7 +415,7 @@ def _fetch_registrations_upcoming(
                             "state": "",
                             "event_id": event_id,
                             "event_type": "DOUBLES",
-                            "entry_stage": "MAIN",
+                            "entry_stage": entry_stage,
                             "entry_status": entry_status,
                             "entry_position": None,
                             "status_detail": None,
@@ -419,7 +435,7 @@ def _fetch_registrations_upcoming(
                         "state": state,
                         "event_id": event_id,
                         "event_type": "DOUBLES",
-                        "entry_stage": "MAIN",
+                        "entry_stage": entry_stage,
                         "entry_status": entry_status,
                         "entry_position": None,
                         "status_detail": None,
@@ -438,7 +454,7 @@ def _fetch_registrations_upcoming(
                         "state": state,
                         "event_id": event_id,
                         "event_type": "",
-                        "entry_stage": "MAIN",
+                        "entry_stage": entry_stage,
                         "entry_status": entry_status,
                         "entry_position": None,
                         "status_detail": None,

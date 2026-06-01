@@ -120,6 +120,28 @@ function InfoRow({ label, value }: { label: string; value: string | null | undef
   )
 }
 
+function tournamentStatus(tEntries: PlayerTournamentEntry[]): "accepted" | "alternate" | "withdrawn" {
+  for (const e of tEntries) {
+    const s = (e.entryStatus || "").toUpperCase()
+    if (s.includes("DIRECT") || s === "REGISTERED") return "accepted"
+  }
+  for (const e of tEntries) {
+    const s = (e.entryStatus || "").toUpperCase()
+    if (s.includes("ALTERNATE") || s.includes("UNGROUPED")) return "alternate"
+  }
+  for (const e of tEntries) {
+    const s = (e.entryStatus || "").toUpperCase()
+    if (s.includes("WITHDRAWN")) return "withdrawn"
+  }
+  return "accepted"
+}
+
+const ENTRY_STATUS_CONFIG = {
+  accepted:  { label: "Accepted",  border: "border-primary/30",     badge: "bg-primary/10 text-primary",                dim: false },
+  alternate: { label: "Alternate", border: "border-muted-foreground/25", badge: "bg-accent text-accent-foreground",      dim: true },
+  withdrawn: { label: "Withdrawn", border: "border-muted-foreground/25", badge: "bg-destructive/10 text-destructive",    dim: true },
+} as const
+
 function TournamentsTab({ entries, loading }: { entries: PlayerTournamentEntry[]; loading: boolean }) {
   if (loading) return <LoadingSection />
   const filtered = entries.filter(e => e.registrationStatus === "Completed")
@@ -145,37 +167,14 @@ function TournamentsTab({ entries, loading }: { entries: PlayerTournamentEntry[]
     grouped.get(tid)!.entries.push(e)
   }
 
-  // Determine overall tournament status from entries
-  function tournamentStatus(tEntries: PlayerTournamentEntry[]): "accepted" | "alternate" | "withdrawn" {
-    for (const e of tEntries) {
-      const s = (e.entryStatus || "").toUpperCase()
-      if (s.includes("DIRECT") || s === "REGISTERED") return "accepted"
-    }
-    for (const e of tEntries) {
-      const s = (e.entryStatus || "").toUpperCase()
-      if (s.includes("ALTERNATE")) return "alternate"
-    }
-    for (const e of tEntries) {
-      const s = (e.entryStatus || "").toUpperCase()
-      if (s.includes("WITHDRAWN")) return "withdrawn"
-    }
-    return "accepted"
-  }
-
-  const statusConfig = {
-    accepted:  { label: "Accepted",  border: "border-primary/30",     badge: "bg-primary/10 text-primary" },
-    alternate: { label: "Alternate", border: "border-accent/50",      badge: "bg-accent text-accent-foreground" },
-    withdrawn: { label: "Withdrawn", border: "border-destructive/30", badge: "bg-destructive/10 text-destructive" },
-  }
-
   return (
     <div className="space-y-3">
       {Array.from(grouped.entries()).map(([tid, t]) => {
         const st = tournamentStatus(t.entries)
-        const cfg = statusConfig[st]
+        const cfg = ENTRY_STATUS_CONFIG[st]
         return (
           <Link key={tid} to={`/tournaments/${tid}`} className={cn("block rounded-lg border p-4 hover:bg-muted/30 transition-colors", cfg.border)}>
-            <div className="flex items-start justify-between gap-3 mb-1.5">
+            <div className={cn("flex items-start justify-between gap-3 mb-1.5", cfg.dim && "opacity-50")}>
               <div className="min-w-0">
                 <div className="flex items-center gap-2">
                   <p className="font-medium text-sm">{t.name}</p>
@@ -191,7 +190,7 @@ function TournamentsTab({ entries, loading }: { entries: PlayerTournamentEntry[]
               </div>
               {t.level && <LevelBadge level={t.level} />}
             </div>
-            <div className="flex flex-wrap gap-1.5 mt-2">
+            <div className={cn("flex flex-wrap gap-1.5 mt-2", cfg.dim && "opacity-50")}>
               {t.entries.map((e, i) => (
                   <span key={`${e.eventId}-${i}`} className="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium bg-muted text-muted-foreground">
                     {compactEventLabel(e) || e.eventType || "Event"}
@@ -246,12 +245,18 @@ function RegistrationsTab({ entries, loading }: { entries: PlayerTournamentEntry
 
   return (
     <div className="space-y-3">
-      {Array.from(grouped.entries()).map(([tid, t]) => (
-        <Link key={tid} to={`/tournaments/${tid}`} className="block rounded-lg border p-4 hover:bg-muted/30 transition-colors">
-          <div className="flex items-start justify-between gap-3 mb-1.5">
+      {Array.from(grouped.entries()).map(([tid, t]) => {
+        const st = tournamentStatus(t.entries)
+        const cfg = ENTRY_STATUS_CONFIG[st]
+        return (
+        <Link key={tid} to={`/tournaments/${tid}`} className={cn("block rounded-lg border p-4 hover:bg-muted/30 transition-colors", cfg.border)}>
+          <div className={cn("flex items-start justify-between gap-3 mb-1.5", cfg.dim && "opacity-50")}>
             <div className="min-w-0">
               <div className="flex items-center gap-2 flex-wrap">
                 <p className="font-medium text-sm">{t.name}</p>
+                <span className={cn("inline-flex items-center rounded-md px-1.5 py-0.5 text-[10px] font-medium", cfg.badge)}>
+                  {cfg.label}
+                </span>
                 {regStatusBadge(t.registrationStatus)}
               </div>
               <p className="text-xs text-muted-foreground mt-0.5">
@@ -262,7 +267,7 @@ function RegistrationsTab({ entries, loading }: { entries: PlayerTournamentEntry
             </div>
             {t.level && <LevelBadge level={t.level} />}
           </div>
-          <div className="flex flex-wrap gap-1.5 mt-2">
+          <div className={cn("flex flex-wrap gap-1.5 mt-2", cfg.dim && "opacity-50")}>
             {t.entries.map((e, i) => (
               <span key={`${e.eventId}-${i}`} className="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium bg-muted text-muted-foreground">
                 {compactEventLabel(e) || e.eventType || "Event"}
@@ -270,7 +275,8 @@ function RegistrationsTab({ entries, loading }: { entries: PlayerTournamentEntry
             ))}
           </div>
         </Link>
-      ))}
+        )
+      })}
     </div>
   )
 }

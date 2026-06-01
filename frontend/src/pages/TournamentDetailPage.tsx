@@ -209,7 +209,7 @@ function classifyStatus(status: string | null): StatusGroup {
   if (!status) return "other"
   const s = status.toUpperCase()
   if (s.includes("DIRECT") || s === "REGISTERED") return "accepted"
-  if (s.includes("ALTERNATE")) return "alternate"
+  if (s.includes("ALTERNATE") || s.includes("UNGROUPED")) return "alternate"
   if (s.includes("WITHDRAWN")) return "withdrawn"
   return "other"
 }
@@ -235,19 +235,17 @@ interface DisplayRow {
 
 /** Build display rows from raw entries.
  *
- *  The scraper creates three kinds of entries for each doubles team:
- *    1. A "team summary" (playerName = "Racic/Yamamoto", firstName empty)
- *    2. Two individual entries with full player details
- *
- *  Team summaries carry the pairing info (which last-names go together).
- *  Individual entries carry the player details (UAID, city/state).
+ *  Entry types produced by the scraper:
+ *    1. Doubles "team summary" (playerName = "Racic/Yamamoto", firstName empty)
+ *    2. Individual player entries with full details (singles or doubles)
+ *    3. TEAM event synthetics: pair summaries and team names (no firstName)
  *
  *  Strategy:
- *    - Use team summaries as a pairing lookup: parse the two last-names
- *      and match each to an individual entry with the same eventId + drawId.
- *    - Matched pairs become a single display row with two entries.
- *    - Unmatched individuals become solo rows.
- *    - Singles events are passed through as-is. */
+ *    - DOUBLES: use team summaries as pairing lookup, match individuals into
+ *      pairs; unmatched individuals become solo rows.
+ *    - TEAM: skip all synthetic entries (pair summaries + team names);
+ *      each individual player becomes their own display row.
+ *    - SINGLES: passed through as-is. */
 function buildDisplayRows(entries: TournamentEntry[]): DisplayRow[] {
   const rows: DisplayRow[] = []
   const teamEntries: TournamentEntry[] = []
@@ -256,12 +254,19 @@ function buildDisplayRows(entries: TournamentEntry[]): DisplayRow[] {
 
   // Classify entries
   for (const e of entries) {
-    const isDoubles = (e.eventType || "").toUpperCase().includes("DOUBLES")
-    const isTeam = (e.playerName || "").includes("/") && !e.firstName?.trim()
+    const evType = (e.eventType || "").toUpperCase()
+    const isDoubles = evType.includes("DOUBLES")
+    const isTeamEvent = evType.includes("TEAM")
+    const hasSlash = (e.playerName || "").includes("/")
+    const hasFirstName = !!e.firstName?.trim()
 
-    if (isDoubles && isTeam) {
+    if (isTeamEvent && !hasFirstName) {
+      // TEAM event synthetic entry: pair summary ("/" in name) or team name — skip both
+      continue
+    } else if (isDoubles && hasSlash && !hasFirstName) {
+      // Doubles pair summary (e.g. "Racic/Yamamoto")
       teamEntries.push(e)
-    } else if (isDoubles && e.firstName?.trim()) {
+    } else if (isDoubles && hasFirstName) {
       const ln = (e.lastName || "").trim().toLowerCase()
       const key = `${e.eventId}::${e.drawId || ""}::${ln}`
       if (!individualsByKey.has(key)) individualsByKey.set(key, [])

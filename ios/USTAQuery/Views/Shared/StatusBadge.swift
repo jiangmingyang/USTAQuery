@@ -17,7 +17,7 @@ struct StatusBadge: View {
         let upper = status.uppercased()
         if upper.contains("DIRECT") || upper == "REGISTERED" || upper == "CONFIRMED" || upper == "ENTERED" {
             return AppTheme.tennisGreen
-        } else if upper.contains("ALTERNATE") {
+        } else if upper.contains("ALTERNATE") || upper.contains("UNGROUPED") {
             return .orange
         } else if upper.contains("WITHDRAWN") {
             return AppTheme.lossRed

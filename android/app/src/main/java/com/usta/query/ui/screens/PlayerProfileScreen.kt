@@ -1,6 +1,7 @@
 package com.usta.query.ui.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -46,6 +47,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -229,13 +231,27 @@ private fun TournamentsTab(
         sortedKeys.forEach { key ->
             val items = grouped[key] ?: return@forEach
             val first = items.first()
+            val status = classifyPlayerEntryStatus(items)
+            val isMainDraw = status == PlayerEntryStatus.ACCEPTED
             Card(
-                modifier = Modifier.fillMaxWidth().clickable { onTournamentClick(first.tournamentInternalId) },
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .then(if (!isMainDraw) Modifier.border(1.dp, Color.Gray.copy(alpha = 0.35f), RoundedCornerShape(12.dp)) else Modifier)
+                    .clickable { onTournamentClick(first.tournamentInternalId) },
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = if (isMainDraw) 0.5f else 0.25f)
+                )
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text(first.tournamentName, fontWeight = FontWeight.SemiBold, modifier = Modifier.weight(1f))
+                        Text(
+                            first.tournamentName,
+                            fontWeight = FontWeight.SemiBold,
+                            modifier = Modifier.weight(1f),
+                            color = if (isMainDraw) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
+                        )
+                        EntryStatusBadge(status)
+                        Spacer(Modifier.width(6.dp))
                         LevelBadge(level = first.tournamentLevel)
                     }
                     first.startDate?.let { Text(it.take(10), fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant) }
@@ -268,13 +284,27 @@ private fun RegistrationsTab(
         sortedKeys.forEach { key ->
             val items = grouped[key] ?: return@forEach
             val first = items.first()
+            val status = classifyPlayerEntryStatus(items)
+            val isMainDraw = status == PlayerEntryStatus.ACCEPTED
             Card(
-                modifier = Modifier.fillMaxWidth().clickable { onTournamentClick(first.tournamentInternalId) },
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .then(if (!isMainDraw) Modifier.border(1.dp, Color.Gray.copy(alpha = 0.35f), RoundedCornerShape(12.dp)) else Modifier)
+                    .clickable { onTournamentClick(first.tournamentInternalId) },
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = if (isMainDraw) 0.5f else 0.25f)
+                )
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text(first.tournamentName, fontWeight = FontWeight.SemiBold, modifier = Modifier.weight(1f))
+                        Text(
+                            first.tournamentName,
+                            fontWeight = FontWeight.SemiBold,
+                            modifier = Modifier.weight(1f),
+                            color = if (isMainDraw) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
+                        )
+                        EntryStatusBadge(status)
+                        Spacer(Modifier.width(6.dp))
                         LevelBadge(level = first.tournamentLevel)
                     }
                     first.startDate?.let { Text(it.take(10), fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant) }
@@ -379,4 +409,40 @@ private fun RankingsTab(
             }
         }
     }
+}
+
+// Entry status classification for player profiles
+
+private enum class PlayerEntryStatus { ACCEPTED, ALTERNATE, WITHDRAWN }
+
+private fun classifyPlayerEntryStatus(entries: List<PlayerTournamentEntry>): PlayerEntryStatus {
+    for (e in entries) {
+        val s = (e.entryStatus ?: "").uppercase()
+        if (s.contains("DIRECT") || s == "REGISTERED") return PlayerEntryStatus.ACCEPTED
+    }
+    for (e in entries) {
+        val s = (e.entryStatus ?: "").uppercase()
+        if (s.contains("ALTERNATE") || s.contains("UNGROUPED")) return PlayerEntryStatus.ALTERNATE
+    }
+    for (e in entries) {
+        val s = (e.entryStatus ?: "").uppercase()
+        if (s.contains("WITHDRAWN")) return PlayerEntryStatus.WITHDRAWN
+    }
+    return PlayerEntryStatus.ACCEPTED
+}
+
+@Composable
+private fun EntryStatusBadge(status: PlayerEntryStatus) {
+    val (label, bgColor, fgColor) = when (status) {
+        PlayerEntryStatus.ACCEPTED -> Triple("Accepted", TennisGreen.copy(alpha = 0.15f), TennisGreen)
+        PlayerEntryStatus.ALTERNATE -> Triple("Alternate", Color(0xFFF97316).copy(alpha = 0.15f), Color(0xFFF97316))
+        PlayerEntryStatus.WITHDRAWN -> Triple("Withdrawn", Color(0xFFEF4444).copy(alpha = 0.15f), Color(0xFFEF4444))
+    }
+    Text(
+        label,
+        fontSize = 10.sp,
+        fontWeight = FontWeight.Medium,
+        color = fgColor,
+        modifier = Modifier.clip(RoundedCornerShape(10.dp)).background(bgColor).padding(horizontal = 6.dp, vertical = 2.dp)
+    )
 }

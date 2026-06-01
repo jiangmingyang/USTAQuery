@@ -68,12 +68,21 @@ class TournamentDetailViewModel(private val tournamentId: Int) : ViewModel() {
         val singlesOrOther = mutableListOf<TournamentEntry>()
 
         for (e in entries) {
-            val isDoubles = (e.eventType ?: "").uppercase().contains("DOUBLES")
-            val isTeam = (e.playerName ?: "").contains("/") && (e.firstName ?: "").isBlank()
+            val evType = (e.eventType ?: "").uppercase()
+            val isDoubles = evType.contains("DOUBLES")
+            val isTeamEvent = evType.contains("TEAM")
+            val hasSlash = (e.playerName ?: "").contains("/")
+            val hasFirstName = (e.firstName ?: "").isNotBlank()
 
             when {
-                isDoubles && isTeam -> teamEntries.add(e)
-                isDoubles && (e.firstName ?: "").isNotBlank() -> {
+                isTeamEvent && !hasFirstName -> {
+                    // TEAM event synthetic entry: pair summary or team name — skip both
+                }
+                isDoubles && hasSlash && !hasFirstName -> {
+                    // Doubles pair summary (e.g. "Racic/Yamamoto")
+                    teamEntries.add(e)
+                }
+                isDoubles && hasFirstName -> {
                     val ln = (e.lastName ?: "").trim().lowercase()
                     val key = "${e.eventId}::${e.drawId ?: ""}::$ln"
                     individualsByKey.getOrPut(key) { mutableListOf() }.add(e)
@@ -138,7 +147,7 @@ class TournamentDetailViewModel(private val tournamentId: Int) : ViewModel() {
         val s = status?.uppercase() ?: return "Other"
         return when {
             s.contains("DIRECT") || s == "REGISTERED" -> "Acceptance"
-            s.contains("ALTERNATE") -> "Alternates"
+            s.contains("ALTERNATE") || s.contains("UNGROUPED") -> "Alternates"
             s.contains("WITHDRAWN") -> "Withdrawn"
             else -> "Other"
         }
