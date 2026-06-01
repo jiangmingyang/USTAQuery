@@ -53,6 +53,9 @@ struct PlayerProfileView: View {
         }
         .navigationTitle(viewModel.player.map { "\($0.firstName) \($0.lastName)" } ?? "Player")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationDestination(for: TournamentRoute.self) { route in
+            TournamentDetailView(tournamentId: route.id)
+        }
         .task { await viewModel.loadProfile() }
         .refreshable { await viewModel.loadProfile() }
         .onChange(of: viewModel.selectedTab) { _, tab in

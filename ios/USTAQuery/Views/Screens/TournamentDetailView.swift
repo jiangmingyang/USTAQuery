@@ -56,6 +56,9 @@ struct TournamentDetailView: View {
         }
         .navigationTitle(viewModel.tournament?.name ?? "Tournament")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationDestination(for: PlayerRoute.self) { route in
+            PlayerProfileView(uaid: route.uaid)
+        }
         .toolbar {
             if let tournament = viewModel.tournament, let tid = tournament.tournamentId, let slug = tournament.orgSlug {
                 ToolbarItem(placement: .topBarTrailing) {

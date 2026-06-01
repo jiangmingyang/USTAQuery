@@ -85,6 +85,15 @@ private struct EntryRow: View {
 
             Spacer()
 
+            // Points
+            let totalPts = row.entries.compactMap { $0.rankingPoints }.reduce(0, +)
+            if totalPts > 0 {
+                Text("\(totalPts)")
+                    .font(.caption.monospaced())
+                    .foregroundStyle(.secondary)
+                    .frame(width: 40, alignment: .trailing)
+            }
+
             // Event label (when showing all events)
             if showEvent, let event = eventMap[row.eventId] {
                 Text(eventLabel(event))

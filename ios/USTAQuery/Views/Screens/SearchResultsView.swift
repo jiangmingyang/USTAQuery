@@ -26,7 +26,7 @@ struct SearchResultsView: View {
                 } else {
                     List {
                         ForEach(results.content) { player in
-                            NavigationLink(value: PlayerRoute(uaid: player.uaid)) {
+                            NavigationLink(destination: PlayerProfileView(uaid: player.uaid)) {
                                 PlayerCard(player: player)
                             }
                         }

@@ -18,7 +18,7 @@ struct HomeView: View {
                             .font(.subheadline)
                             .foregroundStyle(.white.opacity(0.85))
 
-                        SearchBarView(text: $searchText, placeholder: "Search by name or UAID...") {
+                        SearchBarView(text: $searchText, placeholder: "Search players or tournaments...") {
                             navigateToSearch = true
                         }
                         .padding(.horizontal)
@@ -28,10 +28,9 @@ struct HomeView: View {
 
                 // Feature cards
                 VStack(spacing: AppTheme.sectionSpacing) {
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
                         FeatureCard(icon: "person.2", title: "Players", description: "Search player profiles and stats")
                         FeatureCard(icon: "trophy", title: "Tournaments", description: "Browse upcoming and past events")
-                        FeatureCard(icon: "sportscourt", title: "Matches", description: "View match results and scores")
                         FeatureCard(icon: "chart.bar", title: "Rankings", description: "National ranking leaderboards")
                     }
                     .padding(.horizontal)
@@ -42,14 +41,17 @@ struct HomeView: View {
                             .font(.headline)
                             .padding(.horizontal)
 
+                        let quickItems = AppConstants.ageRestrictions.flatMap { age in
+                            AppConstants.genders.map { gender in
+                                (gender: gender, age: age)
+                            }
+                        }
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 8) {
-                            ForEach(AppConstants.ageRestrictions, id: \.self) { age in
-                                ForEach(AppConstants.genders, id: \.value) { gender in
-                                    NavigationLink(value: RankingRoute(gender: gender.value, age: age)) {
-                                        QuickRankingCard(gender: gender.label, age: age)
-                                    }
-                                    .buttonStyle(.plain)
+                            ForEach(Array(quickItems.enumerated()), id: \.offset) { _, item in
+                                NavigationLink(value: RankingRoute(gender: item.gender.value, age: item.age)) {
+                                    QuickRankingCard(gender: item.gender.label, age: item.age)
                                 }
+                                .buttonStyle(.plain)
                             }
                         }
                         .padding(.horizontal)
@@ -128,7 +130,7 @@ private struct QuickRankingCard: View {
 
     var body: some View {
         HStack {
-            Text("\(gender) \(age)")
+            Text("\(gender) \(AppConstants.ageGroupLabels[age] ?? age)")
                 .font(.caption.weight(.medium))
             Spacer()
             Image(systemName: "chevron.right")

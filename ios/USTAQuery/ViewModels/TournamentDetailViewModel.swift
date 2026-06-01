@@ -167,12 +167,19 @@ final class TournamentDetailViewModel {
             rows.append(DisplayRow(entries: [e], eventId: e.eventId, entryPosition: e.entryPosition, entryStatus: e.entryStatus))
         }
 
-        // Sort by entryPosition when available, otherwise preserve order
-        let hasPositions = rows.contains { $0.entryPosition != nil }
-        if hasPositions {
-            rows.sort { a, b in
-                (a.entryPosition ?? Int.max) < (b.entryPosition ?? Int.max)
+        // Sort: entryPosition first, then pts descending
+        rows.sort { a, b in
+            let aPos = a.entryPosition
+            let bPos = b.entryPosition
+            if let aPos = aPos, let bPos = bPos {
+                return aPos < bPos
             }
+            if aPos != nil && bPos == nil { return true }
+            if aPos == nil && bPos != nil { return false }
+            // Both null: sort by total pts descending
+            let aPts = a.entries.compactMap { $0.rankingPoints }.reduce(0, +)
+            let bPts = b.entries.compactMap { $0.rankingPoints }.reduce(0, +)
+            return aPts > bPts
         }
 
         return rows

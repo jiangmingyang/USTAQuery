@@ -191,10 +191,10 @@ def scrape_tournament_api(
     from pages.tournament_api_page import fetch_sections
     from parsers.tournament_api_parser import parse_tournament_results
 
-    # Resolve date range
+    # Resolve date range: explicit from/to takes precedence over year/month defaults
     if year:
-        date_from = f"{year}-01-01"
-        date_to = f"{year}-12-31"
+        date_from = date_from or f"{year}-01-01"
+        date_to = date_to or f"{year}-12-31"
     elif month:
         from datetime import date, timedelta
         parts = month.split("-")
@@ -204,8 +204,8 @@ def scrape_tournament_api(
             last_day = date(y + 1, 1, 1) - timedelta(days=1)
         else:
             last_day = date(y, m + 1, 1) - timedelta(days=1)
-        date_from = first_day.isoformat()
-        date_to = last_day.isoformat()
+        date_from = date_from or first_day.isoformat()
+        date_to = date_to or last_day.isoformat()
 
     job_id = db.create_scrape_job(
         "tournament_api",
@@ -419,10 +419,10 @@ def scrape_tournament_details_batch(
     """
     from pages.tournament_detail_graphql import scrape_tournament_detail_graphql
 
-    # Resolve date range from year
+    # Resolve date range: year provides defaults, but explicit from/to takes precedence
     if year:
-        date_from = f"{year}-01-01"
-        date_to = f"{year}-12-31"
+        date_from = date_from or f"{year}-01-01"
+        date_to = date_to or f"{year}-12-31"
 
     tournaments = db.get_tournaments_to_scrape(date_from, date_to, limit)
     total = len(tournaments)

@@ -74,6 +74,9 @@ final class RankingsViewModel {
     private func fetchVersions(_ catId: String) async {
         do {
             versions = try await APIClient.getRankingVersions(catalogId: catId)
+            if !versions.isEmpty && publishDate.isEmpty {
+                publishDate = versions[0]
+            }
         } catch {
             versions = []
         }
