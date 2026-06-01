@@ -23,7 +23,8 @@ WORKDIR /app
 # Install Python dependencies
 COPY .qoder/skills/usta-data-parser/scripts/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt \
-    && playwright install-deps
+    && playwright install-deps \
+    && playwright install chromium
 
 # Copy scraper source
 COPY .qoder/skills/usta-data-parser/scripts/ ./
