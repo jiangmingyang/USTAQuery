@@ -2,7 +2,6 @@ import SwiftUI
 
 struct RankingsView: View {
     @State private var vm = RankingsViewModel()
-    @State private var showFilters = false
 
     var initialGender: String?
     var initialAge: String?
@@ -17,9 +16,6 @@ struct RankingsView: View {
         .navigationDestination(for: PlayerRoute.self) { route in
             PlayerProfileView(uaid: route.uaid)
         }
-        .sheet(isPresented: $showFilters) {
-            filterSheet
-        }
         .task {
             if let g = initialGender { vm.gender = g }
             if let a = initialAge { vm.ageRestriction = a }
@@ -31,56 +27,24 @@ struct RankingsView: View {
     // MARK: - Filter Bar
 
     private var filterBar: some View {
-        VStack(spacing: 12) {
-            // Summary + filter button
-            HStack {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(vm.selectedList.label)
-                        .font(.subheadline.weight(.medium))
-                        .lineLimit(1)
-                    Text("\(vm.genderLabel) \(vm.ageLabel)")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                FilterMenu(label: "List", options: AppConstants.listTypes.map { ($0.value, $0.label) }, selectedValue: vm.listKey) { val in
+                    vm.updateFilter(list: val)
                 }
-                Spacer()
-                Button {
-                    showFilters = true
-                } label: {
-                    Label("Filters", systemImage: "line.3.horizontal.decrease.circle")
-                        .font(.subheadline)
+                FilterMenu(label: "Gender", options: AppConstants.genders.map { ($0.value, $0.label) }, selectedValue: vm.gender) { val in
+                    vm.updateFilter(gender: val)
+                }
+                FilterMenu(label: "Age", options: AppConstants.ageRestrictions.map { ($0, AppConstants.ageGroupLabels[$0] ?? $0) }, selectedValue: vm.ageRestriction) { val in
+                    vm.updateFilter(age: val)
+                }
+                FilterMenu(label: "Version", options: [("", "Latest")] + vm.versions.map { ($0, formatVersionDate($0)) }, selectedValue: vm.publishDate) { val in
+                    vm.updateVersion(val)
                 }
             }
-
-            // Version picker (inline when versions available)
-            if !vm.versions.isEmpty {
-                HStack(spacing: 8) {
-                    Text("Version")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                    Picker("Version", selection: Binding(
-                        get: { vm.publishDate },
-                        set: { vm.updateVersion($0) }
-                    )) {
-                        Text("Latest").tag("")
-                        ForEach(vm.versions, id: \.self) { v in
-                            Text(formatVersionDate(v)).tag(v)
-                        }
-                    }
-                    .pickerStyle(.menu)
-                    .tint(AppTheme.tennisGreen)
-                    Spacer()
-                }
-            }
-
-            if let data = vm.data, !data.content.isEmpty {
-                Text("\(data.totalElements) players")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }
+            .padding(.horizontal)
+            .padding(.vertical, 8)
         }
-        .padding(.horizontal)
-        .padding(.vertical, 8)
         .background(Color(.systemGroupedBackground))
     }
 
@@ -229,82 +193,6 @@ struct RankingsView: View {
         }
     }
 
-    // MARK: - Filter Sheet
-
-    private var filterSheet: some View {
-        NavigationStack {
-            List {
-                // Ranking List Type
-                Section("Ranking List") {
-                    ForEach(AppConstants.listTypes, id: \.value) { lt in
-                        Button {
-                            vm.updateFilter(list: lt.value)
-                        } label: {
-                            HStack {
-                                Text(lt.label)
-                                    .font(.subheadline)
-                                    .foregroundStyle(.primary)
-                                Spacer()
-                                if vm.listKey == lt.value {
-                                    Image(systemName: "checkmark")
-                                        .foregroundStyle(AppTheme.tennisGreen)
-                                }
-                            }
-                        }
-                    }
-                }
-
-                // Gender
-                Section("Gender") {
-                    ForEach(AppConstants.genders, id: \.value) { g in
-                        Button {
-                            vm.updateFilter(gender: g.value)
-                        } label: {
-                            HStack {
-                                Text(g.label)
-                                    .font(.subheadline)
-                                    .foregroundStyle(.primary)
-                                Spacer()
-                                if vm.gender == g.value {
-                                    Image(systemName: "checkmark")
-                                        .foregroundStyle(AppTheme.tennisGreen)
-                                }
-                            }
-                        }
-                    }
-                }
-
-                // Age Group
-                Section("Age Group") {
-                    ForEach(AppConstants.ageRestrictions, id: \.self) { age in
-                        Button {
-                            vm.updateFilter(age: age)
-                        } label: {
-                            HStack {
-                                Text(AppConstants.ageGroupLabels[age] ?? age)
-                                    .font(.subheadline)
-                                    .foregroundStyle(.primary)
-                                Spacer()
-                                if vm.ageRestriction == age {
-                                    Image(systemName: "checkmark")
-                                        .foregroundStyle(AppTheme.tennisGreen)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            .navigationTitle("Filter Rankings")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Done") { showFilters = false }
-                }
-            }
-        }
-        .presentationDetents([.medium, .large])
-    }
-
     // MARK: - Helpers
 
     private func formatVersionDate(_ dateString: String) -> String {
@@ -313,5 +201,49 @@ struct RankingsView: View {
         guard let date = formatter.date(from: dateString) else { return dateString }
         formatter.dateFormat = "MMM d, yyyy"
         return formatter.string(from: date)
+    }
+}
+
+// MARK: - Filter Menu Dropdown
+
+private struct FilterMenu: View {
+    let label: String
+    let options: [(value: String, label: String)]
+    let selectedValue: String
+    let onSelect: (String) -> Void
+
+    var body: some View {
+        Menu {
+            ForEach(options, id: \.value) { opt in
+                Button {
+                    onSelect(opt.value)
+                } label: {
+                    HStack {
+                        Text(opt.label)
+                        if opt.value == selectedValue {
+                            Image(systemName: "checkmark")
+                        }
+                    }
+                }
+            }
+        } label: {
+            HStack(spacing: 4) {
+                Text(selectedLabel)
+                    .font(.caption.weight(.medium))
+                    .lineLimit(1)
+                Image(systemName: "chevron.down")
+                    .font(.caption2)
+            }
+            .foregroundStyle(.primary)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 6)
+            .background(Color(.systemBackground))
+            .clipShape(RoundedRectangle(cornerRadius: 6))
+            .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color(.separator), lineWidth: 0.5))
+        }
+    }
+
+    private var selectedLabel: String {
+        options.first(where: { $0.value == selectedValue })?.label ?? label
     }
 }

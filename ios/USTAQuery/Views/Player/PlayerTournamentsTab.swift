@@ -64,13 +64,15 @@ private struct TournamentEntryCard: View {
             }
 
             // Event entries
-            ForEach(entries, id: \.id) { entry in
-                Text(compactEventLabel(entry))
-                    .font(.caption2.weight(.medium))
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 2)
-                    .background(Color(.systemGray5))
-                    .clipShape(Capsule())
+            FlowLayout(spacing: 6) {
+                ForEach(entries, id: \.id) { entry in
+                    Text(compactEventLabel(entry))
+                        .font(.caption2.weight(.medium))
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 2)
+                        .background(Color(.systemGray5))
+                        .clipShape(Capsule())
+                }
             }
         }
         .padding()

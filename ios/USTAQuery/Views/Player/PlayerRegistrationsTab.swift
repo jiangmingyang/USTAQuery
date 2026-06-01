@@ -80,13 +80,15 @@ private struct ActiveTournamentEntryCard: View {
                 RegistrationStatusBadge(status: regStatus)
             }
 
-            ForEach(allEntries, id: \.id) { e in
-                Text(compactEventLabel(e))
-                    .font(.caption2.weight(.medium))
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 2)
-                    .background(Color(.systemGray5))
-                    .clipShape(Capsule())
+            FlowLayout(spacing: 6) {
+                ForEach(allEntries, id: \.id) { e in
+                    Text(compactEventLabel(e))
+                        .font(.caption2.weight(.medium))
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 2)
+                        .background(Color(.systemGray5))
+                        .clipShape(Capsule())
+                }
             }
         }
         .padding()

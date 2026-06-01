@@ -5,6 +5,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -210,6 +212,7 @@ private fun PlayerInfoTab(player: com.usta.query.data.model.PlayerDetail) {
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun TournamentsTab(
     entries: List<PlayerTournamentEntry>,
@@ -237,8 +240,8 @@ private fun TournamentsTab(
                     }
                     first.startDate?.let { Text(it.take(10), fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant) }
                     Spacer(Modifier.height(6.dp))
-                    items.forEach { entry ->
-                        Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                        items.forEach { entry ->
                             Text(compactPlayerEventLabel(entry.eventGender, entry.eventAgeCategory, entry.eventType).ifBlank { entry.eventType ?: "Event" }, fontSize = 12.sp, modifier = Modifier.clip(RoundedCornerShape(4.dp)).background(MaterialTheme.colorScheme.surfaceVariant).padding(horizontal = 6.dp, vertical = 2.dp))
                         }
                     }
@@ -248,6 +251,7 @@ private fun TournamentsTab(
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun RegistrationsTab(
     entries: List<PlayerTournamentEntry>,
@@ -276,8 +280,8 @@ private fun RegistrationsTab(
                     first.startDate?.let { Text(it.take(10), fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant) }
                     first.registrationStatus?.let { StatusBadge(it, Modifier.padding(top = 6.dp)) }
                     Spacer(Modifier.height(6.dp))
-                    items.forEach { entry ->
-                        Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                        items.forEach { entry ->
                             Text(compactPlayerEventLabel(entry.eventGender, entry.eventAgeCategory, entry.eventType).ifBlank { entry.eventType ?: "Event" }, fontSize = 12.sp, modifier = Modifier.clip(RoundedCornerShape(4.dp)).background(MaterialTheme.colorScheme.surfaceVariant).padding(horizontal = 6.dp, vertical = 2.dp))
                         }
                     }

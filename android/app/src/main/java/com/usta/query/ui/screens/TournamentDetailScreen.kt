@@ -1,16 +1,19 @@
 package com.usta.query.ui.screens
 
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -18,6 +21,9 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.CalendarMonth
+import androidx.compose.material.icons.filled.EmojiEvents
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -32,6 +38,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -78,7 +85,7 @@ fun TournamentDetailScreen(
                     val tournament = viewModel.tournament!!
                     Column(modifier = Modifier.fillMaxSize()) {
                         // Header info
-                        Column(modifier = Modifier.verticalScroll(rememberScrollState()).padding(16.dp)) {
+                        Column(modifier = Modifier.verticalScroll(rememberScrollState()).padding(horizontal = 16.dp, vertical = 10.dp)) {
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Column(modifier = Modifier.weight(1f)) {
                                     Text(tournament.name, fontWeight = FontWeight.Bold, fontSize = 18.sp)
@@ -88,62 +95,70 @@ fun TournamentDetailScreen(
                                 }
                                 LevelBadge(level = tournament.level)
                             }
-                            Spacer(Modifier.height(8.dp))
+                            Spacer(Modifier.height(6.dp))
+
+                            // Info grid (2 columns)
                             val loc = listOfNotNull(tournament.city, tournament.state).filter { it.isNotBlank() }.joinToString(", ")
                             val dates = listOfNotNull(tournament.startDate, tournament.endDate).filter { it.isNotBlank() }.joinToString(" - ")
-                            if (loc.isNotBlank()) {
-                                Text(loc, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            }
-                            if (dates.isNotBlank()) {
-                                Text(dates, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            }
-                            tournament.venueName?.let {
-                                Text(it, fontSize = 13.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            }
-                            tournament.surface?.let {
-                                Text("Surface: $it", fontSize = 13.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            }
-                            tournament.directorName?.let {
-                                Text("Director: $it", fontSize = 13.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            }
-                            Spacer(Modifier.height(8.dp))
-                            tournament.registrationStatus?.let { StatusBadge(it) }
-                            Spacer(Modifier.height(16.dp))
+                            val eventsNum = tournament.eventsCount ?: tournament.events?.size ?: 0
 
-                            // Events filter
-                            if (!tournament.events.isNullOrEmpty()) {
-                                Text("Events", fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
-                                Spacer(Modifier.height(8.dp))
-
-                                // Detect duplicate labels and disambiguate with eventId
-                                val labelCounts = tournament.events.groupingBy { ev ->
-                                    buildEventLabel(ev)
-                                }.eachCount()
-
-                                FlowRow(
-                                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                                    verticalArrangement = Arrangement.spacedBy(4.dp)
-                                ) {
-                                    FilterChip(
-                                        selected = viewModel.selectedEventId == null,
-                                        onClick = { viewModel.selectEvent(null) },
-                                        label = { Text("All") }
-                                    )
-                                    tournament.events.forEach { event ->
-                                        val baseLabel = buildEventLabel(event)
-                                        val label = if ((labelCounts[baseLabel] ?: 0) > 1) {
-                                            "$baseLabel (${event.eventId})"
-                                        } else {
-                                            baseLabel
+                            InfoRow {
+                                if (dates.isNotBlank()) InfoItem(icon = Icons.Default.CalendarMonth, label = "Dates", value = dates)
+                                if (loc.isNotBlank()) InfoItem(icon = Icons.Default.LocationOn, label = "Location", value = loc)
+                            }
+                            InfoRow {
+                                tournament.venueName?.let { InfoItem(label = "Venue", value = it) }
+                                tournament.section?.let { InfoItem(label = "Section", value = it) }
+                            }
+                            InfoRow {
+                                tournament.surface?.let { InfoItem(label = "Surface", value = it) }
+                                tournament.directorName?.let { InfoItem(label = "Director", value = it) }
+                            }
+                            InfoRow {
+                                InfoItem(icon = Icons.Default.EmojiEvents, label = "Events", value = "$eventsNum")
+                                if (tournament.status == "cancelled") {
+                                    InfoItem(label = "Status", value = "Cancelled", valueColor = Color(0xFFEF4444))
+                                } else {
+                                    tournament.registrationStatus?.let {
+                                        val color = when {
+                                            it.contains("open", ignoreCase = true) -> Color(0xFF22C55E)
+                                            it.contains("closed", ignoreCase = true) -> Color(0xFFF97316)
+                                            else -> Color.Unspecified
                                         }
-                                        FilterChip(
-                                            selected = viewModel.selectedEventId == event.eventId,
-                                            onClick = { viewModel.selectEvent(event.eventId) },
-                                            label = { Text(label, fontSize = 12.sp) }
-                                        )
+                                        InfoItem(label = "Status", value = it, valueColor = color)
                                     }
                                 }
-                                Spacer(Modifier.height(16.dp))
+                            }
+                        }
+
+                        // Events filter - horizontal scrollable chips
+                        if (!tournament.events.isNullOrEmpty()) {
+                            val labelCounts = tournament.events.groupingBy { ev ->
+                                buildEventLabel(ev)
+                            }.eachCount()
+
+                            Row(
+                                modifier = Modifier.horizontalScroll(rememberScrollState()).padding(horizontal = 16.dp, vertical = 6.dp),
+                                horizontalArrangement = Arrangement.spacedBy(6.dp)
+                            ) {
+                                FilterChip(
+                                    selected = viewModel.selectedEventId == null,
+                                    onClick = { viewModel.selectEvent(null) },
+                                    label = { Text("All", fontSize = 12.sp) }
+                                )
+                                tournament.events.forEach { event ->
+                                    val baseLabel = buildEventLabel(event)
+                                    val label = if ((labelCounts[baseLabel] ?: 0) > 1) {
+                                        "$baseLabel (${event.eventId})"
+                                    } else {
+                                        baseLabel
+                                    }
+                                    FilterChip(
+                                        selected = viewModel.selectedEventId == event.eventId,
+                                        onClick = { viewModel.selectEvent(event.eventId) },
+                                        label = { Text(label, fontSize = 12.sp) }
+                                    )
+                                }
                             }
                         }
 
@@ -158,7 +173,7 @@ fun TournamentDetailScreen(
                                 val statusOrder = listOf("Acceptance", "Alternates", "Withdrawn", "Other")
                                 LazyColumn(
                                     modifier = Modifier.fillMaxWidth().weight(1f),
-                                    contentPadding = PaddingValues(16.dp),
+                                    contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 16.dp),
                                     verticalArrangement = Arrangement.spacedBy(8.dp)
                                 ) {
                                     for (status in statusOrder) {
@@ -269,4 +284,31 @@ private fun buildEventLabel(event: TournamentEvent): String {
     val age = event.ageCategory ?: ""
     val type = event.eventType ?: ""
     return listOf(gender, age, type).filter { it.isNotBlank() }.joinToString(" ")
+}
+
+@Composable
+private fun InfoRow(content: @Composable RowScope.() -> Unit) {
+    Row(
+        modifier = Modifier.fillMaxWidth().padding(vertical = 1.dp),
+        horizontalArrangement = Arrangement.spacedBy(12.dp),
+        content = content
+    )
+}
+
+@Composable
+private fun RowScope.InfoItem(
+    icon: androidx.compose.ui.graphics.vector.ImageVector? = null,
+    label: String,
+    value: String,
+    valueColor: Color = Color.Unspecified
+) {
+    Column(modifier = Modifier.weight(1f)) {
+        Text(label, fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+            if (icon != null) {
+                Icon(icon, contentDescription = null, modifier = Modifier.size(13.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+            Text(value, fontWeight = FontWeight.Medium, fontSize = 13.sp, color = if (valueColor != Color.Unspecified) valueColor else MaterialTheme.colorScheme.onSurface)
+        }
+    }
 }

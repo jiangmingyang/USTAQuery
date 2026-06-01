@@ -55,36 +55,7 @@ def run_scheduler():
     """Start the APScheduler daemon with configured intervals."""
     scheduler = BlockingScheduler()
 
-    scheduler.add_job(
-        _refresh_stale_players,
-        trigger=IntervalTrigger(seconds=config.SCHEDULE_PLAYER_REFRESH),
-        id="refresh_players",
-        name="Refresh stale player profiles",
-        max_instances=1,
-    )
-
-    scheduler.add_job(
-        _snapshot_rankings,
-        trigger=IntervalTrigger(seconds=config.SCHEDULE_RANKING_SNAPSHOT),
-        id="snapshot_rankings",
-        name="Take ranking snapshots",
-        max_instances=1,
-    )
-
-    scheduler.add_job(
-        _poll_pending_jobs,
-        trigger=IntervalTrigger(seconds=config.SCHEDULE_JOB_POLL),
-        id="poll_jobs",
-        name="Poll pending scrape jobs",
-        max_instances=1,
-    )
-
-    logger.info(
-        "Scheduler started — player refresh: %ds, ranking snapshot: %ds, job poll: %ds",
-        config.SCHEDULE_PLAYER_REFRESH,
-        config.SCHEDULE_RANKING_SNAPSHOT,
-        config.SCHEDULE_JOB_POLL,
-    )
+    logger.info("Scheduler started — no default jobs configured (manual mode)")
 
     try:
         scheduler.start()
