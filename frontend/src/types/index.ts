@@ -125,6 +125,8 @@ export interface PlayerTournamentEntry {
   registrationStatus: string | null
   eventId: string
   eventType: string | null
+  eventGender: string | null
+  eventAgeCategory: string | null
   entryStatus: string | null
   entryStage: string | null
   entryPosition: number | null

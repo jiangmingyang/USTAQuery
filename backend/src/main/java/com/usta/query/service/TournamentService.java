@@ -250,7 +250,35 @@ public class TournamentService {
 
     public List<PlayerTournamentEntryDto> getPlayerEntries(String uaid) {
         List<TournamentEntry> entries = tournamentEntryRepository.findByPlayerUaidWithTournament(uaid);
-        return entries.stream().map(tournamentMapper::toPlayerEntryDto).toList();
+        List<PlayerTournamentEntryDto> dtos = entries.stream().map(tournamentMapper::toPlayerEntryDto).toList();
+
+        // Batch-load events to enrich with gender/ageCategory
+        List<Long> tournamentIds = entries.stream()
+                .map(e -> e.getTournament().getId())
+                .distinct()
+                .toList();
+        if (!tournamentIds.isEmpty()) {
+            Map<Long, Map<String, TournamentEvent>> eventsByTournament =
+                    tournamentEventRepository.findByTournamentIdIn(tournamentIds).stream()
+                            .collect(Collectors.groupingBy(
+                                    e -> e.getTournament().getId(),
+                                    Collectors.toMap(ev -> ev.getEventId().toLowerCase(), ev -> ev, (a, b) -> a)
+                            ));
+            for (PlayerTournamentEntryDto dto : dtos) {
+                Map<String, TournamentEvent> eventMap = eventsByTournament.get(dto.getTournamentInternalId());
+                if (eventMap != null && dto.getEventId() != null) {
+                    TournamentEvent event = eventMap.get(dto.getEventId().toLowerCase());
+                    if (event != null) {
+                        dto.setEventGender(event.getGender());
+                        dto.setEventAgeCategory(event.getAgeCategory());
+                        if (dto.getEventType() == null || dto.getEventType().isEmpty()) {
+                            dto.setEventType(event.getEventType());
+                        }
+                    }
+                }
+            }
+        }
+        return dtos;
     }
 
     public PagedResponse<TournamentDto> searchUnified(String q, Pageable pageable) {

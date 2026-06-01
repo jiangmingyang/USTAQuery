@@ -14,6 +14,8 @@ struct PlayerTournamentEntry: Codable, Identifiable, Hashable {
     let registrationStatus: String?
     let eventId: String
     let eventType: String?
+    let eventGender: String?
+    let eventAgeCategory: String?
     let entryStatus: String?
     let entryStage: String?
     let entryPosition: Int?

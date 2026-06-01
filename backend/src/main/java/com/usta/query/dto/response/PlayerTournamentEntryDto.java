@@ -19,6 +19,8 @@ public class PlayerTournamentEntryDto {
     // Entry info
     private String eventId;
     private String eventType;
+    private String eventGender;
+    private String eventAgeCategory;
     private String entryStatus;
     private String entryStage;
     private Integer entryPosition;
@@ -58,6 +60,12 @@ public class PlayerTournamentEntryDto {
 
     public String getEventType() { return eventType; }
     public void setEventType(String eventType) { this.eventType = eventType; }
+
+    public String getEventGender() { return eventGender; }
+    public void setEventGender(String eventGender) { this.eventGender = eventGender; }
+
+    public String getEventAgeCategory() { return eventAgeCategory; }
+    public void setEventAgeCategory(String eventAgeCategory) { this.eventAgeCategory = eventAgeCategory; }
 
     public String getEntryStatus() { return entryStatus; }
     public void setEntryStatus(String entryStatus) { this.entryStatus = entryStatus; }

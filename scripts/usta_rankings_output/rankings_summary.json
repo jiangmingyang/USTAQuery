@@ -1,0 +1,173 @@
+{
+  "scrape_timestamp": "2026-05-17T17:45:18.786742+00:00",
+  "combinations": [
+    {
+      "label": "Boys_Y12",
+      "file": "usta_rankings_output/rankings_M_Y12.json",
+      "player_count": 100,
+      "metadata": {
+        "catalogId": "JUNIOR_NULL_M_STANDING_Y12_UNDER_NULL_NULL_NULL",
+        "displayLabel": "Boys' 12 National Standings List (combined)",
+        "publishDate": "2026-05-13T09:43:14.027Z",
+        "listType": "STANDING",
+        "playerType": "JUNIOR",
+        "rankListGender": "M",
+        "ageRestriction": "Y12",
+        "ageRestrictionModifier": "UNDER",
+        "matchFormat": null,
+        "matchFormatType": null,
+        "familyCategory": null,
+        "totalPages": 77,
+        "totalResults": 7643,
+        "pageSize": 100
+      }
+    },
+    {
+      "label": "Boys_Y14",
+      "file": "usta_rankings_output/rankings_M_Y14.json",
+      "player_count": 100,
+      "metadata": {
+        "catalogId": "JUNIOR_NULL_M_STANDING_Y14_UNDER_NULL_NULL_NULL",
+        "displayLabel": "Boys' 14 National Standings List (combined)",
+        "publishDate": "2026-05-13T09:38:53.020Z",
+        "listType": "STANDING",
+        "playerType": "JUNIOR",
+        "rankListGender": "M",
+        "ageRestriction": "Y14",
+        "ageRestrictionModifier": "UNDER",
+        "matchFormat": null,
+        "matchFormatType": null,
+        "familyCategory": null,
+        "totalPages": 100,
+        "totalResults": 10000,
+        "pageSize": 100
+      }
+    },
+    {
+      "label": "Boys_Y16",
+      "file": "usta_rankings_output/rankings_M_Y16.json",
+      "player_count": 100,
+      "metadata": {
+        "catalogId": "JUNIOR_NULL_M_STANDING_Y16_UNDER_NULL_NULL_NULL",
+        "displayLabel": "Boys' 16 National Standings List (combined)",
+        "publishDate": "2026-05-13T09:42:16.205Z",
+        "listType": "STANDING",
+        "playerType": "JUNIOR",
+        "rankListGender": "M",
+        "ageRestriction": "Y16",
+        "ageRestrictionModifier": "UNDER",
+        "matchFormat": null,
+        "matchFormatType": null,
+        "familyCategory": null,
+        "totalPages": 100,
+        "totalResults": 10000,
+        "pageSize": 100
+      }
+    },
+    {
+      "label": "Boys_Y18",
+      "file": "usta_rankings_output/rankings_M_Y18.json",
+      "player_count": 100,
+      "metadata": {
+        "catalogId": "JUNIOR_NULL_M_STANDING_Y18_UNDER_NULL_NULL_NULL",
+        "displayLabel": "Boys' 18 National Standings List (combined)",
+        "publishDate": "2026-05-13T09:31:27.517Z",
+        "listType": "STANDING",
+        "playerType": "JUNIOR",
+        "rankListGender": "M",
+        "ageRestriction": "Y18",
+        "ageRestrictionModifier": "UNDER",
+        "matchFormat": null,
+        "matchFormatType": null,
+        "familyCategory": null,
+        "totalPages": 100,
+        "totalResults": 10000,
+        "pageSize": 100
+      }
+    },
+    {
+      "label": "Girls_Y12",
+      "file": "usta_rankings_output/rankings_F_Y12.json",
+      "player_count": 100,
+      "metadata": {
+        "catalogId": "JUNIOR_NULL_F_STANDING_Y12_UNDER_NULL_NULL_NULL",
+        "displayLabel": "Girls' 12 National Standings List (combined)",
+        "publishDate": "2026-05-13T09:37:09.294Z",
+        "listType": "STANDING",
+        "playerType": "JUNIOR",
+        "rankListGender": "F",
+        "ageRestriction": "Y12",
+        "ageRestrictionModifier": "UNDER",
+        "matchFormat": null,
+        "matchFormatType": null,
+        "familyCategory": null,
+        "totalPages": 52,
+        "totalResults": 5170,
+        "pageSize": 100
+      }
+    },
+    {
+      "label": "Girls_Y14",
+      "file": "usta_rankings_output/rankings_F_Y14.json",
+      "player_count": 100,
+      "metadata": {
+        "catalogId": "JUNIOR_NULL_F_STANDING_Y14_UNDER_NULL_NULL_NULL",
+        "displayLabel": "Girls' 14 National Standings List (combined)",
+        "publishDate": "2026-05-13T09:44:35.247Z",
+        "listType": "STANDING",
+        "playerType": "JUNIOR",
+        "rankListGender": "F",
+        "ageRestriction": "Y14",
+        "ageRestrictionModifier": "UNDER",
+        "matchFormat": null,
+        "matchFormatType": null,
+        "familyCategory": null,
+        "totalPages": 100,
+        "totalResults": 10000,
+        "pageSize": 100
+      }
+    },
+    {
+      "label": "Girls_Y16",
+      "file": "usta_rankings_output/rankings_F_Y16.json",
+      "player_count": 100,
+      "metadata": {
+        "catalogId": "JUNIOR_NULL_F_STANDING_Y16_UNDER_NULL_NULL_NULL",
+        "displayLabel": "Girls' 16 National Standings List (combined)",
+        "publishDate": "2026-05-13T09:40:26.687Z",
+        "listType": "STANDING",
+        "playerType": "JUNIOR",
+        "rankListGender": "F",
+        "ageRestriction": "Y16",
+        "ageRestrictionModifier": "UNDER",
+        "matchFormat": null,
+        "matchFormatType": null,
+        "familyCategory": null,
+        "totalPages": 100,
+        "totalResults": 10000,
+        "pageSize": 100
+      }
+    },
+    {
+      "label": "Girls_Y18",
+      "file": "usta_rankings_output/rankings_F_Y18.json",
+      "player_count": 100,
+      "metadata": {
+        "catalogId": "JUNIOR_NULL_F_STANDING_Y18_UNDER_NULL_NULL_NULL",
+        "displayLabel": "Girls' 18 National Standings List (combined)",
+        "publishDate": "2026-05-13T09:32:34.643Z",
+        "listType": "STANDING",
+        "playerType": "JUNIOR",
+        "rankListGender": "F",
+        "ageRestriction": "Y18",
+        "ageRestrictionModifier": "UNDER",
+        "matchFormat": null,
+        "matchFormatType": null,
+        "familyCategory": null,
+        "totalPages": 100,
+        "totalResults": 10000,
+        "pageSize": 100
+      }
+    }
+  ]
+}

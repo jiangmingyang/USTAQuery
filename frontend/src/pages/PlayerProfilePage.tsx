@@ -8,6 +8,21 @@ import { LoadingSection, EmptyState, ErrorAlert, LevelBadge } from "@/components
 import { cn, formatDate } from "@/lib/utils"
 import { AGE_RESTRICTIONS, LIST_TYPES, formatRankingListName } from "@/lib/constants"
 
+const EVENT_GENDER_MAP: Record<string, string> = {
+  M: "Boys", Male: "Boys", male: "Boys", boys: "Boys", Boys: "Boys",
+  F: "Girls", Female: "Girls", female: "Girls", girls: "Girls", Girls: "Girls",
+  Coed: "Coed", coed: "Coed", Mixed: "Mixed", mixed: "Mixed",
+}
+
+function compactEventLabel(e: PlayerTournamentEntry): string {
+  const gender = EVENT_GENDER_MAP[e.eventGender || ""] || e.eventGender || ""
+  const age = e.eventAgeCategory || ""
+  const type = e.eventType?.toLowerCase().startsWith("s") ? "S"
+    : e.eventType?.toLowerCase().startsWith("d") ? "D"
+    : e.eventType || ""
+  return [gender, age, type].filter(Boolean).join(" ")
+}
+
 type Tab = "info" | "tournaments" | "registrations" | "matches" | "rankings"
 
 export function PlayerProfilePage() {
@@ -177,21 +192,11 @@ function TournamentsTab({ entries, loading }: { entries: PlayerTournamentEntry[]
               {t.level && <LevelBadge level={t.level} />}
             </div>
             <div className="flex flex-wrap gap-1.5 mt-2">
-              {t.entries.map((e, i) => {
-                const es = (e.entryStatus || "").toUpperCase()
-                const entryColor = es.includes("DIRECT") || es === "REGISTERED"
-                  ? "bg-primary/10 text-primary"
-                  : es.includes("WITHDRAWN")
-                    ? "bg-destructive/10 text-destructive"
-                    : es.includes("ALTERNATE")
-                      ? "bg-accent text-accent-foreground"
-                      : "bg-muted text-muted-foreground"
-                return (
-                  <span key={`${e.eventId}-${i}`} className={cn("inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium", entryColor)}>
-                    {e.eventType || "Event"}
+              {t.entries.map((e, i) => (
+                  <span key={`${e.eventId}-${i}`} className="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium bg-muted text-muted-foreground">
+                    {compactEventLabel(e) || e.eventType || "Event"}
                   </span>
-                )
-              })}
+              ))}
             </div>
           </Link>
         )
@@ -223,14 +228,6 @@ function RegistrationsTab({ entries, loading }: { entries: PlayerTournamentEntry
       })
     }
     grouped.get(tid)!.entries.push(e)
-  }
-
-  function entryStatusColor(status: string | null): string {
-    const s = (status || "").toUpperCase()
-    if (s.includes("DIRECT") || s === "REGISTERED") return "bg-primary/10 text-primary"
-    if (s.includes("WITHDRAWN")) return "bg-destructive/10 text-destructive"
-    if (s.includes("ALTERNATE")) return "bg-accent text-accent-foreground"
-    return "bg-muted text-muted-foreground"
   }
 
   function regStatusBadge(status: string | null) {
@@ -267,8 +264,8 @@ function RegistrationsTab({ entries, loading }: { entries: PlayerTournamentEntry
           </div>
           <div className="flex flex-wrap gap-1.5 mt-2">
             {t.entries.map((e, i) => (
-              <span key={`${e.eventId}-${i}`} className={cn("inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium", entryStatusColor(e.entryStatus))}>
-                {e.eventType || "Event"}
+              <span key={`${e.eventId}-${i}`} className="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium bg-muted text-muted-foreground">
+                {compactEventLabel(e) || e.eventType || "Event"}
               </span>
             ))}
           </div>

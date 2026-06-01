@@ -1,0 +1,2421 @@
+{
+  "metadata": {
+    "catalogId": "JUNIOR_NULL_M_STANDING_Y16_UNDER_NULL_NULL_NULL",
+    "displayLabel": "Boys' 16 National Standings List (combined)",
+    "publishDate": "2026-05-13T09:42:16.205Z",
+    "listType": "STANDING",
+    "playerType": "JUNIOR",
+    "rankListGender": "M",
+    "ageRestriction": "Y16",
+    "ageRestrictionModifier": "UNDER",
+    "matchFormat": null,
+    "matchFormatType": null,
+    "familyCategory": null,
+    "totalPages": 100,
+    "totalResults": 10000,
+    "pageSize": 100
+  },
+  "players": [
+    {
+      "name": "Andrew Johnson",
+      "uaid": "2010688342",
+      "city": "Rancho Palos Verdes",
+      "state": "CA",
+      "trend": "no change",
+      "points": 15988,
+      "rank": {
+        "national": 1,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Southern California"
+      },
+      "district": {
+        "name": "Southern California"
+      },
+      "pointsRecord": {
+        "singlesPoints": 11048,
+        "doublesPoints": 10260,
+        "bonusPoints": 3401
+      }
+    },
+    {
+      "name": "Michael Antonius",
+      "uaid": "2010868976",
+      "city": "Buffalo",
+      "state": "NY",
+      "trend": "no change",
+      "points": 13037,
+      "rank": {
+        "national": 2,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Eastern"
+      },
+      "district": {
+        "name": "Western Region"
+      },
+      "pointsRecord": {
+        "singlesPoints": 10125,
+        "doublesPoints": 8295,
+        "bonusPoints": 1668
+      }
+    },
+    {
+      "name": "Eli Kaminski",
+      "uaid": "2010866666",
+      "city": "Fairfax Station",
+      "state": "VA",
+      "trend": "no change",
+      "points": 12713,
+      "rank": {
+        "national": 3,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Mid-Atlantic"
+      },
+      "district": {
+        "name": "Virginia"
+      },
+      "pointsRecord": {
+        "singlesPoints": 9013,
+        "doublesPoints": 8438,
+        "bonusPoints": 2434
+      }
+    },
+    {
+      "name": "Piotr Gradzki",
+      "uaid": "2017375800",
+      "city": "Ridgewood",
+      "state": "NY",
+      "trend": "no change",
+      "points": 11001,
+      "rank": {
+        "national": 4,
+        "section": 2,
+        "district": 1
+      },
+      "section": {
+        "name": "Eastern"
+      },
+      "district": {
+        "name": "Metropolitan Region"
+      },
+      "pointsRecord": {
+        "singlesPoints": 6912,
+        "doublesPoints": 4350,
+        "bonusPoints": 3436
+      }
+    },
+    {
+      "name": "Lennart Hammargren",
+      "uaid": "2018466478",
+      "city": "Bradenton",
+      "state": "FL",
+      "trend": "no change",
+      "points": 10303,
+      "rank": {
+        "national": 5,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Florida"
+      },
+      "district": {
+        "name": "Region 5"
+      },
+      "pointsRecord": {
+        "singlesPoints": 7958,
+        "doublesPoints": 4575,
+        "bonusPoints": 1659
+      }
+    },
+    {
+      "name": "Daniel Malacek",
+      "uaid": "2010931833",
+      "city": "Kirkland",
+      "state": "WA",
+      "trend": "no change",
+      "points": 10024,
+      "rank": {
+        "national": 6,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Pacific NW"
+      },
+      "district": {
+        "name": "Northwest Washington"
+      },
+      "pointsRecord": {
+        "singlesPoints": 7006,
+        "doublesPoints": 4044,
+        "bonusPoints": 2411
+      }
+    },
+    {
+      "name": "Ivan Rybak",
+      "uaid": "2010951187",
+      "city": "Palm Coast",
+      "state": "FL",
+      "trend": "no change",
+      "points": 9940,
+      "rank": {
+        "national": 7,
+        "section": 2,
+        "district": 1
+      },
+      "section": {
+        "name": "Florida"
+      },
+      "district": {
+        "name": "Region 4"
+      },
+      "pointsRecord": {
+        "singlesPoints": 5700,
+        "doublesPoints": 8520,
+        "bonusPoints": 2962
+      }
+    },
+    {
+      "name": "Mason Vaughan",
+      "uaid": "2010765886",
+      "city": "DALLAS",
+      "state": "TX",
+      "trend": "no change",
+      "points": 9520,
+      "rank": {
+        "national": 8,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 6375,
+        "doublesPoints": 9773,
+        "bonusPoints": 1679
+      }
+    },
+    {
+      "name": "Ethan Turunen",
+      "uaid": "2018127559",
+      "city": "Maple Grove",
+      "state": "MN",
+      "trend": "no change",
+      "points": 9270,
+      "rank": {
+        "national": 9,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Northern"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 6240,
+        "doublesPoints": 6975,
+        "bonusPoints": 1984
+      }
+    },
+    {
+      "name": "Kahven Singh",
+      "uaid": "2017114702",
+      "city": "Bethesda",
+      "state": "MD",
+      "trend": "no change",
+      "points": 9162,
+      "rank": {
+        "national": 10,
+        "section": 2,
+        "district": 1
+      },
+      "section": {
+        "name": "Mid-Atlantic"
+      },
+      "district": {
+        "name": "Maryland"
+      },
+      "pointsRecord": {
+        "singlesPoints": 5250,
+        "doublesPoints": 10148,
+        "bonusPoints": 2390
+      }
+    },
+    {
+      "name": "Mikaeel Alibaig",
+      "uaid": "2010891288",
+      "city": "WESLEY CHAPEL",
+      "state": "FL",
+      "trend": "no change",
+      "points": 8907,
+      "rank": {
+        "national": 11,
+        "section": 3,
+        "district": 1
+      },
+      "section": {
+        "name": "Florida"
+      },
+      "district": {
+        "name": "Region 3"
+      },
+      "pointsRecord": {
+        "singlesPoints": 5040,
+        "doublesPoints": 8888,
+        "bonusPoints": 2534
+      }
+    },
+    {
+      "name": "Jerrid Gaines Jr",
+      "uaid": "2010272712",
+      "city": "Palmetto",
+      "state": "FL",
+      "trend": "down",
+      "points": 8766,
+      "rank": {
+        "national": 12,
+        "section": 4,
+        "district": 2
+      },
+      "section": {
+        "name": "Florida"
+      },
+      "district": {
+        "name": "Region 5"
+      },
+      "pointsRecord": {
+        "singlesPoints": 6188,
+        "doublesPoints": 7200,
+        "bonusPoints": 1498
+      }
+    },
+    {
+      "name": "Akshay Mirmira",
+      "uaid": "2010780586",
+      "city": "Bethesda",
+      "state": "MD",
+      "trend": "no change",
+      "points": 8718,
+      "rank": {
+        "national": 13,
+        "section": 3,
+        "district": 2
+      },
+      "section": {
+        "name": "Mid-Atlantic"
+      },
+      "district": {
+        "name": "Maryland"
+      },
+      "pointsRecord": {
+        "singlesPoints": 5380,
+        "doublesPoints": 7995,
+        "bonusPoints": 2139
+      }
+    },
+    {
+      "name": "Anay Kulkarni",
+      "uaid": "2010339267",
+      "city": "Gilbert",
+      "state": "AZ",
+      "trend": "no change",
+      "points": 8520,
+      "rank": {
+        "national": 14,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Southwest"
+      },
+      "district": {
+        "name": "Central Arizona"
+      },
+      "pointsRecord": {
+        "singlesPoints": 5739,
+        "doublesPoints": 5078,
+        "bonusPoints": 2019
+      }
+    },
+    {
+      "name": "Rafael Pawar",
+      "uaid": "2010673543",
+      "city": "Boca Raton",
+      "state": "FL",
+      "trend": "no change",
+      "points": 7975,
+      "rank": {
+        "national": 15,
+        "section": 5,
+        "district": 1
+      },
+      "section": {
+        "name": "Florida"
+      },
+      "district": {
+        "name": "Region 6"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4577,
+        "doublesPoints": 7920,
+        "bonusPoints": 2210
+      }
+    },
+    {
+      "name": "Ryan Corcoran",
+      "uaid": "2010721697",
+      "city": "Cary",
+      "state": "NC",
+      "trend": "no change",
+      "points": 7863,
+      "rank": {
+        "national": 16,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Southern"
+      },
+      "district": {
+        "name": "North Carolina"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4328,
+        "doublesPoints": 9448,
+        "bonusPoints": 2118
+      }
+    },
+    {
+      "name": "Cayden Laughton",
+      "uaid": "2017298076",
+      "city": "Portland",
+      "state": "OR",
+      "trend": "no change",
+      "points": 7777,
+      "rank": {
+        "national": 17,
+        "section": 2,
+        "district": 1
+      },
+      "section": {
+        "name": "Pacific NW"
+      },
+      "district": {
+        "name": "Northern Oregon"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4965,
+        "doublesPoints": 5760,
+        "bonusPoints": 1948
+      }
+    },
+    {
+      "name": "Zachary Szymanski",
+      "uaid": "2017330027",
+      "city": "Locust Grove",
+      "state": "GA",
+      "trend": "no change",
+      "points": 7468,
+      "rank": {
+        "national": 18,
+        "section": 2,
+        "district": 1
+      },
+      "section": {
+        "name": "Southern"
+      },
+      "district": {
+        "name": "Georgia"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4980,
+        "doublesPoints": 4493,
+        "bonusPoints": 1814
+      }
+    },
+    {
+      "name": "Tristan Stratton",
+      "uaid": "2010824952",
+      "city": "Forest Hills",
+      "state": "NY",
+      "trend": "no change",
+      "points": 7375,
+      "rank": {
+        "national": 19,
+        "section": 3,
+        "district": 2
+      },
+      "section": {
+        "name": "Eastern"
+      },
+      "district": {
+        "name": "Metropolitan Region"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4250,
+        "doublesPoints": 5490,
+        "bonusPoints": 2301
+      }
+    },
+    {
+      "name": "Joshua Dolinsky",
+      "uaid": "2010937535",
+      "city": "Brooklyn",
+      "state": "NY",
+      "trend": "no change",
+      "points": 7251,
+      "rank": {
+        "national": 20,
+        "section": 4,
+        "district": 3
+      },
+      "section": {
+        "name": "Eastern"
+      },
+      "district": {
+        "name": "Metropolitan Region"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4665,
+        "doublesPoints": 4275,
+        "bonusPoints": 1945
+      }
+    },
+    {
+      "name": "Arjun Krishnan",
+      "uaid": "2017065889",
+      "city": "San Jose",
+      "state": "CA",
+      "trend": "no change",
+      "points": 7154,
+      "rank": {
+        "national": 21,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Northern California"
+      },
+      "district": {
+        "name": "Northern California"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3912,
+        "doublesPoints": 6990,
+        "bonusPoints": 2193
+      }
+    },
+    {
+      "name": "James Andrew Ross",
+      "uaid": "2017150235",
+      "city": "Frisco",
+      "state": "TX",
+      "trend": "no change",
+      "points": 7127,
+      "rank": {
+        "national": 22,
+        "section": 2,
+        "district": 2
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4603,
+        "doublesPoints": 9908,
+        "bonusPoints": 1038
+      }
+    },
+    {
+      "name": "Simon Hayal",
+      "uaid": "2017034592",
+      "city": "Atlanta",
+      "state": "GA",
+      "trend": "no change",
+      "points": 7085,
+      "rank": {
+        "national": 23,
+        "section": 3,
+        "district": 2
+      },
+      "section": {
+        "name": "Southern"
+      },
+      "district": {
+        "name": "Georgia"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4350,
+        "doublesPoints": 7268,
+        "bonusPoints": 1645
+      }
+    },
+    {
+      "name": "Antanas Daugis",
+      "uaid": "2017229397",
+      "city": "Staten Island",
+      "state": "NY",
+      "trend": "no change",
+      "points": 7070,
+      "rank": {
+        "national": 24,
+        "section": 5,
+        "district": 4
+      },
+      "section": {
+        "name": "Eastern"
+      },
+      "district": {
+        "name": "Metropolitan Region"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4164,
+        "doublesPoints": 6360,
+        "bonusPoints": 1952
+      }
+    },
+    {
+      "name": "Nikhil Bommaiah",
+      "uaid": "2010627421",
+      "city": "Tustin",
+      "state": "CA",
+      "trend": "no change",
+      "points": 7055,
+      "rank": {
+        "national": 25,
+        "section": 2,
+        "district": 2
+      },
+      "section": {
+        "name": "Southern California"
+      },
+      "district": {
+        "name": "Southern California"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4904,
+        "doublesPoints": 5326,
+        "bonusPoints": 1352
+      }
+    },
+    {
+      "name": "Gadin Arun",
+      "uaid": "2010870035",
+      "city": "Paradise Valley",
+      "state": "AZ",
+      "trend": "no change",
+      "points": 7043,
+      "rank": {
+        "national": 26,
+        "section": 2,
+        "district": 2
+      },
+      "section": {
+        "name": "Southwest"
+      },
+      "district": {
+        "name": "Central Arizona"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4688,
+        "doublesPoints": 6900,
+        "bonusPoints": 1320
+      }
+    },
+    {
+      "name": "Maxwell Paape",
+      "uaid": "2017135742",
+      "city": "Neenah",
+      "state": "WI",
+      "trend": "no change",
+      "points": 7026,
+      "rank": {
+        "national": 27,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Midwest"
+      },
+      "district": {
+        "name": "Wisconsin"
+      },
+      "pointsRecord": {
+        "singlesPoints": 5153,
+        "doublesPoints": 4140,
+        "bonusPoints": 1252
+      }
+    },
+    {
+      "name": "Maddox Iliescu",
+      "uaid": "2010862007",
+      "city": "Alpharetta",
+      "state": "GA",
+      "trend": "no change",
+      "points": 7023,
+      "rank": {
+        "national": 28,
+        "section": 4,
+        "district": 3
+      },
+      "section": {
+        "name": "Southern"
+      },
+      "district": {
+        "name": "Georgia"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4457,
+        "doublesPoints": 4868,
+        "bonusPoints": 1836
+      }
+    },
+    {
+      "name": "Advay Singh",
+      "uaid": "2017121683",
+      "city": "Frisco",
+      "state": "TX",
+      "trend": "no change",
+      "points": 6914,
+      "rank": {
+        "national": 29,
+        "section": 3,
+        "district": 3
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4317,
+        "doublesPoints": 3051,
+        "bonusPoints": 2139
+      }
+    },
+    {
+      "name": "Vihaan Reddy",
+      "uaid": "2010729494",
+      "city": "San Jose",
+      "state": "CA",
+      "trend": "up",
+      "points": 6658,
+      "rank": {
+        "national": 30,
+        "section": 2,
+        "district": 2
+      },
+      "section": {
+        "name": "Northern California"
+      },
+      "district": {
+        "name": "Northern California"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4625,
+        "doublesPoints": 4760,
+        "bonusPoints": 1319
+      }
+    },
+    {
+      "name": "Marko Mikic",
+      "uaid": "2018485385",
+      "city": "Coppell",
+      "state": "TX",
+      "trend": "no change",
+      "points": 6589,
+      "rank": {
+        "national": 31,
+        "section": 4,
+        "district": 4
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4380,
+        "doublesPoints": 3907,
+        "bonusPoints": 1623
+      }
+    },
+    {
+      "name": "Aiden Zadeh",
+      "uaid": "2017287384",
+      "city": "Los Angeles",
+      "state": "CA",
+      "trend": "no change",
+      "points": 6535,
+      "rank": {
+        "national": 32,
+        "section": 3,
+        "district": 3
+      },
+      "section": {
+        "name": "Southern California"
+      },
+      "district": {
+        "name": "Southern California"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4533,
+        "doublesPoints": 3803,
+        "bonusPoints": 1432
+      }
+    },
+    {
+      "name": "Rowan Qalbani",
+      "uaid": "2017310757",
+      "city": "New York",
+      "state": "NY",
+      "trend": "no change",
+      "points": 6257,
+      "rank": {
+        "national": 33,
+        "section": 6,
+        "district": 5
+      },
+      "section": {
+        "name": "Eastern"
+      },
+      "district": {
+        "name": "Metropolitan Region"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3700,
+        "doublesPoints": 5928,
+        "bonusPoints": 1668
+      }
+    },
+    {
+      "name": "Zesen Wang",
+      "uaid": "2017200048",
+      "city": "State College",
+      "state": "PA",
+      "trend": "no change",
+      "points": 6200,
+      "rank": {
+        "national": 34,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Middle States"
+      },
+      "district": {
+        "name": "Central Pennsylvania"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4400,
+        "doublesPoints": 4928,
+        "bonusPoints": 1061
+      }
+    },
+    {
+      "name": "Colter Amey",
+      "uaid": "2010649123",
+      "city": "Boca Raton",
+      "state": "FL",
+      "trend": "down",
+      "points": 6111,
+      "rank": {
+        "national": 35,
+        "section": 6,
+        "district": 2
+      },
+      "section": {
+        "name": "Florida"
+      },
+      "district": {
+        "name": "Region 6"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4800,
+        "doublesPoints": 2964,
+        "bonusPoints": 866
+      }
+    },
+    {
+      "name": "Sebastian Zavala",
+      "uaid": "2017160970",
+      "city": "Allen",
+      "state": "TX",
+      "trend": "no change",
+      "points": 6086,
+      "rank": {
+        "national": 36,
+        "section": 5,
+        "district": 5
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4240,
+        "doublesPoints": 4639,
+        "bonusPoints": 1150
+      }
+    },
+    {
+      "name": "Safir Azam",
+      "uaid": "2010737687",
+      "city": "Redmond",
+      "state": "WA",
+      "trend": "no change",
+      "points": 6041,
+      "rank": {
+        "national": 37,
+        "section": 3,
+        "district": 2
+      },
+      "section": {
+        "name": "Pacific NW"
+      },
+      "district": {
+        "name": "Northwest Washington"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4490,
+        "doublesPoints": 2978,
+        "bonusPoints": 1104
+      }
+    },
+    {
+      "name": "Daniil Berezin",
+      "uaid": "2017071400",
+      "city": "Boca Raton",
+      "state": "FL",
+      "trend": "no change",
+      "points": 6040,
+      "rank": {
+        "national": 38,
+        "section": 7,
+        "district": 3
+      },
+      "section": {
+        "name": "Florida"
+      },
+      "district": {
+        "name": "Region 6"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4003,
+        "doublesPoints": 585,
+        "bonusPoints": 1949
+      }
+    },
+    {
+      "name": "Dylan Meineke",
+      "uaid": "2010890310",
+      "city": "Frisco",
+      "state": "TX",
+      "trend": "no change",
+      "points": 5967,
+      "rank": {
+        "national": 39,
+        "section": 6,
+        "district": 6
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3962,
+        "doublesPoints": 4193,
+        "bonusPoints": 1376
+      }
+    },
+    {
+      "name": "Connor Feehan",
+      "uaid": "2017073091",
+      "city": "Bettendorf",
+      "state": "IA",
+      "trend": "no change",
+      "points": 5893,
+      "rank": {
+        "national": 40,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Missouri Valley"
+      },
+      "district": {
+        "name": "Iowa"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4155,
+        "doublesPoints": 4296,
+        "bonusPoints": 1094
+      }
+    },
+    {
+      "name": "Luca Sevim",
+      "uaid": "2017238246",
+      "city": "Chicago",
+      "state": "IL",
+      "trend": "no change",
+      "points": 5878,
+      "rank": {
+        "national": 41,
+        "section": 2,
+        "district": 1
+      },
+      "section": {
+        "name": "Midwest"
+      },
+      "district": {
+        "name": "Chicago"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4092,
+        "doublesPoints": 2355,
+        "bonusPoints": 1433
+      }
+    },
+    {
+      "name": "Jordan Lee",
+      "uaid": "2010892316",
+      "city": "Orlando",
+      "state": "FL",
+      "trend": "no change",
+      "points": 5809,
+      "rank": {
+        "national": 42,
+        "section": 8,
+        "district": 2
+      },
+      "section": {
+        "name": "Florida"
+      },
+      "district": {
+        "name": "Region 4"
+      },
+      "pointsRecord": {
+        "singlesPoints": 5200,
+        "doublesPoints": 2400,
+        "bonusPoints": 249
+      }
+    },
+    {
+      "name": "Damian Gutheil",
+      "uaid": "2017324243",
+      "city": "Kansas City",
+      "state": "MO",
+      "trend": "no change",
+      "points": 5800,
+      "rank": {
+        "national": 43,
+        "section": 2,
+        "district": 1
+      },
+      "section": {
+        "name": "Missouri Valley"
+      },
+      "district": {
+        "name": "Heart of America"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3727,
+        "doublesPoints": 5115,
+        "bonusPoints": 1306
+      }
+    },
+    {
+      "name": "Tristan Ascenzo",
+      "uaid": "2017171411",
+      "city": "Dallas",
+      "state": "TX",
+      "trend": "no change",
+      "points": 5793,
+      "rank": {
+        "national": 44,
+        "section": 7,
+        "district": 7
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3423,
+        "doublesPoints": 4829,
+        "bonusPoints": 1646
+      }
+    },
+    {
+      "name": "Zander Abrams",
+      "uaid": "2010468351",
+      "city": "South El Monte",
+      "state": "CA",
+      "trend": "no change",
+      "points": 5743,
+      "rank": {
+        "national": 45,
+        "section": 4,
+        "district": 4
+      },
+      "section": {
+        "name": "Southern California"
+      },
+      "district": {
+        "name": "Southern California"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4003,
+        "doublesPoints": 3110,
+        "bonusPoints": 1273
+      }
+    },
+    {
+      "name": "Alexander Anderson",
+      "uaid": "2017302122",
+      "city": "Davis",
+      "state": "CA",
+      "trend": "no change",
+      "points": 5700,
+      "rank": {
+        "national": 46,
+        "section": 3,
+        "district": 3
+      },
+      "section": {
+        "name": "Northern California"
+      },
+      "district": {
+        "name": "Northern California"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3946,
+        "doublesPoints": 2907,
+        "bonusPoints": 1318
+      }
+    },
+    {
+      "name": "Aayush Vartak",
+      "uaid": "2010907243",
+      "city": "Hilton Head",
+      "state": "SC",
+      "trend": "no change",
+      "points": 5673,
+      "rank": {
+        "national": 47,
+        "section": 5,
+        "district": 1
+      },
+      "section": {
+        "name": "Southern"
+      },
+      "district": {
+        "name": "South Carolina"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3700,
+        "doublesPoints": 5850,
+        "bonusPoints": 1095
+      }
+    },
+    {
+      "name": "Matias Reyniak",
+      "uaid": "2018191488",
+      "city": "New York",
+      "state": "NY",
+      "trend": "no change",
+      "points": 5650,
+      "rank": {
+        "national": 48,
+        "section": 7,
+        "district": 6
+      },
+      "section": {
+        "name": "Eastern"
+      },
+      "district": {
+        "name": "Metropolitan Region"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4422,
+        "doublesPoints": 0,
+        "bonusPoints": 1228
+      }
+    },
+    {
+      "name": "Peter Choi",
+      "uaid": "2017354219",
+      "city": "Bixby",
+      "state": "OK",
+      "trend": "no change",
+      "points": 5571,
+      "rank": {
+        "national": 49,
+        "section": 8,
+        "district": 8
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3701,
+        "doublesPoints": 5326,
+        "bonusPoints": 1071
+      }
+    },
+    {
+      "name": "Zhiyu Yuan",
+      "uaid": "2018426892",
+      "city": "Chino Hills",
+      "state": "CA",
+      "trend": "no change",
+      "points": 5458,
+      "rank": {
+        "national": 50,
+        "section": 5,
+        "district": 5
+      },
+      "section": {
+        "name": "Southern California"
+      },
+      "district": {
+        "name": "Southern California"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3376,
+        "doublesPoints": 6450,
+        "bonusPoints": 1114
+      }
+    },
+    {
+      "name": "Alexander Totoian",
+      "uaid": "2018452753",
+      "city": "Roseburg",
+      "state": "OR",
+      "trend": "no change",
+      "points": 5357,
+      "rank": {
+        "national": 51,
+        "section": 4,
+        "district": 1
+      },
+      "section": {
+        "name": "Pacific NW"
+      },
+      "district": {
+        "name": "Southern Oregon"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3627,
+        "doublesPoints": 4546,
+        "bonusPoints": 1048
+      }
+    },
+    {
+      "name": "Jason Eigbedion",
+      "uaid": "2010899162",
+      "city": "Duluth",
+      "state": "GA",
+      "trend": "no change",
+      "points": 5293,
+      "rank": {
+        "national": 52,
+        "section": 6,
+        "district": 4
+      },
+      "section": {
+        "name": "Southern"
+      },
+      "district": {
+        "name": "Georgia"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3695,
+        "doublesPoints": 2387,
+        "bonusPoints": 1240
+      }
+    },
+    {
+      "name": "George Ho",
+      "uaid": "2017314102",
+      "city": "Honolulu",
+      "state": "HI",
+      "trend": "no change",
+      "points": 5261,
+      "rank": {
+        "national": 53,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Hawaii Pacific"
+      },
+      "district": {
+        "name": "Oahu"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3726,
+        "doublesPoints": 5190,
+        "bonusPoints": 756
+      }
+    },
+    {
+      "name": "Eita Mishima",
+      "uaid": "2010896500",
+      "city": "Newtown Square",
+      "state": "PA",
+      "trend": "no change",
+      "points": 5192,
+      "rank": {
+        "national": 54,
+        "section": 2,
+        "district": 1
+      },
+      "section": {
+        "name": "Middle States"
+      },
+      "district": {
+        "name": "Philadelphia"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3447,
+        "doublesPoints": 3443,
+        "bonusPoints": 1229
+      }
+    },
+    {
+      "name": "Aryan Ponugoti",
+      "uaid": "2010632884",
+      "city": "Suwanee",
+      "state": "GA",
+      "trend": "no change",
+      "points": 5160,
+      "rank": {
+        "national": 55,
+        "section": 7,
+        "district": 5
+      },
+      "section": {
+        "name": "Southern"
+      },
+      "district": {
+        "name": "Georgia"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3144,
+        "doublesPoints": 6060,
+        "bonusPoints": 1107
+      }
+    },
+    {
+      "name": "Andres Quijada",
+      "uaid": "2018526724",
+      "city": "Carrollton",
+      "state": "TX",
+      "trend": "no change",
+      "points": 5117,
+      "rank": {
+        "national": 56,
+        "section": 9,
+        "district": 9
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3697,
+        "doublesPoints": 3014,
+        "bonusPoints": 968
+      }
+    },
+    {
+      "name": "Adrian Sharma",
+      "uaid": "2010949032",
+      "city": "Porter Ranch",
+      "state": "CA",
+      "trend": "no change",
+      "points": 5102,
+      "rank": {
+        "national": 57,
+        "section": 6,
+        "district": 6
+      },
+      "section": {
+        "name": "Southern California"
+      },
+      "district": {
+        "name": "Southern California"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3150,
+        "doublesPoints": 2865,
+        "bonusPoints": 1522
+      }
+    },
+    {
+      "name": "Carson Kuchar",
+      "uaid": "2010658210",
+      "city": "Six Mile",
+      "state": "SC",
+      "trend": "no change",
+      "points": 5086,
+      "rank": {
+        "national": 58,
+        "section": 8,
+        "district": 2
+      },
+      "section": {
+        "name": "Southern"
+      },
+      "district": {
+        "name": "South Carolina"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2181,
+        "doublesPoints": 11550,
+        "bonusPoints": 1172
+      }
+    },
+    {
+      "name": "Gurbaaz Narang",
+      "uaid": "2018481313",
+      "city": "Orlando",
+      "state": "FL",
+      "trend": "no change",
+      "points": 5016,
+      "rank": {
+        "national": 59,
+        "section": 9,
+        "district": 3
+      },
+      "section": {
+        "name": "Florida"
+      },
+      "district": {
+        "name": "Region 4"
+      },
+      "pointsRecord": {
+        "singlesPoints": 4080,
+        "doublesPoints": 297,
+        "bonusPoints": 891
+      }
+    },
+    {
+      "name": "Sean Peng",
+      "uaid": "2017306144",
+      "city": "Sugar Land",
+      "state": "TX",
+      "trend": "no change",
+      "points": 4985,
+      "rank": {
+        "national": 60,
+        "section": 10,
+        "district": 10
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2939,
+        "doublesPoints": 7853,
+        "bonusPoints": 868
+      }
+    },
+    {
+      "name": "Dylan Warn",
+      "uaid": "2017359328",
+      "city": "Minnetonka",
+      "state": "MN",
+      "trend": "no change",
+      "points": 4764,
+      "rank": {
+        "national": 61,
+        "section": 2,
+        "district": 2
+      },
+      "section": {
+        "name": "Northern"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3225,
+        "doublesPoints": 6435,
+        "bonusPoints": 574
+      }
+    },
+    {
+      "name": "Alec Rodriguez-Fields",
+      "uaid": "2010916920",
+      "city": "Denver",
+      "state": "CO",
+      "trend": "no change",
+      "points": 4630,
+      "rank": {
+        "national": 62,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Intermountain"
+      },
+      "district": {
+        "name": "Colorado"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3405,
+        "doublesPoints": 2840,
+        "bonusPoints": 799
+      }
+    },
+    {
+      "name": "Akshath Hemanth",
+      "uaid": "2010779182",
+      "city": "Hoover",
+      "state": "AL",
+      "trend": "no change",
+      "points": 4608,
+      "rank": {
+        "national": 63,
+        "section": 9,
+        "district": 1
+      },
+      "section": {
+        "name": "Southern"
+      },
+      "district": {
+        "name": "Alabama"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3258,
+        "doublesPoints": 2458,
+        "bonusPoints": 981
+      }
+    },
+    {
+      "name": "Mayurchandra Bharath",
+      "uaid": "2017192317",
+      "city": "San Diego",
+      "state": "CA",
+      "trend": "no change",
+      "points": 4571,
+      "rank": {
+        "national": 64,
+        "section": 7,
+        "district": 1
+      },
+      "section": {
+        "name": "Southern California"
+      },
+      "district": {
+        "name": "San Diego"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3186,
+        "doublesPoints": 2925,
+        "bonusPoints": 946
+      }
+    },
+    {
+      "name": "Karthik Thumu",
+      "uaid": "2010835921",
+      "city": "Fremont",
+      "state": "CA",
+      "trend": "no change",
+      "points": 4548,
+      "rank": {
+        "national": 65,
+        "section": 4,
+        "district": 4
+      },
+      "section": {
+        "name": "Northern California"
+      },
+      "district": {
+        "name": "Northern California"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2873,
+        "doublesPoints": 6049,
+        "bonusPoints": 768
+      }
+    },
+    {
+      "name": "Jiarui Zhang",
+      "uaid": "2017304057",
+      "city": "Houston",
+      "state": "TX",
+      "trend": "no change",
+      "points": 4506,
+      "rank": {
+        "national": 66,
+        "section": 11,
+        "district": 11
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3222,
+        "doublesPoints": 1923,
+        "bonusPoints": 996
+      }
+    },
+    {
+      "name": "Rafael Bote",
+      "uaid": "2018268846",
+      "city": "Boca Raton",
+      "state": "FL",
+      "trend": "no change",
+      "points": 4481,
+      "rank": {
+        "national": 67,
+        "section": 10,
+        "district": 4
+      },
+      "section": {
+        "name": "Florida"
+      },
+      "district": {
+        "name": "Region 6"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2528,
+        "doublesPoints": 4748,
+        "bonusPoints": 1241
+      }
+    },
+    {
+      "name": "Brody Barbeau",
+      "uaid": "2010862406",
+      "city": "Excelsior",
+      "state": "MN",
+      "trend": "no change",
+      "points": 4465,
+      "rank": {
+        "national": 68,
+        "section": 3,
+        "district": 3
+      },
+      "section": {
+        "name": "Northern"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3061,
+        "doublesPoints": 4935,
+        "bonusPoints": 664
+      }
+    },
+    {
+      "name": "Tabb Tuck",
+      "uaid": "2010843389",
+      "city": "Mountain Brk",
+      "state": "AL",
+      "trend": "no change",
+      "points": 4447,
+      "rank": {
+        "national": 69,
+        "section": 10,
+        "district": 2
+      },
+      "section": {
+        "name": "Southern"
+      },
+      "district": {
+        "name": "Alabama"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2926,
+        "doublesPoints": 4358,
+        "bonusPoints": 867
+      }
+    },
+    {
+      "name": "Braylon Desquitado",
+      "uaid": "2018275267",
+      "city": "Colorado Springs",
+      "state": "CO",
+      "trend": "no change",
+      "points": 4439,
+      "rank": {
+        "national": 70,
+        "section": 2,
+        "district": 2
+      },
+      "section": {
+        "name": "Intermountain"
+      },
+      "district": {
+        "name": "Colorado"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3053,
+        "doublesPoints": 5940,
+        "bonusPoints": 495
+      }
+    },
+    {
+      "name": "Alonso Berry",
+      "uaid": "2010858925",
+      "city": "Cambridge",
+      "state": "MA",
+      "trend": "no change",
+      "points": 4435,
+      "rank": {
+        "national": 71,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "New England"
+      },
+      "district": {
+        "name": "Eastern Massachusetts"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2910,
+        "doublesPoints": 5273,
+        "bonusPoints": 734
+      }
+    },
+    {
+      "name": "ETHAN VALDEZ",
+      "uaid": "2010722837",
+      "city": "San Antonio",
+      "state": "TX",
+      "trend": "no change",
+      "points": 4387,
+      "rank": {
+        "national": 72,
+        "section": 12,
+        "district": 12
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2754,
+        "doublesPoints": 3517,
+        "bonusPoints": 1105
+      }
+    },
+    {
+      "name": "Kamden Harden",
+      "uaid": "2018693784",
+      "city": "Long Beach",
+      "state": "CA",
+      "trend": "no change",
+      "points": 4348,
+      "rank": {
+        "national": 73,
+        "section": 8,
+        "district": 7
+      },
+      "section": {
+        "name": "Southern California"
+      },
+      "district": {
+        "name": "Southern California"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3540,
+        "doublesPoints": 1623,
+        "bonusPoints": 565
+      }
+    },
+    {
+      "name": "Kona Parseghian",
+      "uaid": "2017332106",
+      "city": "LA Jolla",
+      "state": "CA",
+      "trend": "no change",
+      "points": 4269,
+      "rank": {
+        "national": 74,
+        "section": 9,
+        "district": 2
+      },
+      "section": {
+        "name": "Southern California"
+      },
+      "district": {
+        "name": "San Diego"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3105,
+        "doublesPoints": 3251,
+        "bonusPoints": 676
+      }
+    },
+    {
+      "name": "Walker Nelson",
+      "uaid": "2010898056",
+      "city": "Tulsa",
+      "state": "OK",
+      "trend": "no change",
+      "points": 4248,
+      "rank": {
+        "national": 75,
+        "section": 3,
+        "district": 1
+      },
+      "section": {
+        "name": "Missouri Valley"
+      },
+      "district": {
+        "name": "Oklahoma"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2863,
+        "doublesPoints": 4650,
+        "bonusPoints": 687
+      }
+    },
+    {
+      "name": "Nirbhay Agarwal",
+      "uaid": "2017161280",
+      "city": "Bellevue",
+      "state": "WA",
+      "trend": "no change",
+      "points": 4242,
+      "rank": {
+        "national": 76,
+        "section": 5,
+        "district": 3
+      },
+      "section": {
+        "name": "Pacific NW"
+      },
+      "district": {
+        "name": "Northwest Washington"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2969,
+        "doublesPoints": 4208,
+        "bonusPoints": 642
+      }
+    },
+    {
+      "name": "Ricky Jeong",
+      "uaid": "2017053661",
+      "city": "Bloomfield Hills",
+      "state": "MI",
+      "trend": "no change",
+      "points": 4226,
+      "rank": {
+        "national": 77,
+        "section": 3,
+        "district": 1
+      },
+      "section": {
+        "name": "Midwest"
+      },
+      "district": {
+        "name": "S.E. Michigan"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2943,
+        "doublesPoints": 3438,
+        "bonusPoints": 767
+      }
+    },
+    {
+      "name": "Harrison Lessard",
+      "uaid": "2010915900",
+      "city": "Columbus",
+      "state": "OH",
+      "trend": "no change",
+      "points": 4194,
+      "rank": {
+        "national": 78,
+        "section": 4,
+        "district": 1
+      },
+      "section": {
+        "name": "Midwest"
+      },
+      "district": {
+        "name": "Ohio Valley"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3108,
+        "doublesPoints": 2427,
+        "bonusPoints": 722
+      }
+    },
+    {
+      "name": "John Murphy",
+      "uaid": "2010783206",
+      "city": "Manhasset",
+      "state": "NY",
+      "trend": "no change",
+      "points": 4165,
+      "rank": {
+        "national": 79,
+        "section": 11,
+        "district": 5
+      },
+      "section": {
+        "name": "Florida"
+      },
+      "district": {
+        "name": "Region 6"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2780,
+        "doublesPoints": 2487,
+        "bonusPoints": 1012
+      }
+    },
+    {
+      "name": "Ezra Britton",
+      "uaid": "2018482189",
+      "city": "Lubbock",
+      "state": "TX",
+      "trend": "no change",
+      "points": 4152,
+      "rank": {
+        "national": 80,
+        "section": 13,
+        "district": 13
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2856,
+        "doublesPoints": 3153,
+        "bonusPoints": 823
+      }
+    },
+    {
+      "name": "Griffin Goode",
+      "uaid": "2010762598",
+      "city": "Raleigh",
+      "state": "NC",
+      "trend": "down",
+      "points": 4148,
+      "rank": {
+        "national": 81,
+        "section": 11,
+        "district": 2
+      },
+      "section": {
+        "name": "Southern"
+      },
+      "district": {
+        "name": "North Carolina"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2185,
+        "doublesPoints": 8423,
+        "bonusPoints": 700
+      }
+    },
+    {
+      "name": "KAMIL STOLARCZYK",
+      "uaid": "2010822939",
+      "city": "Glendale",
+      "state": "NY",
+      "trend": "down",
+      "points": 4140,
+      "rank": {
+        "national": 82,
+        "section": 8,
+        "district": 7
+      },
+      "section": {
+        "name": "Eastern"
+      },
+      "district": {
+        "name": "Metropolitan Region"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3050,
+        "doublesPoints": 3594,
+        "bonusPoints": 551
+      }
+    },
+    {
+      "name": "Mason Fekete",
+      "uaid": "2010380575",
+      "city": "Cary",
+      "state": "NC",
+      "trend": "no change",
+      "points": 4128,
+      "rank": {
+        "national": 83,
+        "section": 12,
+        "district": 3
+      },
+      "section": {
+        "name": "Southern"
+      },
+      "district": {
+        "name": "North Carolina"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2923,
+        "doublesPoints": 4404,
+        "bonusPoints": 544
+      }
+    },
+    {
+      "name": "Gregg Carlevato",
+      "uaid": "2017004662",
+      "city": "HILTON HEAD ISLAND",
+      "state": "SC",
+      "trend": "no change",
+      "points": 4088,
+      "rank": {
+        "national": 84,
+        "section": 5,
+        "district": 2
+      },
+      "section": {
+        "name": "Midwest"
+      },
+      "district": {
+        "name": "Wisconsin"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2442,
+        "doublesPoints": 3585,
+        "bonusPoints": 1108
+      }
+    },
+    {
+      "name": "Blake Wright",
+      "uaid": "2010799095",
+      "city": "Denver",
+      "state": "CO",
+      "trend": "no change",
+      "points": 4050,
+      "rank": {
+        "national": 85,
+        "section": 3,
+        "district": 3
+      },
+      "section": {
+        "name": "Intermountain"
+      },
+      "district": {
+        "name": "Colorado"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2889,
+        "doublesPoints": 5340,
+        "bonusPoints": 360
+      }
+    },
+    {
+      "name": "Alexander Lerman",
+      "uaid": "2017102394",
+      "city": "Old Westbury",
+      "state": "NY",
+      "trend": "no change",
+      "points": 4020,
+      "rank": {
+        "national": 86,
+        "section": 9,
+        "district": 1
+      },
+      "section": {
+        "name": "Eastern"
+      },
+      "district": {
+        "name": "Long Island Region"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2638,
+        "doublesPoints": 5228,
+        "bonusPoints": 598
+      }
+    },
+    {
+      "name": "Asher Yuan",
+      "uaid": "2017089490",
+      "city": "Long Beach",
+      "state": "CA",
+      "trend": "no change",
+      "points": 4015,
+      "rank": {
+        "national": 87,
+        "section": 10,
+        "district": 8
+      },
+      "section": {
+        "name": "Southern California"
+      },
+      "district": {
+        "name": "Southern California"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2897,
+        "doublesPoints": 3402,
+        "bonusPoints": 608
+      }
+    },
+    {
+      "name": "MATEI CALIN",
+      "uaid": "2010745562",
+      "city": "Katy",
+      "state": "TX",
+      "trend": "no change",
+      "points": 3970,
+      "rank": {
+        "national": 88,
+        "section": 14,
+        "district": 14
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2705,
+        "doublesPoints": 3548,
+        "bonusPoints": 733
+      }
+    },
+    {
+      "name": "Michael Chervenkov",
+      "uaid": "2018439006",
+      "city": "Canton",
+      "state": "GA",
+      "trend": "no change",
+      "points": 3970,
+      "rank": {
+        "national": 89,
+        "section": 13,
+        "district": 6
+      },
+      "section": {
+        "name": "Southern"
+      },
+      "district": {
+        "name": "Georgia"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2745,
+        "doublesPoints": 866,
+        "bonusPoints": 1095
+      }
+    },
+    {
+      "name": "Brandon Jeon",
+      "uaid": "2017147598",
+      "city": "East Brunswick",
+      "state": "NJ",
+      "trend": "no change",
+      "points": 3961,
+      "rank": {
+        "national": 90,
+        "section": 10,
+        "district": 1
+      },
+      "section": {
+        "name": "Eastern"
+      },
+      "district": {
+        "name": "New Jersey Region"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2760,
+        "doublesPoints": 4021,
+        "bonusPoints": 598
+      }
+    },
+    {
+      "name": "Smyan Thuta",
+      "uaid": "2018359212",
+      "city": "San Jose",
+      "state": "CA",
+      "trend": "no change",
+      "points": 3959,
+      "rank": {
+        "national": 91,
+        "section": 5,
+        "district": 5
+      },
+      "section": {
+        "name": "Northern California"
+      },
+      "district": {
+        "name": "Northern California"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2490,
+        "doublesPoints": 2927,
+        "bonusPoints": 1030
+      }
+    },
+    {
+      "name": "Oliver Caldwell",
+      "uaid": "2010509433",
+      "city": "Grand Rapids",
+      "state": "MI",
+      "trend": "no change",
+      "points": 3938,
+      "rank": {
+        "national": 92,
+        "section": 6,
+        "district": 1
+      },
+      "section": {
+        "name": "Midwest"
+      },
+      "district": {
+        "name": "Western Michigan"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3080,
+        "doublesPoints": 2625,
+        "bonusPoints": 464
+      }
+    },
+    {
+      "name": "Ishaan Marla",
+      "uaid": "2018162184",
+      "city": "Mason",
+      "state": "OH",
+      "trend": "no change",
+      "points": 3923,
+      "rank": {
+        "national": 93,
+        "section": 7,
+        "district": 2
+      },
+      "section": {
+        "name": "Midwest"
+      },
+      "district": {
+        "name": "Ohio Valley"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2754,
+        "doublesPoints": 1322,
+        "bonusPoints": 971
+      }
+    },
+    {
+      "name": "Manas Kondapalli",
+      "uaid": "2018367320",
+      "city": "Frisco",
+      "state": "TX",
+      "trend": "no change",
+      "points": 3911,
+      "rank": {
+        "national": 94,
+        "section": 15,
+        "district": 15
+      },
+      "section": {
+        "name": "Texas"
+      },
+      "district": {
+        "name": "Member"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2637,
+        "doublesPoints": 3464,
+        "bonusPoints": 754
+      }
+    },
+    {
+      "name": "Paul Bower",
+      "uaid": "2017280419",
+      "city": "Coral Springs",
+      "state": "FL",
+      "trend": "no change",
+      "points": 3871,
+      "rank": {
+        "national": 95,
+        "section": 12,
+        "district": 1
+      },
+      "section": {
+        "name": "Florida"
+      },
+      "district": {
+        "name": "Region 8"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2970,
+        "doublesPoints": 2097,
+        "bonusPoints": 586
+      }
+    },
+    {
+      "name": "Benjamin Wiese",
+      "uaid": "2010664533",
+      "city": "Garden City",
+      "state": "NY",
+      "trend": "no change",
+      "points": 3868,
+      "rank": {
+        "national": 96,
+        "section": 11,
+        "district": 2
+      },
+      "section": {
+        "name": "Eastern"
+      },
+      "district": {
+        "name": "Long Island Region"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2688,
+        "doublesPoints": 4778,
+        "bonusPoints": 463
+      }
+    },
+    {
+      "name": "Trishiv Premanand",
+      "uaid": "2017071157",
+      "city": "Cary",
+      "state": "NC",
+      "trend": "no change",
+      "points": 3863,
+      "rank": {
+        "national": 97,
+        "section": 14,
+        "district": 4
+      },
+      "section": {
+        "name": "Southern"
+      },
+      "district": {
+        "name": "North Carolina"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2225,
+        "doublesPoints": 4525,
+        "bonusPoints": 959
+      }
+    },
+    {
+      "name": "Peter Nistad",
+      "uaid": "2010280319",
+      "city": "Wesley Chapel",
+      "state": "FL",
+      "trend": "no change",
+      "points": 3848,
+      "rank": {
+        "national": 98,
+        "section": 13,
+        "district": 2
+      },
+      "section": {
+        "name": "Florida"
+      },
+      "district": {
+        "name": "Region 3"
+      },
+      "pointsRecord": {
+        "singlesPoints": 1938,
+        "doublesPoints": 4306,
+        "bonusPoints": 1264
+      }
+    },
+    {
+      "name": "Miguel Quinones",
+      "uaid": "2010863646",
+      "city": "Caguas",
+      "state": "PR",
+      "trend": "no change",
+      "points": 3780,
+      "rank": {
+        "national": 99,
+        "section": 1,
+        "district": 1
+      },
+      "section": {
+        "name": "Caribbean"
+      },
+      "district": {
+        "name": "Puerto Rico"
+      },
+      "pointsRecord": {
+        "singlesPoints": 3015,
+        "doublesPoints": 3600,
+        "bonusPoints": 225
+      }
+    },
+    {
+      "name": "James Choi",
+      "uaid": "2017066929",
+      "city": "Mountain View",
+      "state": "CA",
+      "trend": "no change",
+      "points": 3693,
+      "rank": {
+        "national": 100,
+        "section": 6,
+        "district": 6
+      },
+      "section": {
+        "name": "Northern California"
+      },
+      "district": {
+        "name": "Northern California"
+      },
+      "pointsRecord": {
+        "singlesPoints": 2619,
+        "doublesPoints": 3773,
+        "bonusPoints": 508
+      }
+    }
+  ],
+  "scrape_timestamp": "2026-05-17T17:45:18.786742+00:00"
+}

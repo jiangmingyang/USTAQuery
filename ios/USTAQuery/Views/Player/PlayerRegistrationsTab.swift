@@ -81,17 +81,12 @@ private struct ActiveTournamentEntryCard: View {
             }
 
             ForEach(allEntries, id: \.id) { e in
-                HStack(spacing: 8) {
-                    Text(e.eventType ?? "Event")
-                        .font(.caption2.weight(.medium))
-                        .padding(.horizontal, 6)
-                        .padding(.vertical, 2)
-                        .background(Color(.systemGray5))
-                        .clipShape(Capsule())
-                    if let status = e.entryStatus {
-                        StatusBadge(status: status)
-                    }
-                }
+                Text(compactEventLabel(e))
+                    .font(.caption2.weight(.medium))
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .background(Color(.systemGray5))
+                    .clipShape(Capsule())
             }
         }
         .padding()

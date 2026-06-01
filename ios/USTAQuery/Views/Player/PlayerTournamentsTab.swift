@@ -65,21 +65,35 @@ private struct TournamentEntryCard: View {
 
             // Event entries
             ForEach(entries, id: \.id) { entry in
-                HStack(spacing: 8) {
-                    Text(entry.eventType ?? "Event")
-                        .font(.caption2.weight(.medium))
-                        .padding(.horizontal, 6)
-                        .padding(.vertical, 2)
-                        .background(Color(.systemGray5))
-                        .clipShape(Capsule())
-                    if let status = entry.entryStatus {
-                        StatusBadge(status: status)
-                    }
-                }
+                Text(compactEventLabel(entry))
+                    .font(.caption2.weight(.medium))
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .background(Color(.systemGray5))
+                    .clipShape(Capsule())
             }
         }
         .padding()
         .background(Color(.systemGroupedBackground))
         .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
     }
+}
+
+func compactEventLabel(_ entry: PlayerTournamentEntry) -> String {
+    let gender = AppConstants.genderMap[entry.eventGender ?? ""] ?? entry.eventGender ?? ""
+    let age = entry.eventAgeCategory ?? ""
+    let type: String
+    if let et = entry.eventType {
+        let lower = et.lowercased()
+        if lower.hasPrefix("s") { type = "S" }
+        else if lower.hasPrefix("d") { type = "D" }
+        else { type = et }
+    } else {
+        type = ""
+    }
+    return [gender, age, type].filter { !$0.isEmpty }.joined(separator: " ").ifEmpty("Event")
+}
+
+private extension String {
+    func ifEmpty(_ fallback: String) -> String { self.isEmpty ? fallback : self }
 }

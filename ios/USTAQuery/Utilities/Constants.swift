@@ -33,6 +33,8 @@ enum AppConstants {
     static let genderMap: [String: String] = [
         "Male": "Boys", "Female": "Girls", "Coed": "Coed", "Mixed": "Mixed",
         "male": "Boys", "female": "Girls", "coed": "Coed", "mixed": "Mixed",
+        "boys": "Boys", "girls": "Girls",
         "Boys": "Boys", "Girls": "Girls",
+        "M": "Boys", "F": "Girls",
     ]
 }
