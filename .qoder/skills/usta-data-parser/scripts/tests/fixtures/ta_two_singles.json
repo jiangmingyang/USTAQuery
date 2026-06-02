@@ -1,0 +1,93 @@
+{
+  "paginatedPublicTournamentRegistrations": {
+    "totalItems": 2,
+    "items": [
+      {
+        "playerState": "WA",
+        "eventEntries": [
+          {
+            "players": [
+              {
+                "lastName": "Wang",
+                "customId": {
+                  "value": "96D09847-4703-4724-85CF-9235CD758D44",
+                  "key": "userId"
+                },
+                "firstName": "Caleb"
+              }
+            ],
+            "eventId": "E6B9CE1A-0628-44F6-A983-0FE208BB09FF",
+            "partnershipStatus": "NONE"
+          }
+        ],
+        "events": [
+          {
+            "id": "E6B9CE1A-0628-44F6-A983-0FE208BB09FF"
+          }
+        ],
+        "playerCity": "Bellevue",
+        "playerCustomIds": [
+          {
+            "value": "96D09847-4703-4724-85CF-9235CD758D44",
+            "key": "userId"
+          },
+          {
+            "value": "2018905072",
+            "key": "ustaId"
+          }
+        ],
+        "playerFirstName": "Caleb",
+        "playerGender": "MALE",
+        "playerId": {
+          "value": "96D09847-4703-4724-85CF-9235CD758D44",
+          "key": "userId"
+        },
+        "playerLastName": "Wang",
+        "playerName": "Caleb Wang"
+      },
+      {
+        "playerState": "NY",
+        "eventEntries": [
+          {
+            "players": [
+              {
+                "lastName": "Chou",
+                "customId": {
+                  "value": "10A3D4B8-391F-483B-8D02-43745EA6367C",
+                  "key": "userId"
+                },
+                "firstName": "Reagan"
+              }
+            ],
+            "eventId": "E6B9CE1A-0628-44F6-A983-0FE208BB09FF",
+            "partnershipStatus": "NONE"
+          }
+        ],
+        "events": [
+          {
+            "id": "E6B9CE1A-0628-44F6-A983-0FE208BB09FF"
+          }
+        ],
+        "playerCity": "Levittown",
+        "playerCustomIds": [
+          {
+            "value": "10A3D4B8-391F-483B-8D02-43745EA6367C",
+            "key": "userId"
+          },
+          {
+            "value": "2018608139",
+            "key": "ustaId"
+          }
+        ],
+        "playerFirstName": "Reagan",
+        "playerGender": "MALE",
+        "playerId": {
+          "value": "10A3D4B8-391F-483B-8D02-43745EA6367C",
+          "key": "userId"
+        },
+        "playerLastName": "Chou",
+        "playerName": "Reagan Chou"
+      }
+    ]
+  }
+}

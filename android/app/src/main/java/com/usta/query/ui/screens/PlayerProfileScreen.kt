@@ -76,7 +76,7 @@ fun PlayerProfileScreen(
     }
 
     var selectedTab by remember { mutableIntStateOf(0) }
-    val tabs = listOf("Info", "Tournaments", "Registrations", "Matches", "Rankings")
+    val tabs = listOf("Info", "Tournaments", "Registrations", "Rankings")
 
     Scaffold(
         topBar = {
@@ -109,8 +109,7 @@ fun PlayerProfileScreen(
                                     when (index) {
                                         1 -> viewModel.loadTournaments()
                                         2 -> viewModel.loadRegistrations()
-                                        3 -> viewModel.loadMatches()
-                                        4 -> viewModel.loadRankings()
+                                        3 -> viewModel.loadRankings()
                                     }
                                 },
                                 text = { Text(title, fontSize = 12.sp) }
@@ -130,14 +129,7 @@ fun PlayerProfileScreen(
                             isLoading = viewModel.registrationsLoading || viewModel.tournamentsLoading,
                             onTournamentClick = onTournamentClick
                         )
-                        3 -> MatchesTab(
-                            matches = viewModel.matches,
-                            isLoading = viewModel.matchesLoading,
-                            currentPage = viewModel.matchesPage,
-                            uaid = uaid,
-                            onPageChange = { viewModel.loadMatches(it) }
-                        )
-                        4 -> RankingsTab(
+                        3 -> RankingsTab(
                             rankings = viewModel.rankings,
                             isLoading = viewModel.rankingsLoading,
                             selectedAge = viewModel.selectedAgeRestriction,
@@ -155,37 +147,42 @@ fun PlayerProfileScreen(
 
 @Composable
 private fun PlayerHeader(player: com.usta.query.data.model.PlayerDetail, stats: com.usta.query.data.model.PlayerStats?) {
-    Column(modifier = Modifier.fillMaxWidth().padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+    Row(
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
         Box(
-            modifier = Modifier.size(72.dp).clip(CircleShape).background(TennisGreen.copy(alpha = 0.15f)),
+            modifier = Modifier.size(48.dp).clip(CircleShape).background(TennisGreen.copy(alpha = 0.15f)),
             contentAlignment = Alignment.Center
         ) {
             Text(
                 "${player.firstName.first()}${player.lastName.first()}",
-                color = TennisGreen, fontWeight = FontWeight.Bold, fontSize = 28.sp
+                color = TennisGreen, fontWeight = FontWeight.Bold, fontSize = 20.sp
             )
         }
-        Spacer(Modifier.height(8.dp))
-        Text("${player.firstName} ${player.lastName}", fontWeight = FontWeight.Bold, fontSize = 20.sp)
-        val loc = listOfNotNull(player.city, player.state).filter { it.isNotBlank() }.joinToString(", ")
-        if (loc.isNotBlank()) {
-            Text(loc, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        }
-        Spacer(Modifier.height(12.dp))
-        Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            StatPill("WTN", player.wtnSingles?.let { String.format("%.2f", it) } ?: "—")
-            StatPill("NTRP", player.ratingNtrp ?: "—")
-            stats?.let { StatPill("Win%", "${String.format("%.0f", it.winPercentage)}%") }
+        Spacer(Modifier.width(12.dp))
+        Column(modifier = Modifier.weight(1f)) {
+            Text("${player.firstName} ${player.lastName}", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+            val loc = listOfNotNull(player.city, player.state).filter { it.isNotBlank() }.joinToString(", ")
+            if (loc.isNotBlank()) {
+                Text(loc, fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+            Spacer(Modifier.height(4.dp))
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                StatPill("WTN", player.wtnSingles?.let { String.format("%.2f", it) } ?: "—")
+                StatPill("NTRP", player.ratingNtrp ?: "—")
+                stats?.let { StatPill("Win%", "${String.format("%.0f", it.winPercentage)}%") }
+            }
         }
     }
 }
 
 @Composable
 private fun StatPill(label: String, value: String) {
-    Card(shape = RoundedCornerShape(8.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
-        Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-            Text(label, fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            Text(value, fontWeight = FontWeight.Bold, fontSize = 16.sp)
+    Card(shape = RoundedCornerShape(6.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
+        Column(modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(label, fontSize = 10.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(value, fontWeight = FontWeight.Bold, fontSize = 13.sp)
         }
     }
 }
@@ -375,6 +372,18 @@ private fun MatchCard(match: com.usta.query.data.model.Match, uaid: String) {
     }
 }
 
+private fun friendlyRankingName(r: Ranking): String {
+    val isDoubles = r.matchFormat?.uppercase() == "DOUBLES"
+    return when (r.listType) {
+        "STANDING" -> "Combined National Standing List"
+        "SEEDING" -> if (isDoubles) "Doubles Seeding List" else "Singles Seeding List"
+        "BONUS_POINTS" -> "Bonus Points List"
+        "QUOTA" -> "Quota List"
+        "YEAR_END" -> if (isDoubles) "Final Year End Doubles Rank List" else "Final Year End Combined Rank List"
+        else -> r.listType
+    }
+}
+
 @Composable
 private fun RankingsTab(
     rankings: List<Ranking>,
@@ -400,7 +409,7 @@ private fun RankingsTab(
                 Card(modifier = Modifier.fillMaxWidth(), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))) {
                     Row(modifier = Modifier.padding(16.dp).fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                         Column(modifier = Modifier.weight(1f)) {
-                            Text(r.displayLabel ?: r.catalogId, fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
+                            Text(friendlyRankingName(r), fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
                             Text("Nat: ${r.nationalRank ?: "—"} · Sect: ${r.sectionRank ?: "—"} · Dist: ${r.districtRank ?: "—"}", fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                         Text("${r.points ?: "—"} pts", fontWeight = FontWeight.Bold, fontSize = 14.sp)

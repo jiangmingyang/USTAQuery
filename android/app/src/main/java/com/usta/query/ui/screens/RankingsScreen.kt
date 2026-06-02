@@ -71,8 +71,8 @@ fun RankingsScreen(
     ) { padding ->
         Column(modifier = Modifier.padding(padding).fillMaxSize()) {
             Row(
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 8.dp),
-                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(4.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 FilterDropdown(
@@ -80,7 +80,7 @@ fun RankingsScreen(
                     options = RankingsViewModel.listTypes.map { it.second },
                     selectedIndex = RankingsViewModel.listTypes.indexOfFirst { it.first == viewModel.listKey }.takeIf { it >= 0 } ?: 0,
                     onSelected = { idx -> viewModel.updateFilter(list = RankingsViewModel.listTypes[idx].first) },
-                    modifier = Modifier.weight(2f)
+                    modifier = Modifier.weight(1.5f)
                 )
 
                 FilterDropdown(
@@ -88,7 +88,7 @@ fun RankingsScreen(
                     options = RankingsViewModel.genders.map { it.second },
                     selectedIndex = RankingsViewModel.genders.indexOfFirst { it.first == viewModel.gender }.takeIf { it >= 0 } ?: 0,
                     onSelected = { idx -> viewModel.updateFilter(g = RankingsViewModel.genders[idx].first) },
-                    modifier = Modifier.weight(1f)
+                    modifier = Modifier.weight(1.2f)
                 )
 
                 FilterDropdown(
@@ -107,7 +107,7 @@ fun RankingsScreen(
                         val selected = viewModel.versions.getOrElse(idx) { "" }
                         viewModel.updateVersion(selected)
                     },
-                    modifier = Modifier.weight(1.5f)
+                    modifier = Modifier.weight(1.3f)
                 )
             }
 

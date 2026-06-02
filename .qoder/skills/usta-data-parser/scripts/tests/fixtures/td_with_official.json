@@ -1,0 +1,62 @@
+{
+  "getTournamentParticipants": [
+    {
+      "participantId": "459CC74A-8040-4442-8F12-5D9FA4330CB1",
+      "participantType": "INDIVIDUAL",
+      "participantName": "James O'Grady",
+      "participantRole": "COMPETITOR",
+      "participantStatus": "ACTIVE",
+      "person": {
+        "addresses": [
+          {
+            "city": "Tempe",
+            "state": "AZ"
+          }
+        ],
+        "personId": "459CC74A-8040-4442-8F12-5D9FA4330CB1",
+        "personOtherIds": [
+          {
+            "personId": "2019156302",
+            "uniqueOrganisationName": "USTA"
+          }
+        ],
+        "sex": "MALE",
+        "standardGivenName": "James",
+        "standardFamilyName": "O'Grady"
+      },
+      "draws": [
+        {
+          "drawId": "ec8e0a67-0931-4352-af96-980310c07db9",
+          "eventId": "E6B9CE1A-0628-44F6-A983-0FE208BB09FF"
+        }
+      ],
+      "events": [
+        {
+          "eventId": "E6B9CE1A-0628-44F6-A983-0FE208BB09FF",
+          "eventType": "TEAM",
+          "entryStage": "MAIN",
+          "entryStatus": "DIRECT_ACCEPTANCE",
+          "entryPosition": 5,
+          "statusDetail": null
+        }
+      ]
+    },
+    {
+      "participantId": "3813D62A-3E8D-4002-B9D7-B1D1D9CD104B",
+      "participantType": "INDIVIDUAL",
+      "participantName": "Jennifer Fuchs",
+      "participantRole": "OFFICIAL",
+      "participantStatus": "ACTIVE",
+      "person": {
+        "addresses": [],
+        "personId": "E8A3257F-8AB8-4674-8019-795A655C45C1",
+        "personOtherIds": [],
+        "sex": null,
+        "standardGivenName": "Jennifer",
+        "standardFamilyName": "Fuchs"
+      },
+      "draws": [],
+      "events": []
+    }
+  ]
+}

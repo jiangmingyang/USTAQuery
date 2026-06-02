@@ -1,0 +1,53 @@
+{
+  "getTournamentParticipants": [
+    {
+      "participantId": "DD0BF8DD-B47D-450B-9440-7D9A0FCFF0F6",
+      "participantType": "INDIVIDUAL",
+      "participantName": "Adrian Choi",
+      "participantRole": "COMPETITOR",
+      "participantStatus": "ACTIVE",
+      "person": {
+        "addresses": [
+          {
+            "city": "Bedford",
+            "state": "NY"
+          }
+        ],
+        "personId": "88150CE4-7C1B-49A9-9F4C-C753E788E5B1",
+        "personOtherIds": [
+          {
+            "personId": "2019253454",
+            "uniqueOrganisationName": "USTA"
+          }
+        ],
+        "sex": "MALE",
+        "standardGivenName": "Adrian",
+        "standardFamilyName": "Choi"
+      },
+      "draws": [
+        {
+          "drawId": "ec8e0a67-0931-4352-af96-980310c07db9",
+          "eventId": "E6B9CE1A-0628-44F6-A983-0FE208BB09FF"
+        }
+      ],
+      "events": [
+        {
+          "eventId": "E6B9CE1A-0628-44F6-A983-0FE208BB09FF",
+          "eventType": "TEAM",
+          "entryStage": "MAIN",
+          "entryStatus": "DIRECT_ACCEPTANCE",
+          "entryPosition": 2,
+          "statusDetail": null
+        },
+        {
+          "eventId": "2EE1506B-43CB-4B14-B365-582536C0573D",
+          "eventType": "TEAM",
+          "entryStage": "MAIN",
+          "entryStatus": "WITHDRAWN",
+          "entryPosition": 24,
+          "statusDetail": "undefined"
+        }
+      ]
+    }
+  ]
+}

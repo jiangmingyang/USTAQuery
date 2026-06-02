@@ -1,0 +1,1 @@
+{"errors":[{"message":"repositoryError(SPLSwiftServerCore.RepositoryError.objectNotFound(\"Tournament\", 00000000-0000-0000-0000-000000000000))","locations":[{"line":1,"column":113}],"path":["paginatedPublicTournamentRegistrations"]}]}

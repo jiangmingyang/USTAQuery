@@ -1,0 +1,50 @@
+{
+  "paginatedPublicTournamentRegistrations": {
+    "totalItems": 3,
+    "items": [
+      {
+        "playerState": "CA",
+        "eventEntries": [
+          {
+            "players": [
+              {
+                "lastName": "Patra",
+                "customId": {
+                  "value": "7B9CB4E4-BF3D-4DE0-BFFC-E00A38F84FC7",
+                  "key": "userId"
+                },
+                "firstName": "Devansh"
+              }
+            ],
+            "eventId": "E6B9CE1A-0628-44F6-A983-0FE208BB09FF",
+            "partnershipStatus": "NONE"
+          }
+        ],
+        "events": [
+          {
+            "id": "E6B9CE1A-0628-44F6-A983-0FE208BB09FF"
+          }
+        ],
+        "playerCity": "Cupertino",
+        "playerCustomIds": [
+          {
+            "value": "7B9CB4E4-BF3D-4DE0-BFFC-E00A38F84FC7",
+            "key": "userId"
+          },
+          {
+            "value": "2018670408",
+            "key": "ustaId"
+          }
+        ],
+        "playerFirstName": "Devansh",
+        "playerGender": "MALE",
+        "playerId": {
+          "value": "7B9CB4E4-BF3D-4DE0-BFFC-E00A38F84FC7",
+          "key": "userId"
+        },
+        "playerLastName": "Patra",
+        "playerName": "Devansh Patra"
+      }
+    ]
+  }
+}

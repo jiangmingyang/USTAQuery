@@ -4,13 +4,22 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
+    <!-- Tennis ball body (lime-green circle, r=32 = 60% of 108dp, center 54,54) -->
     <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M54,30c-13.25,0 -24,10.75 -24,24s10.75,24 24,24 24,-10.75 24,-24 -10.75,-24 -24,-24zM54,74c-11.05,0 -20,-8.95 -20,-20s8.95,-20 20,-20 20,8.95 20,20 -8.95,20 -20,20z"/>
+        android:fillColor="#CDDC39"
+        android:pathData="M22,54a32,32 0,1 0,64 0a32,32 0,1 0,-64 0"/>
+    <!-- Seam 1: top-left to bottom-right -->
     <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M54,36c-1.1,0 -2,0.9 -2,2v24c0,1.1 0.9,2 2,2s2,-0.9 2,-2v-24c0,-1.1 -0.9,-2 -2,-2z"/>
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4.5"
+        android:strokeLineCap="round"
+        android:pathData="M31.4,31.4C40,44 68,64 76.6,76.6"/>
+    <!-- Seam 2: top-right to bottom-left -->
     <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M42,48c-1.1,0 -2,0.9 -2,2s0.9,2 2,2h24c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2h-24z"/>
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4.5"
+        android:strokeLineCap="round"
+        android:pathData="M76.6,31.4C64,40 44,68 31.4,76.6"/>
 </vector>

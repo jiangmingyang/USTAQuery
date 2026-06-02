@@ -56,9 +56,8 @@ fun HomeScreen(
     onNavigateToSearch: () -> Unit
 ) {
     var searchText by remember { mutableStateOf("") }
-    val scrollState = rememberScrollState()
 
-    Column(modifier = Modifier.fillMaxSize().verticalScroll(scrollState)) {
+    Column(modifier = Modifier.fillMaxSize()) {
         // Hero
         Column(
             modifier = Modifier

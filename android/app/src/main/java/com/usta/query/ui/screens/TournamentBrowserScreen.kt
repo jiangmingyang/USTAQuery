@@ -61,9 +61,9 @@ fun TournamentBrowserScreen(
             )
 
             FlowRow(
-                modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
-                horizontalArrangement = Arrangement.spacedBy(6.dp),
-                verticalArrangement = Arrangement.spacedBy(4.dp)
+                modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp),
+                horizontalArrangement = Arrangement.spacedBy(4.dp),
+                verticalArrangement = Arrangement.spacedBy(2.dp)
             ) {
                 val years = listOf(null, 2024, 2025, 2026)
                 val yearLabels = listOf("All Years", "2024", "2025", "2026")
@@ -140,8 +140,11 @@ fun TournamentBrowserScreen(
                     }
                 )
 
-                TextButton(onClick = { viewModel.clearFilters(); viewModel.selectedYear = null; viewModel.search() }) {
-                    Text("Clear", fontSize = 12.sp)
+                TextButton(
+                    onClick = { viewModel.clearFilters(); viewModel.selectedYear = null; viewModel.search() },
+                    contentPadding = PaddingValues(horizontal = 8.dp, vertical = 2.dp)
+                ) {
+                    Text("Clear", fontSize = 11.sp)
                 }
             }
 

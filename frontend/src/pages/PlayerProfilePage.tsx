@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { getPlayer, getPlayerStats, getPlayerMatches, getPlayerRankings, getPlayerTournamentEntries } from "@/api/client"
-import type { PlayerDetail, PlayerStats, Match, Ranking, PagedResponse, PlayerTournamentEntry } from "@/types"
+import { getPlayer, getPlayerStats, getPlayerRankings, getPlayerTournamentEntries } from "@/api/client"
+import type { PlayerDetail, PlayerStats, Ranking, PlayerTournamentEntry } from "@/types"
 import { PlayerInfoSection } from "@/components/player/PlayerInfoSection"
 import { MatchScoreDisplay, WinLossIndicator } from "@/components/match/MatchScoreDisplay"
 import { LoadingSection, EmptyState, ErrorAlert, LevelBadge } from "@/components/shared/StatusComponents"
@@ -23,7 +23,7 @@ function compactEventLabel(e: PlayerTournamentEntry): string {
   return [gender, age, type].filter(Boolean).join(" ")
 }
 
-type Tab = "info" | "tournaments" | "registrations" | "matches" | "rankings"
+type Tab = "info" | "tournaments" | "registrations" | "rankings"
 
 export function PlayerProfilePage() {
   const { uaid } = useParams<{ uaid: string }>()
@@ -58,7 +58,6 @@ export function PlayerProfilePage() {
     { key: "info", label: "Overview" },
     { key: "tournaments", label: "Tournaments" },
     { key: "registrations", label: "Registrations" },
-    { key: "matches", label: "Matches" },
     { key: "rankings", label: "Rankings" },
   ]
 
@@ -88,7 +87,6 @@ export function PlayerProfilePage() {
         {tab === "info" && <PlayerInfoTab player={player} />}
         {tab === "tournaments" && <TournamentsTab entries={entries} loading={entriesLoading} />}
         {tab === "registrations" && <RegistrationsTab entries={entries} loading={entriesLoading} />}
-        {tab === "matches" && <MatchesTab uaid={player.uaid} />}
         {tab === "rankings" && <RankingsTab uaid={player.uaid} />}
       </div>
     </div>

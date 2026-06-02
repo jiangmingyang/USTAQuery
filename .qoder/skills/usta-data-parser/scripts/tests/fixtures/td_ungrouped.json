@@ -1,0 +1,40 @@
+{
+  "getTournamentParticipants": [
+    {
+      "participantId": "9901145B-E74A-4BD4-A5FC-9E2898642B49",
+      "participantType": "INDIVIDUAL",
+      "participantName": "Alejandro Pazos",
+      "participantRole": "COMPETITOR",
+      "participantStatus": "ACTIVE",
+      "person": {
+        "addresses": [
+          {
+            "city": "Houston",
+            "state": "TX"
+          }
+        ],
+        "personId": "9901145B-E74A-4BD4-A5FC-9E2898642B49",
+        "personOtherIds": [
+          {
+            "personId": "2018847940",
+            "uniqueOrganisationName": "USTA"
+          }
+        ],
+        "sex": "MALE",
+        "standardGivenName": "Alejandro",
+        "standardFamilyName": "Pazos"
+      },
+      "draws": [],
+      "events": [
+        {
+          "eventId": "E6B9CE1A-0628-44F6-A983-0FE208BB09FF",
+          "eventType": "TEAM",
+          "entryStage": null,
+          "entryStatus": "UNGROUPED",
+          "entryPosition": 23,
+          "statusDetail": null
+        }
+      ]
+    }
+  ]
+}
