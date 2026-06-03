@@ -7,6 +7,7 @@ import { TournamentBrowserPage } from "@/pages/TournamentBrowserPage"
 import { TournamentDetailPage } from "@/pages/TournamentDetailPage"
 import { RankingsPage } from "@/pages/RankingsPage"
 import { NotFoundPage } from "@/pages/NotFoundPage"
+import { PrivacyPolicyPage } from "@/pages/PrivacyPolicyPage"
 
 function App() {
   return (
@@ -27,5 +28,4 @@ function App() {
   )
 }
 
-export default App
 export default App
