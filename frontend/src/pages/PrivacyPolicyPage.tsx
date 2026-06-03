@@ -91,7 +91,7 @@ export function PrivacyPolicyPage() {
             information from our displayed data, please contact us at:
           </p>
           <p className="mt-2 font-medium">
-            support@ustaquery.com
+            ustaquery@gmail.com
           </p>
         </section>
 
