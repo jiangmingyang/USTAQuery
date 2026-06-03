@@ -1,14 +1,19 @@
 import SwiftUI
 
+enum AppTab { case home, tournaments, rankings }
+
 struct ContentView: View {
+    @State private var selectedTab: AppTab = .home
+
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             NavigationStack {
-                HomeView()
+                HomeView(onSwitchToRankings: { selectedTab = .rankings })
             }
             .tabItem {
-                Label("Home", systemImage: "magnifyingglass")
+                Label("Home", systemImage: "house")
             }
+            .tag(AppTab.home)
 
             NavigationStack {
                 TournamentBrowserView()
@@ -16,6 +21,7 @@ struct ContentView: View {
             .tabItem {
                 Label("Tournaments", systemImage: "trophy")
             }
+            .tag(AppTab.tournaments)
 
             NavigationStack {
                 RankingsView()
@@ -23,6 +29,7 @@ struct ContentView: View {
             .tabItem {
                 Label("Rankings", systemImage: "chart.bar")
             }
+            .tag(AppTab.rankings)
         }
         .tint(AppTheme.tennisGreen)
     }

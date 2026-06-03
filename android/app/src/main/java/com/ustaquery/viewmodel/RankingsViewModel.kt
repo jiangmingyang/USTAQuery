@@ -1,25 +1,31 @@
 package com.ustaquery.viewmodel
 
+import android.app.Application
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.ustaquery.data.api.ApiClient
 import com.ustaquery.data.model.Ranking
 import kotlinx.coroutines.launch
 
-class RankingsViewModel : ViewModel() {
+class RankingsViewModel(application: Application) : AndroidViewModel(application) {
+    private val prefs = application.getSharedPreferences("ustaquery_prefs", 0)
+
     var listKey by mutableStateOf("STANDING")
     var gender by mutableStateOf("M")
     var ageRestriction by mutableStateOf("Y12")
     var page by mutableIntStateOf(0)
     var publishDate by mutableStateOf("")
+    var sectionFilter by mutableStateOf(prefs.getString("rankings_section", "") ?: "")
+        private set
 
     var data by mutableStateOf<List<Ranking>?>(null)
     var totalPages by mutableIntStateOf(0)
     var versions by mutableStateOf<List<String>>(emptyList())
+    var sections by mutableStateOf<List<String>>(emptyList())
     var isLoading by mutableStateOf(false)
     var error by mutableStateOf<String?>(null)
 
@@ -35,10 +41,14 @@ class RankingsViewModel : ViewModel() {
         fetchAll()
     }
 
-    fun updateFilter(list: String? = null, g: String? = null, age: String? = null) {
+    fun updateFilter(list: String? = null, g: String? = null, age: String? = null, section: String? = null) {
         list?.let { listKey = it }
         g?.let { gender = it }
         age?.let { ageRestriction = it }
+        section?.let {
+            sectionFilter = it
+            prefs.edit().putString("rankings_section", it.ifEmpty { null }).apply()
+        }
         page = 0
         publishDate = ""
         fetchAll()
@@ -65,6 +75,11 @@ class RankingsViewModel : ViewModel() {
             } catch (_: Exception) {
                 versions = emptyList()
             }
+            try {
+                sections = ApiClient.api.getRankingSections(catalogId)
+            } catch (_: Exception) {
+                sections = emptyList()
+            }
             fetchLeaderboard()
         }
     }
@@ -77,7 +92,8 @@ class RankingsViewModel : ViewModel() {
                     catalogId = catalogId,
                     page = page,
                     size = 50,
-                    publishDate = publishDate.takeIf { it.isNotEmpty() }
+                    publishDate = publishDate.takeIf { it.isNotEmpty() },
+                    section = sectionFilter.takeIf { it.isNotEmpty() }
                 )
                 data = resp.content
                 totalPages = resp.totalPages

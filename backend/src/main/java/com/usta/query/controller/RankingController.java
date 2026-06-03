@@ -43,17 +43,18 @@ public class RankingController {
             @RequestParam(required = false) String ageRestriction,
             @RequestParam(required = false) String matchFormat,
             @RequestParam(required = false) String publishDate,
+            @RequestParam(required = false) String section,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "50") int size) {
         if (catalogId != null && publishDate != null && !publishDate.isBlank()) {
             LocalDateTime date = LocalDateTime.parse(publishDate);
-            return ResponseEntity.ok(rankingService.getLeaderboardByDate(catalogId, date, PageRequest.of(page, size)));
+            return ResponseEntity.ok(rankingService.getLeaderboardByDate(catalogId, date, section, PageRequest.of(page, size)));
         }
         if (listType != null && gender != null && ageRestriction != null) {
             return ResponseEntity.ok(rankingService.getLeaderboardByFilters(listType, gender, ageRestriction, matchFormat, PageRequest.of(page, size)));
         }
         if (catalogId != null) {
-            return ResponseEntity.ok(rankingService.getLeaderboard(catalogId, PageRequest.of(page, size)));
+            return ResponseEntity.ok(rankingService.getLeaderboard(catalogId, section, PageRequest.of(page, size)));
         }
         return ResponseEntity.badRequest().build();
     }
@@ -63,5 +64,10 @@ public class RankingController {
         List<LocalDateTime> dates = rankingService.getPublishDates(catalogId);
         List<String> isoStrings = dates.stream().map(LocalDateTime::toString).toList();
         return ResponseEntity.ok(isoStrings);
+    }
+
+    @GetMapping("/rankings/sections")
+    public ResponseEntity<List<String>> getDistinctSections(@RequestParam String catalogId) {
+        return ResponseEntity.ok(rankingService.getDistinctSections(catalogId));
     }
 }

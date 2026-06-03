@@ -83,9 +83,13 @@ interface ApiService {
         @Query("catalogId") catalogId: String,
         @Query("page") page: Int = 0,
         @Query("size") size: Int = 50,
-        @Query("publishDate") publishDate: String? = null
+        @Query("publishDate") publishDate: String? = null,
+        @Query("section") section: String? = null
     ): PagedResponse<Ranking>
 
     @GET("rankings/versions")
     suspend fun getRankingVersions(@Query("catalogId") catalogId: String): List<String>
+
+    @GET("rankings/sections")
+    suspend fun getRankingSections(@Query("catalogId") catalogId: String): List<String>
 }

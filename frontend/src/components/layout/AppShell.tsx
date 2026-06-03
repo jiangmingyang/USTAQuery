@@ -66,12 +66,7 @@ export function Footer() {
     <footer className="border-t mt-auto">
       <div className="container flex h-14 items-center justify-between text-xs text-muted-foreground">
         <p>USTA Tennis Query Dashboard</p>
-        <div className="flex items-center gap-4">
-          <p>Data sourced from usta.com</p>
-          <Link to="/privacy" className="hover:text-foreground transition-colors">
-            Privacy Policy
-          </Link>
-        </div>
+        <p>Data sourced from usta.com</p>
       </div>
     </footer>
   )

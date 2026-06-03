@@ -3,6 +3,7 @@ import SwiftUI
 struct HomeView: View {
     @State private var searchText = ""
     @State private var navigateToSearch = false
+    var onSwitchToRankings: () -> Void = {}
 
     var body: some View {
         ScrollView {
@@ -29,9 +30,22 @@ struct HomeView: View {
                 // Feature cards
                 VStack(spacing: AppTheme.sectionSpacing) {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
-                        FeatureCard(icon: "person.2", title: "Players", description: "Search player profiles and stats")
-                        FeatureCard(icon: "trophy", title: "Tournaments", description: "Browse upcoming and past events")
-                        FeatureCard(icon: "chart.bar", title: "Rankings", description: "National ranking leaderboards")
+                        NavigationLink(value: SearchRoute(query: "")) {
+                            FeatureCard(icon: "person.2", title: "Players", description: "Search player profiles and stats")
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink(value: TournamentBrowserRoute()) {
+                            FeatureCard(icon: "trophy", title: "Tournaments", description: "Browse upcoming and past events")
+                        }
+                        .buttonStyle(.plain)
+
+                        Button {
+                            onSwitchToRankings()
+                        } label: {
+                            FeatureCard(icon: "chart.bar", title: "Rankings", description: "National ranking leaderboards")
+                        }
+                        .buttonStyle(.plain)
                     }
                     .padding(.horizontal)
 
@@ -69,8 +83,11 @@ struct HomeView: View {
         .navigationDestination(for: TournamentRoute.self) { route in
             TournamentDetailView(tournamentId: route.id)
         }
+        .navigationDestination(for: TournamentBrowserRoute.self) { _ in
+            TournamentBrowserView()
+        }
         .navigationDestination(for: RankingRoute.self) { route in
-            RankingsView(initialGender: route.gender, initialAge: route.age)
+            RankingsView(vm: RankingsViewModel(), initialGender: route.gender, initialAge: route.age)
         }
         .navigationDestination(isPresented: $navigateToSearch) {
             SearchResultsView(initialQuery: searchText)
@@ -93,6 +110,8 @@ struct TournamentRoute: Hashable {
     let id: Int
 }
 
+struct TournamentBrowserRoute: Hashable {}
+
 struct RankingRoute: Hashable {
     let gender: String
     let age: String
@@ -112,13 +131,17 @@ private struct FeatureCard: View {
                 .foregroundStyle(AppTheme.tennisGreen)
             Text(title)
                 .font(.subheadline.weight(.semibold))
+                .lineLimit(1)
+                .fixedSize(horizontal: false, vertical: true)
             Text(description)
                 .font(.caption2)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .frame(minHeight: 28, alignment: .top)
         }
         .padding()
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(.systemGroupedBackground))
         .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
     }

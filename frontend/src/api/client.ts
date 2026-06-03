@@ -93,10 +93,14 @@ export function getPlayerRankingHistory(uaid: string, catalogId: string) {
   return fetchJson<RankingHistory>(`${BASE_URL}/players/${uaid}/rankings/history${qs({ catalogId })}`)
 }
 
-export function getLeaderboard(params: { catalogId: string; page?: number; size?: number; publishDate?: string }) {
+export function getLeaderboard(params: { catalogId: string; page?: number; size?: number; publishDate?: string; section?: string }) {
   return fetchJson<PagedResponse<Ranking>>(`${BASE_URL}/rankings${qs(params)}`)
 }
 
 export function getRankingVersions(catalogId: string) {
   return fetchJson<string[]>(`${BASE_URL}/rankings/versions${qs({ catalogId })}`)
+}
+
+export function getRankingSections(catalogId: string) {
+  return fetchJson<string[]>(`${BASE_URL}/rankings/sections${qs({ catalogId })}`)
 }

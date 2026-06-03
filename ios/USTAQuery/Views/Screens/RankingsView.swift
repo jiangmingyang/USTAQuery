@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RankingsView: View {
-    @State private var vm = RankingsViewModel()
+    @State var vm: RankingsViewModel = .shared
 
     var initialGender: String?
     var initialAge: String?
@@ -11,6 +11,7 @@ struct RankingsView: View {
             filterBar
             leaderboardContent
         }
+        .padding(.top, -22)
         .navigationTitle("Rankings")
         .navigationBarTitleDisplayMode(.large)
         .navigationDestination(for: PlayerRoute.self) { route in
@@ -41,9 +42,13 @@ struct RankingsView: View {
                 FilterMenu(label: "Version", options: [("", "Latest")] + vm.versions.map { ($0, formatVersionDate($0)) }, selectedValue: vm.publishDate) { val in
                     vm.updateVersion(val)
                 }
+                FilterMenu(label: "Section", options: [("", "All Sections")] + vm.sections.map { ($0, $0) }, selectedValue: vm.sectionFilter) { val in
+                    vm.updateFilter(section: val)
+                }
             }
             .padding(.horizontal)
-            .padding(.vertical, 8)
+            .padding(.top, 14)
+            .padding(.bottom, 8)
         }
         .background(Color(.systemGroupedBackground))
     }
@@ -71,6 +76,8 @@ struct RankingsView: View {
         VStack(spacing: 0) {
             // Header
             HStack(spacing: 0) {
+                Text("")
+                    .frame(width: 32, alignment: .center)
                 Text("Player")
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Text("Dist")
@@ -81,8 +88,6 @@ struct RankingsView: View {
                     .frame(width: 40, alignment: .center)
                 Text("Pts")
                     .frame(width: 50, alignment: .trailing)
-                Text("W/L")
-                    .frame(width: 44, alignment: .center)
                 Text("")
                     .frame(width: 24)
             }
@@ -119,6 +124,17 @@ struct RankingsView: View {
 
     private func rankingRow(_ r: Ranking) -> some View {
         HStack(spacing: 0) {
+            // Green circle with national rank
+            ZStack {
+                Circle()
+                    .fill(AppTheme.tennisGreen.opacity(0.15))
+                    .frame(width: 28, height: 28)
+                Text(r.nationalRank.map(String.init) ?? "\u{2014}")
+                    .font(.caption2.weight(.bold))
+                    .foregroundStyle(AppTheme.tennisGreen)
+            }
+            .frame(width: 32, alignment: .center)
+
             // Player info
             VStack(alignment: .leading, spacing: 2) {
                 Text("\(r.playerFirstName) \(r.playerLastName)")
@@ -153,17 +169,6 @@ struct RankingsView: View {
             Text(r.points.map(String.init) ?? "\u{2014}")
                 .font(.caption.monospaced())
                 .frame(width: 50, alignment: .trailing)
-
-            // W/L
-            if let w = r.wins, let l = r.losses {
-                Text("\(w)-\(l)")
-                    .font(.caption2.monospaced())
-                    .frame(width: 44, alignment: .center)
-            } else {
-                Text("\u{2014}")
-                    .font(.caption2)
-                    .frame(width: 44, alignment: .center)
-            }
 
             // Trend
             trendIcon(r.trendDirection)

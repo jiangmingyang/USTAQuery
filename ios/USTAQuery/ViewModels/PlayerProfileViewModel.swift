@@ -66,7 +66,7 @@ final class PlayerProfileViewModel {
         case .info: break
         case .tournaments: await loadTournaments()
         case .registrations: await loadRegistrations()
-        case .matches: await loadMatches()
+        case .matches: break
         case .rankings: await loadRankings()
         }
     }

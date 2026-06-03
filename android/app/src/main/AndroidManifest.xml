@@ -14,7 +14,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="35">
         <activity
-            android:name=".MainActivity"
+            android:name="com.ustaquery.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.USTAQuery">
             <intent-filter>

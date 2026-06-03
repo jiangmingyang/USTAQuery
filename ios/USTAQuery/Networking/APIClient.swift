@@ -123,14 +123,20 @@ enum APIClient {
 
     // MARK: - Rankings
 
-    static func getLeaderboard(catalogId: String, page: Int = 0, size: Int = 50, publishDate: String? = nil) async throws -> PagedResponse<Ranking> {
+    static func getLeaderboard(catalogId: String, page: Int = 0, size: Int = 50, publishDate: String? = nil, section: String? = nil) async throws -> PagedResponse<Ranking> {
         try await fetch(Endpoint.url(path: "/rankings", query: [
-            "catalogId": catalogId, "page": String(page), "size": String(size), "publishDate": publishDate
+            "catalogId": catalogId, "page": String(page), "size": String(size), "publishDate": publishDate, "section": section
         ]))
     }
 
     static func getRankingVersions(catalogId: String) async throws -> [String] {
         try await fetch(Endpoint.url(path: "/rankings/versions", query: [
+            "catalogId": catalogId
+        ]))
+    }
+
+    static func getRankingSections(catalogId: String) async throws -> [String] {
+        try await fetch(Endpoint.url(path: "/rankings/sections", query: [
             "catalogId": catalogId
         ]))
     }

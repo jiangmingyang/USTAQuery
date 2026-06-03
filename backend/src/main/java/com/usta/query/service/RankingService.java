@@ -46,8 +46,8 @@ public class RankingService {
         return dto;
     }
 
-    public PagedResponse<RankingDto> getLeaderboard(String catalogId, Pageable pageable) {
-        Page<Ranking> page = rankingRepository.findLeaderboard(catalogId, pageable);
+    public PagedResponse<RankingDto> getLeaderboard(String catalogId, String section, Pageable pageable) {
+        Page<Ranking> page = rankingRepository.findLeaderboard(catalogId, section, pageable);
         var content = page.getContent().stream().map(rankingMapper::toDto).toList();
         return playerMapper.toPagedResponse(page, content);
     }
@@ -62,9 +62,13 @@ public class RankingService {
         return rankingRepository.findDistinctPublishDates(catalogId);
     }
 
-    public PagedResponse<RankingDto> getLeaderboardByDate(String catalogId, LocalDateTime publishDate, Pageable pageable) {
-        Page<Ranking> page = rankingRepository.findLeaderboardByDate(catalogId, publishDate, pageable);
+    public PagedResponse<RankingDto> getLeaderboardByDate(String catalogId, LocalDateTime publishDate, String section, Pageable pageable) {
+        Page<Ranking> page = rankingRepository.findLeaderboardByDate(catalogId, publishDate, section, pageable);
         var content = page.getContent().stream().map(rankingMapper::toDto).toList();
         return playerMapper.toPagedResponse(page, content);
+    }
+
+    public List<String> getDistinctSections(String catalogId) {
+        return rankingRepository.findDistinctSections(catalogId);
     }
 }

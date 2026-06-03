@@ -28,11 +28,14 @@ public interface RankingRepository extends JpaRepository<Ranking, Long> {
 
     @Query(value = "SELECT r FROM Ranking r JOIN FETCH r.player WHERE " +
            "r.catalogId = :catalogId " +
-           "AND r.publishDate = (SELECT MAX(r2.publishDate) FROM Ranking r2 WHERE r2.catalogId = :catalogId)",
+           "AND r.publishDate = (SELECT MAX(r2.publishDate) FROM Ranking r2 WHERE r2.catalogId = :catalogId) " +
+           "AND (:section IS NULL OR r.section = :section)",
            countQuery = "SELECT COUNT(r) FROM Ranking r WHERE " +
            "r.catalogId = :catalogId " +
-           "AND r.publishDate = (SELECT MAX(r2.publishDate) FROM Ranking r2 WHERE r2.catalogId = :catalogId)")
+           "AND r.publishDate = (SELECT MAX(r2.publishDate) FROM Ranking r2 WHERE r2.catalogId = :catalogId) " +
+           "AND (:section IS NULL OR r.section = :section)")
     Page<Ranking> findLeaderboard(@Param("catalogId") String catalogId,
+                                  @Param("section") String section,
                                   Pageable pageable);
 
     @Query(value = "SELECT r FROM Ranking r JOIN FETCH r.player WHERE " +
@@ -83,9 +86,15 @@ public interface RankingRepository extends JpaRepository<Ranking, Long> {
     @Query("SELECT DISTINCT r.publishDate FROM Ranking r WHERE r.catalogId = :catalogId ORDER BY r.publishDate DESC")
     List<LocalDateTime> findDistinctPublishDates(@Param("catalogId") String catalogId);
 
-    @Query(value = "SELECT r FROM Ranking r JOIN FETCH r.player WHERE r.catalogId = :catalogId AND r.publishDate = :publishDate ORDER BY r.nationalRank ASC NULLS LAST",
-           countQuery = "SELECT COUNT(r) FROM Ranking r WHERE r.catalogId = :catalogId AND r.publishDate = :publishDate")
+    @Query(value = "SELECT r FROM Ranking r JOIN FETCH r.player WHERE r.catalogId = :catalogId AND r.publishDate = :publishDate " +
+           "AND (:section IS NULL OR r.section = :section) ORDER BY r.nationalRank ASC NULLS LAST",
+           countQuery = "SELECT COUNT(r) FROM Ranking r WHERE r.catalogId = :catalogId AND r.publishDate = :publishDate " +
+           "AND (:section IS NULL OR r.section = :section)")
     Page<Ranking> findLeaderboardByDate(@Param("catalogId") String catalogId,
                                         @Param("publishDate") LocalDateTime publishDate,
+                                        @Param("section") String section,
                                         Pageable pageable);
+
+    @Query("SELECT DISTINCT r.section FROM Ranking r WHERE r.catalogId = :catalogId AND r.section IS NOT NULL ORDER BY r.section")
+    List<String> findDistinctSections(@Param("catalogId") String catalogId);
 }

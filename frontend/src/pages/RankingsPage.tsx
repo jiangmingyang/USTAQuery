@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
-import { getLeaderboard, getRankingVersions } from "@/api/client"
+import { getLeaderboard, getRankingVersions, getRankingSections } from "@/api/client"
 import type { PagedResponse, Ranking } from "@/types"
 import { Pagination } from "@/components/shared/Pagination"
 import { LoadingSection, EmptyState, ErrorAlert } from "@/components/shared/StatusComponents"
@@ -33,12 +33,16 @@ const AGE_GROUPS = [
   { value: "Y18", label: "18 & Under" },
 ]
 
+const SECTION_STORAGE_KEY = "ustaquery_rankings_section"
+
 export function RankingsPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [data, setData] = useState<PagedResponse<Ranking> | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [versions, setVersions] = useState<string[]>([])
+  const [sectionFilter, setSectionFilter] = useState(() => localStorage.getItem(SECTION_STORAGE_KEY) || "")
+  const [sections, setSections] = useState<string[]>([])
 
   const listKey = searchParams.get("list") || "STANDING"
   const gender = searchParams.get("gender") || "M"
@@ -53,10 +57,18 @@ export function RankingsPage() {
     params.set(key, value)
     if (key !== "page") {
       params.set("page", "0")
-      // Reset publishDate when changing list/gender/age so auto-select picks latest for new catalog
       if (key !== "publishDate") params.delete("publishDate")
     }
     setSearchParams(params)
+  }
+
+  function updateSectionFilter(value: string) {
+    setSectionFilter(value)
+    if (value) {
+      localStorage.setItem(SECTION_STORAGE_KEY, value)
+    } else {
+      localStorage.removeItem(SECTION_STORAGE_KEY)
+    }
   }
 
   const catalogId = buildCatalogId(selectedList.catalogPattern, gender, ageRestriction)
@@ -78,14 +90,21 @@ export function RankingsPage() {
       .catch(() => setVersions([]))
   }, [catalogId])
 
+  // Fetch available sections when catalogId changes
+  useEffect(() => {
+    getRankingSections(catalogId)
+      .then(setSections)
+      .catch(() => setSections([]))
+  }, [catalogId])
+
   useEffect(() => {
     setLoading(true)
     setError(null)
-    getLeaderboard({ catalogId, page, publishDate: publishDate || undefined })
+    getLeaderboard({ catalogId, page, publishDate: publishDate || undefined, section: sectionFilter || undefined })
       .then(setData)
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false))
-  }, [catalogId, page, publishDate])
+  }, [catalogId, page, publishDate, sectionFilter])
 
   const genderLabel = GENDERS.find((g) => g.value === gender)?.label ?? gender
   const ageLabel = AGE_GROUPS.find((a) => a.value === ageRestriction)?.label ?? ageRestriction
@@ -147,6 +166,19 @@ export function RankingsPage() {
             </select>
           </div>
         )}
+        <div>
+          <label className="text-xs font-medium text-muted-foreground block mb-1.5">Section</label>
+          <select
+            value={sectionFilter}
+            onChange={(e) => updateSectionFilter(e.target.value)}
+            className="h-9 rounded-md border bg-background px-3 text-sm min-w-[180px]"
+          >
+            <option value="">All Sections</option>
+            {sections.map((s) => (
+              <option key={s} value={s}>{s}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       {/* Summary */}

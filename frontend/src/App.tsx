@@ -7,7 +7,6 @@ import { TournamentBrowserPage } from "@/pages/TournamentBrowserPage"
 import { TournamentDetailPage } from "@/pages/TournamentDetailPage"
 import { RankingsPage } from "@/pages/RankingsPage"
 import { NotFoundPage } from "@/pages/NotFoundPage"
-import { PrivacyPolicyPage } from "@/pages/PrivacyPolicyPage"
 
 function App() {
   return (
@@ -20,7 +19,6 @@ function App() {
           <Route path="/tournaments" element={<TournamentBrowserPage />} />
           <Route path="/tournaments/:id" element={<TournamentDetailPage />} />
           <Route path="/rankings" element={<RankingsPage />} />
-          <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </AppShell>
