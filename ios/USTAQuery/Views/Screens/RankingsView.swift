@@ -30,6 +30,9 @@ struct RankingsView: View {
     private var filterBar: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
+                FilterMenu(label: "Section", options: [("", "All Sections")] + vm.sections.map { ($0, $0) }, selectedValue: vm.sectionFilter) { val in
+                    vm.updateFilter(section: val)
+                }
                 FilterMenu(label: "List", options: AppConstants.listTypes.map { ($0.value, $0.label) }, selectedValue: vm.listKey) { val in
                     vm.updateFilter(list: val)
                 }
@@ -41,9 +44,6 @@ struct RankingsView: View {
                 }
                 FilterMenu(label: "Version", options: [("", "Latest")] + vm.versions.map { ($0, formatVersionDate($0)) }, selectedValue: vm.publishDate) { val in
                     vm.updateVersion(val)
-                }
-                FilterMenu(label: "Section", options: [("", "All Sections")] + vm.sections.map { ($0, $0) }, selectedValue: vm.sectionFilter) { val in
-                    vm.updateFilter(section: val)
                 }
             }
             .padding(.horizontal)

@@ -65,7 +65,7 @@ fun RankingsScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Rankings") },
+                title = {},
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
@@ -77,6 +77,12 @@ fun RankingsScreen(
         }
     ) { padding ->
         Column(modifier = Modifier.padding(padding).fillMaxSize()) {
+            Text(
+                text = "Rankings",
+                fontSize = 32.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(start = 16.dp, top = 8.dp, bottom = 8.dp)
+            )
             // Filter bar
             Row(
                 modifier = Modifier
@@ -86,6 +92,17 @@ fun RankingsScreen(
                 horizontalArrangement = Arrangement.spacedBy(4.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
+                FilterDropdown(
+                    label = "Section",
+                    options = listOf("All Sections") + viewModel.sections,
+                    selectedIndex = if (viewModel.sectionFilter.isEmpty()) 0
+                        else (viewModel.sections.indexOf(viewModel.sectionFilter).takeIf { it >= 0 } ?: 0) + 1,
+                    onSelected = { idx ->
+                        val selected = if (idx == 0) "" else viewModel.sections.getOrElse(idx - 1) { "" }
+                        viewModel.updateFilter(section = selected)
+                    },
+                    modifier = Modifier.width(180.dp)
+                )
                 FilterDropdown(
                     label = "List",
                     options = RankingsViewModel.listTypes.map { it.second },
@@ -116,17 +133,6 @@ fun RankingsScreen(
                         viewModel.updateVersion(selected)
                     },
                     modifier = Modifier.width(140.dp)
-                )
-                FilterDropdown(
-                    label = "Section",
-                    options = listOf("All Sections") + viewModel.sections,
-                    selectedIndex = if (viewModel.sectionFilter.isEmpty()) 0
-                        else (viewModel.sections.indexOf(viewModel.sectionFilter).takeIf { it >= 0 } ?: 0) + 1,
-                    onSelected = { idx ->
-                        val selected = if (idx == 0) "" else viewModel.sections.getOrElse(idx - 1) { "" }
-                        viewModel.updateFilter(section = selected)
-                    },
-                    modifier = Modifier.width(180.dp)
                 )
             }
 
