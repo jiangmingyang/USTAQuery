@@ -19,6 +19,7 @@ function App() {
           <Route path="/tournaments" element={<TournamentBrowserPage />} />
           <Route path="/tournaments/:id" element={<TournamentDetailPage />} />
           <Route path="/rankings" element={<RankingsPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </AppShell>
@@ -26,4 +27,5 @@ function App() {
   )
 }
 
+export default App
 export default App
