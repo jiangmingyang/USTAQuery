@@ -24,6 +24,7 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.EmojiEvents
 import androidx.compose.material.icons.filled.LocationOn
+import androidx.compose.material.icons.filled.OpenInNew
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -33,10 +34,12 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -127,6 +130,25 @@ fun TournamentDetailScreen(
                                         }
                                         InfoItem(label = "Status", value = it, valueColor = color)
                                     }
+                                }
+                            }
+
+                            // USTA link button
+                            tournament.tournamentId?.let { tid ->
+                                Spacer(Modifier.height(6.dp))
+                                val slug = tournament.orgSlug ?: "abc"
+                                val ustaUrl = "https://playtennis.usta.com/Competitions/$slug/Tournaments/Overview/$tid"
+                                val context = LocalContext.current
+                                TextButton(
+                                    onClick = {
+                                        val intent = android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse(ustaUrl))
+                                        context.startActivity(intent)
+                                    },
+                                    modifier = Modifier.fillMaxWidth()
+                                ) {
+                                    Icon(Icons.Default.OpenInNew, contentDescription = null, modifier = Modifier.size(16.dp))
+                                    Spacer(Modifier.width(4.dp))
+                                    Text("View on USTA", fontWeight = FontWeight.Medium)
                                 }
                             }
                         }

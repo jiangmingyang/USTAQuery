@@ -169,6 +169,7 @@ private fun PlayerHeader(player: com.ustaquery.data.model.PlayerDetail, stats: c
             }
             Spacer(Modifier.height(4.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                StatPill("UTR", player.utrSingles?.let { String.format("%.2f", it) } ?: "—")
                 StatPill("WTN", player.wtnSingles?.let { String.format("%.2f", it) } ?: "—")
                 StatPill("NTRP", player.ratingNtrp ?: "—")
                 stats?.let { StatPill("Win%", "${String.format("%.0f", it.winPercentage)}%") }
@@ -196,8 +197,8 @@ private fun PlayerInfoTab(player: com.ustaquery.data.model.PlayerDetail) {
         "District" to player.district,
         "Nationality" to player.nationality,
         "Membership" to player.membershipType,
-        "UTR Singles" to player.utrSingles?.toString(),
-        "UTR Doubles" to player.utrDoubles?.toString()
+        "UTR Singles" to player.utrSingles?.let { String.format("%.2f", it) },
+        "UTR Doubles" to player.utrDoubles?.let { String.format("%.2f", it) }
     )
     Column(modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
         infoItems.forEach { (label, value) ->

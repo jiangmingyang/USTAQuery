@@ -6,34 +6,19 @@ struct EntriesGroupedView: View {
     let selectedEventId: String?
 
     var body: some View {
-        LazyVStack(spacing: 20) {
+        LazyVStack(spacing: 8) {
             ForEach(groups, id: \.0) { group, rows in
-                VStack(alignment: .leading, spacing: 8) {
-                    // Group header
-                    HStack(spacing: 6) {
-                        Text(group.label)
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(group.color)
-                        Text("\(rows.count)")
-                            .font(.caption2.weight(.medium))
-                            .padding(.horizontal, 6)
-                            .padding(.vertical, 2)
-                            .background(group.color.opacity(0.12))
-                            .foregroundStyle(group.color)
-                            .clipShape(Capsule())
-                    }
+                // Group header - standalone above the list, like Android
+                Text("\(group.label) (\(rows.count))")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(group.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.top, 8)
 
-                    // Entries
-                    ForEach(Array(rows.enumerated()), id: \.element.id) { idx, row in
-                        EntryRow(row: row, index: idx, eventMap: eventMap, showEvent: selectedEventId == nil)
-                        if idx < rows.count - 1 {
-                            Divider()
-                        }
-                    }
+                // Entry cards
+                ForEach(Array(rows.enumerated()), id: \.element.id) { idx, row in
+                    EntryRow(row: row, index: idx, eventMap: eventMap, showEvent: selectedEventId == nil)
                 }
-                .padding()
-                .background(Color(.systemGroupedBackground))
-                .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
             }
         }
     }
@@ -48,83 +33,83 @@ private struct EntryRow: View {
     private var isPair: Bool { row.entries.count == 2 }
 
     var body: some View {
-        HStack(spacing: 8) {
-            // Position
-            Text("\(row.entryPosition ?? (index + 1))")
-                .font(.system(.caption, design: .monospaced))
-                .foregroundStyle(.secondary)
-                .frame(width: 28, alignment: .trailing)
+        HStack(spacing: 4) {
+            // Position - green bold number like Android
+            Text("\(row.entryPosition ?? (index + 1)).")
+                .font(.system(size: 13, weight: .bold))
+                .foregroundStyle(AppTheme.tennisGreen)
+                .frame(width: 28, alignment: .leading)
 
             // Player name(s)
             VStack(alignment: .leading, spacing: 2) {
                 if isPair {
-                    HStack(spacing: 4) {
-                        playerLink(row.entries[0])
-                        Text("/")
+                    Text("\(displayName(row.entries[0])) / \(displayName(row.entries[1]))")
+                        .font(.system(size: 14, weight: .medium))
+                        .lineLimit(1)
+                    let loc1 = locationString(row.entries[0])
+                    let loc2 = locationString(row.entries[1])
+                    let locText = switch (loc1.isEmpty, loc2.isEmpty) {
+                    case (false, false): "\(loc1) / \(loc2)"
+                    case (false, true): loc1
+                    case (true, false): loc2
+                    default: ""
+                    }
+                    if !locText.isEmpty {
+                        Text(locText)
+                            .font(.system(size: 12))
                             .foregroundStyle(.secondary)
-                            .font(.caption)
-                        playerLink(row.entries[1])
+                            .lineLimit(1)
                     }
                 } else {
-                    playerLink(row.entries[0])
-                }
-
-                // Location
-                if isPair {
-                    HStack(spacing: 4) {
-                        locationText(row.entries[0])
-                        Text("/")
-                            .font(.caption2)
-                            .foregroundStyle(.secondary)
-                        locationText(row.entries[1])
+                    if let uaid = row.entries[0].playerUaid, !uaid.isEmpty {
+                        NavigationLink(value: PlayerRoute(uaid: uaid)) {
+                            Text(displayName(row.entries[0]))
+                                .font(.system(size: 14, weight: .medium))
+                                .lineLimit(1)
+                        }
+                    } else {
+                        Text(displayName(row.entries[0]))
+                            .font(.system(size: 14, weight: .medium))
+                            .lineLimit(1)
                     }
-                } else {
-                    locationText(row.entries[0])
+                    let loc = locationString(row.entries[0])
+                    if !loc.isEmpty {
+                        Text(loc)
+                            .font(.system(size: 12))
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                    }
                 }
             }
 
-            Spacer()
+            Spacer(minLength: 4)
 
-            // Points
-            let totalPts = row.entries.compactMap { $0.rankingPoints }.reduce(0, +)
-            if totalPts > 0 {
-                Text("\(totalPts)")
-                    .font(.caption.monospaced())
-                    .foregroundStyle(.secondary)
-                    .frame(width: 40, alignment: .trailing)
-            }
-
-            // Event label (when showing all events)
-            if showEvent, let event = eventMap[row.eventId] {
-                Text(eventLabel(event))
-                    .font(.caption2)
+            // Points - right aligned, compact
+            if isPair {
+                let pts0 = row.entries[0].rankingPoints
+                let pts1 = row.entries[1].rankingPoints
+                Text("\(pts0?.description ?? "—") / \(pts1?.description ?? "—")")
+                    .font(.system(size: 12, design: .monospaced))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
+            } else {
+                if let pts = row.entries[0].rankingPoints {
+                    Text("\(pts) pts")
+                        .font(.system(size: 12, design: .monospaced))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                }
             }
         }
-        .padding(.vertical, 2)
+        .padding(.vertical, 10)
+        .padding(.horizontal, 16)
+        .background(Color(.systemGroupedBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 8))
     }
 
-    @ViewBuilder
-    private func playerLink(_ entry: TournamentEntry) -> some View {
-        let name = displayName(entry)
-        if let uaid = entry.playerUaid, !uaid.isEmpty {
-            NavigationLink(value: PlayerRoute(uaid: uaid)) {
-                Text(name)
-                    .font(.subheadline.weight(.medium))
-            }
-        } else {
-            Text(name)
-                .font(.subheadline.weight(.medium))
-        }
-    }
-
-    @ViewBuilder
-    private func locationText(_ entry: TournamentEntry) -> some View {
+    private func locationString(_ entry: TournamentEntry) -> String {
         let parts = [entry.city, entry.state].compactMap { $0 }.filter { !$0.isEmpty }
-        Text(parts.isEmpty ? "-" : parts.joined(separator: ", "))
-            .font(.caption2)
-            .foregroundStyle(.secondary)
+        return parts.joined(separator: ", ")
     }
 
     private func displayName(_ entry: TournamentEntry) -> String {
@@ -132,12 +117,5 @@ private struct EntryRow: View {
             return "\(f) \(l)"
         }
         return entry.playerName ?? "\(entry.firstName ?? "") \(entry.lastName ?? "")".trimmingCharacters(in: .whitespaces)
-    }
-
-    private func eventLabel(_ event: TournamentEvent) -> String {
-        let gender = AppConstants.genderMap[event.gender ?? ""] ?? event.gender ?? ""
-        let age = event.ageCategory ?? ""
-        let type = event.eventType ?? ""
-        return [gender, age, type].filter { !$0.isEmpty }.joined(separator: " ")
     }
 }

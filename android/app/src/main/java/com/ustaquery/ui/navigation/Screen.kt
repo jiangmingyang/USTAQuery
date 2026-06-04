@@ -10,7 +10,7 @@ sealed class Screen(val route: String) {
     }
     data object TournamentBrowser : Screen("tournaments")
     data object TournamentDetail : Screen("tournament/{id}") {
-        fun createRoute(id: Int) = "tournament/{id}"
+        fun createRoute(id: Int) = "tournament/$id"
     }
     data object Rankings : Screen("rankings/{gender}/{age}") {
         fun createRoute(gender: String = "M", age: String = "Y12") = "rankings/$gender/$age"

@@ -24,6 +24,23 @@ struct TournamentDetailView: View {
                         // Tournament info card
                         TournamentInfoCard(tournament: tournament)
 
+                        // USTA link
+                        if let tid = tournament.tournamentId, let linkURL = URL(string: "https://playtennis.usta.com/Competitions/\(tournament.orgSlug ?? "abc")/Tournaments/Overview/\(tid)") {
+                            Link(destination: linkURL) {
+                                HStack {
+                                    Image(systemName: "arrow.up.right.square")
+                                    Text("View on USTA")
+                                }
+                                .font(.subheadline.weight(.medium))
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 10)
+                                .background(AppTheme.tennisGreen.opacity(0.12))
+                                .foregroundStyle(AppTheme.tennisGreen)
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                            }
+                            .padding(.horizontal)
+                        }
+
                         // Event pills
                         if let events = tournament.events, !events.isEmpty {
                             EventPillSelector(
@@ -60,9 +77,9 @@ struct TournamentDetailView: View {
             PlayerProfileView(uaid: route.uaid)
         }
         .toolbar {
-            if let tournament = viewModel.tournament, let tid = tournament.tournamentId, let slug = tournament.orgSlug {
+            if let tournament = viewModel.tournament, let url = tournament.url, let linkURL = URL(string: url) {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Link(destination: URL(string: "https://playtennis.usta.com/Competitions/\(slug)/Tournaments/Overview/\(tid)")!) {
+                    Link(destination: linkURL) {
                         Image(systemName: "arrow.up.right.square")
                             .font(.subheadline)
                     }
